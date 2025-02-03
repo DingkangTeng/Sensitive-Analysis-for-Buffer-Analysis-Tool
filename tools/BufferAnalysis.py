@@ -5,7 +5,7 @@ class BufferAnalysis(object):
     def __init__(self):
         """Define the tool (tool name is the name of the class)."""
         self.label = "Buffer Analysis"
-        self.description = "Analysis the relationship between Metro station and charging station."
+        self.description = "Analysis the relationship between Metro station and charging station or parking lots."
 
     def getParameterInfo(self):
         """Define the tool parameters."""
@@ -92,7 +92,7 @@ class BufferAnalysis(object):
         totalWorking = len(allCities)
         
         # Initialize null dataframe
-        results = pd.DataFrame({"city": [], "distance": [], "chargingNum": [], "totalChargingNum": []})
+        results = pd.DataFrame({"city": [], "distance": [], "Num": [], "totalNum": []})
         
         # Set buffer using city
         num = 1
@@ -100,7 +100,7 @@ class BufferAnalysis(object):
             # Initialize meaasge and null result
             arcpy.AddMessage("Processing city {} ({}/{})".format(city, num, totalWorking))
             num += 1
-            result = {"city": [city] * parts, "distance": self.distance, "chargingNum": [0] * parts, "totalChargingNum": [0] * parts}
+            result = {"city": [city] * parts, "distance": self.distance, "Num": [0] * parts, "totalNum": [0] * parts}
             memoryName = self.randomName()
 
             # Select data in one city
@@ -146,10 +146,10 @@ class BufferAnalysis(object):
                 result["distance"][i] = data[4]
                 # Buffer shape is disk, so the number shound be sum up
                 if i == 0:
-                    result["chargingNum"][i] = data[2]
+                    result["Num"][i] = data[2]
                 else:
-                    result["chargingNum"][i] = result["chargingNum"][i - 1] + data[2]
-                result["totalChargingNum"][i] = totalCharing
+                    result["Num"][i] = result["Num"][i - 1] + data[2]
+                result["totalNum"][i] = totalCharing
             arcpy.management.Delete(pathSort)
 
             # Append result in dataframe
