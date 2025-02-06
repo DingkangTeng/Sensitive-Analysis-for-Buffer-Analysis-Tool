@@ -1,11 +1,11 @@
 import arcpy, os, random
 import pandas as pd
 
-class BufferAnalysis(object):
+class BufferAnalysisArea(object):
     def __init__(self):
         """Define the tool (tool name is the name of the class)."""
-        self.label = "Buffer Analysis"
-        self.description = "Analysis the relationship between Metro station and charging station or parking lots."
+        self.label = "Buffer Analysis(Area)"
+        self.description = "Analysis the the proporation of area of the buffer zone."
 
     def getParameterInfo(self):
         """Define the tool parameters."""
@@ -25,22 +25,22 @@ class BufferAnalysis(object):
         )
         zoneFieldM.parameterDependencies = [metroLayer.name]
         zoneFieldM.filter.list = ["Text"]
-        chargingLayer = arcpy.Parameter(
-            displayName="Charging Station Layer",
-            name="chargingLayer",
+        districtLayer = arcpy.Parameter(
+            displayName="Disrict Layer",
+            name="districtLayer",
             datatype="GPFeatureLayer",
             parameterType="Required",
             direction="Input"
         )
-        zoneFieldC = arcpy.Parameter(
-            displayName="Select zone name field of charging station",
-            name="zoneFieldC",
+        zoneFieldD = arcpy.Parameter(
+            displayName="Select zone name field of district layer",
+            name="zoneFieldD",
             datatype="Field",
             parameterType="Required",
             direction="Input"
         )
-        zoneFieldC.parameterDependencies = [chargingLayer.name]
-        zoneFieldC.filter.list = ["Text"]
+        zoneFieldD.parameterDependencies = [districtLayer.name]
+        zoneFieldD.filter.list = ["Text"]
         bufferSyntax = arcpy.Parameter(
             displayName="Buffer (Meter) Syntax (Python)",
             name="bufferSyntax",
@@ -57,7 +57,7 @@ class BufferAnalysis(object):
             direction="Output"
         )
 
-        return [metroLayer, zoneFieldM, chargingLayer, zoneFieldC, bufferSyntax, savePath]
+        return [metroLayer, zoneFieldM, districtLayer, zoneFieldD, bufferSyntax, savePath]
 
     def isLicensed(self):
         """Set whether the tool is licensed to execute."""
@@ -78,8 +78,8 @@ class BufferAnalysis(object):
         """The source code of the tool."""
         metroLayer = parameters[0].valueAsText # Metro Station Layer
         zoneFieldM = parameters[1].valueAsText # Metro Station Zone Field
-        chargingLayer = parameters[2].valueAsText # Charging Station Layer
-        zoneFieldC = parameters[3].valueAsText # Charging Station Zone Field
+        districtLayer = parameters[2].valueAsText # Charging Station Layer
+        zoneFieldD = parameters[3].valueAsText # Charging Station Zone Field
         exec("self.setDistance(" + parameters[4].valueAsText + ")") # Set buffer distance
         savePath = parameters[5].valueAsText # Saving path of calculation csv file
         parts = len(self.distance)
@@ -93,6 +93,11 @@ class BufferAnalysis(object):
         
         # Initialize null dataframe
         results = pd.DataFrame({"city": [], "distance": [], "Num": [], "totalNum": []})
+
+        # Calculate total Area
+        totalAreaName = self.randomName("totalArea")
+        arcpy.management.AddField(districtLayer, totalAreaName, "DOUBLE")
+        arcpy.management.CalculateField(districtLayer, totalAreaName, "!shape.geodesicArea!", "PYTHON3")
         
         # Set buffer using city
         num = 1
@@ -106,58 +111,55 @@ class BufferAnalysis(object):
             # Select data in one city
             expression = arcpy.AddFieldDelimiters(metroLayer, zoneFieldM)+"=\'" + city +'\''
             arcpy.management.SelectLayerByAttribute(metroLayer, "NEW_SELECTION", expression)
-            expression = arcpy.AddFieldDelimiters(chargingLayer, zoneFieldC)+"=\'" + city +'\''
-            arcpy.management.SelectLayerByAttribute(chargingLayer, "NEW_SELECTION", expression)
-            
-            # Get the total number of charging station in one city
-            totalCharing = int(arcpy.management.GetCount(chargingLayer).getOutput(0))
-            # No charging station, save 0 and skip to next city
-            if totalCharing == 0:
-                # Append result in dataframe
-                results = pd.concat([results, pd.DataFrame(result)])
-                continue
+            expression = arcpy.AddFieldDelimiters(districtLayer, zoneFieldD)+"=\'" + city +'\''
+            arcpy.management.SelectLayerByAttribute(districtLayer, "NEW_SELECTION", expression)
+
+            # Total Area
+            with arcpy.da.SearchCursor(districtLayer, [totalAreaName]) as cursor:
+                for row in cursor:
+                    totalArea = row[0]
             
             # Creat Buffer (Rings)
             arcpy.AddMessage("Creating buffer.")
             pathBuffer = os.path.join("memory", "Buffer" + memoryName) # Save intermediate result in memory
             arcpy.analysis.MultipleRingBuffer(metroLayer, pathBuffer, self.distance, "Meters", "distance", "ALL", "FULL", "GEODESIC")
 
-            # Calculate the number of charger in the buffer area
-            arcpy.AddMessage("Calculation station number.")
-            pathWithin = os.path.join("memory", "Within" + memoryName) # Save intermediate result in memory
-            ## SummarizeWithin has performance problem
-            # arcpy.analysis.SummarizeWithin(pathBuffer, chargingLayer, pathWithin, "KEEP_ALL")
-            ## Using SpatialJoin instead
-            # Add fiedmappings for input layer
-            fieldmappings = arcpy.FieldMappings()
-            fieldmappings.addTable(pathBuffer)
-            arcpy.analysis.SpatialJoin(pathBuffer, chargingLayer, pathWithin, "JOIN_ONE_TO_ONE", "KEEP_ALL", fieldmappings, "CONTAINS")
-            arcpy.management.Delete(pathBuffer)
+            # Cut the outside area
+            arcpy.AddMessage("Processing buffer.")
+            pathIntersect = os.path.join("memory", "Intersect" + memoryName) # Save intermediate result in memory
+            arcpy.analysis.PairwiseIntersect([pathBuffer, districtLayer], pathIntersect, "All")
 
             # Sort using disatnce
             pathSort = os.path.join("memory", "Sort" + memoryName) # Save intermediate result in memory
-            arcpy.management.Sort(pathWithin, pathSort, [["distance", "Ascending"]])
-            arcpy.management.Delete(pathWithin)
+            arcpy.management.Sort(pathIntersect, pathSort, [["distance", "Ascending"]])
+            arcpy.management.Delete(pathIntersect)
+            
+            # Calculate Area
+            arcpy.AddMessage("Calculating area.")
+            areaName = self.randomName("Area")
+            arcpy.management.AddField(pathSort, areaName, "DOUBLE")
+            arcpy.management.CalculateField(pathSort, areaName, "!shape.geodesicArea!", "PYTHON3")
             
             # Change feature into table
-            arcpy.AddMessage("Converting results into table.")
-            numpyArry = arcpy.da.TableToNumPyArray(pathSort, '*')
-            # Useful Field name: distance in [2] & Count of Points in [3] (Summarize within)
+            arcpy.AddMessage("Coverting results into table.")
+            with arcpy.da.SearchCursor(pathSort, ["distance", areaName]) as cursor:
             # Useful Field name: distance in [4] & Count of Points in [2] (Spatial Join)
-            for i in range(len(numpyArry)):
-                data = numpyArry[i]
-                result["distance"][i] = data[4]
-                # Buffer shape is disk, so the number shound be sum up
-                if i == 0:
-                    result["Num"][i] = data[2]
-                else:
-                    result["Num"][i] = result["Num"][i - 1] + data[2]
-                result["totalNum"][i] = totalCharing
+                i = 0
+                for data in cursor:
+                    result["distance"][i] = data[0]
+                    # Buffer shape is disk, so the number shound be sum up
+                    if i == 0:
+                        result["Num"][i] = data[1]
+                    else:
+                        result["Num"][i] = result["Num"][i - 1] + data[1]
+                    result["totalNum"][i] = totalArea
+                    i += 1
             arcpy.management.Delete(pathSort)
 
             # Append result in dataframe
             results = pd.concat([results, pd.DataFrame(result)])
 
+        arcpy.management.DeleteField(districtLayer, totalAreaName)
         results.to_csv(savePath + ".csv", encoding="utf-8", index=False)
         
         return

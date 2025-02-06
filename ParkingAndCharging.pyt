@@ -2,13 +2,14 @@
 
 import arcpy
 
-# # Test parts
-import os, random
-import pandas as pd
+# # # Test parts
+# import os, random
+# import pandas as pd
 
 # Inport analysis method
 from tools.DistrictDivid import DistrictDivid as DD
 from tools.BufferAnalysis import BufferAnalysis as BA
+from tools.BufferAnalysisArea import BufferAnalysisArea as BAA
 
 # Set some environment settings
 arcpy.env.overwriteOutput = True
@@ -22,4 +23,4 @@ class Toolbox(object):
         self.alias = "ParkingAndCharging"
 
         # List of tool classes associated with this toolbox
-        self.tools = [DD, BA]
+        self.tools = [DD, BA, BAA]
