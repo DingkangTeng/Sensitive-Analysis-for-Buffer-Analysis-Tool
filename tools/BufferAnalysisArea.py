@@ -1,3 +1,5 @@
+# -*- coding: utf-8 -*-
+
 import arcpy, os, random
 import pandas as pd
 
@@ -95,7 +97,7 @@ class BufferAnalysisArea(object):
         results = pd.DataFrame({"city": [], "distance": [], "Num": [], "totalNum": []})
 
         # Calculate total Area
-        totalAreaName = self.randomName("totalArea")
+        totalAreaName = self.randomName("tA")
         arcpy.management.AddField(districtLayer, totalAreaName, "DOUBLE")
         arcpy.management.CalculateField(districtLayer, totalAreaName, "!shape.geodesicArea!", "PYTHON3")
         
@@ -170,7 +172,7 @@ class BufferAnalysisArea(object):
         return
 
     def randomName(self, name: str = "") -> str:
-        return name+"_"+"".join(random.sample('zyxwvutsrqponmlkjihgfedcba1234567890',10))
+        return name+"_"+"".join(random.sample('zyxwvutsrqponmlkjihgfedcba1234567890',5))
     
     def setDistance(self, distance: list) -> None:
         self.distance = distance

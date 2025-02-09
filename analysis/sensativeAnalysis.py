@@ -3,7 +3,7 @@ import matplotlib.pyplot as plt
 from pylab import mpl
 
 from globalAnalysis import analysis as GA
-from function import CITY_STANDER
+from function import CITY_STANDER, STANDER_NAME
 
 # # Setting Chinese front
 # mpl.rcParams["font.sans-serif"] = ["SimHei"]
@@ -13,6 +13,7 @@ class analysis(GA):
     data = []
 
     def __init__(self, metro: pd.DataFrame):
+        metro.drop(metro.loc[metro["city"] == "San Juan"].index, inplace=True) # Delete San Juan
         # metro change city name using CITY_STANDER
         metro["city"] = metro["city"].map(CITY_STANDER())
         self.cities = metro["city"].unique()
@@ -22,14 +23,22 @@ class analysis(GA):
         # Read data
         ratioName = "ratio" + name
         data = pd.read_csv(dataPath + ".csv", encoding="utf-8")
-        dataBaseline = pd.read_csv(dataPath + "_Baseline.csv", encoding="utf-8")
+        data.drop(data.loc[data["city"] == "San Juan"].index, inplace=True) # Delete San Juan
         data[ratioName] = data["Num"] / data["totalNum"]
         data.rename(columns={"Num": "Num" + name}, inplace=True)
         # Read baseline
+        # dataPath.replace("PaR", "CaR") # For parking and charging analysis
+        dataBaseline = pd.read_csv(dataPath + "_Baseline.csv", encoding="utf-8")
+        dataBaseline.drop(dataBaseline.loc[dataBaseline["city"] == "San Juan"].index, inplace=True) # Delete San Juan
+        # Some buffer zone exceed the district area, recalculate the ratio into 100%
+        dataBaseline.loc[dataBaseline["totalNum"] == 0, "Num"] = 1
+        dataBaseline.loc[dataBaseline["totalNum"] == 0, "totalNum"] = 1
         dataBaseline[ratioName + "_Baseline"] = dataBaseline["Num"] / dataBaseline["totalNum"]
-        data = data.set_index("city").join(dataBaseline[ratioName + "Baseline"], on="city")
+        dataBaseline = dataBaseline[["city", "distance", ratioName + "_Baseline"]]
+        data = pd.merge(data, dataBaseline, how="inner", on=["city", "distance"])
         # data change city name using CITY_STANDER
         data["city"] = data["city"].map(CITY_STANDER())
+        data.to_csv(name + "temp.csv", encoding="utf-8")
         self.data.append(data)
 
         return
@@ -38,13 +47,14 @@ class analysis(GA):
     def merge(self, path: str) -> None:
         self.data = pd.concat(self.data)
         self.data = self.data.groupby(["city", "distance", "totalNum"], as_index=False).agg("sum")
+        self.data.sort_values(["city", "distance"], inplace=True)
         self.data.to_csv(path, encoding="utf-8", index=False)
 
         return
     
     # 加上baseline后线太多了，想想咋重新画图
-    def drawCurve(self, path: str, threshold: int = 0) -> None:
-        columns = ["distance", "ratioAll", "ratioNormal", "ratioTerminal", "ratioTrans"]
+    def drawCurve(self, path: str, columnList: list[str], threshold: int = 0) -> None:
+        columns = ["distance"] + columnList
         cityNum = len(self.cities)
         colNum = int(cityNum ** 0.5)
         rowNum = (cityNum + colNum - 1) // colNum
@@ -80,7 +90,7 @@ class analysis(GA):
         
         # Add one legend
         # Change labels into a friendly name
-        # ...
+        labels = [STANDER_NAME[x] if x in STANDER_NAME else x for x in labels]
         fig.legend(lines, labels, loc = "lower right")
         plt.tight_layout()
         plt.savefig(path + '\\multiple_dataframes_plot.png', bbox_inches='tight')
@@ -109,19 +119,18 @@ class analysis(GA):
 # Analysis using saved output csv file
 class analysisAll(analysis):
     def __init__(self, metro: pd.DataFrame, data: pd.DataFrame):
-        data["city"] = data["city"].map(CITY_STANDER())
         super().__init__(metro)
         self.data = data
 
 def runAnalysis(a: analysis | analysisAll, path: str) -> None:
-    a.drawCurve(path, 5)
-    a.drawBar([500], "All", path, 5)
+    a.drawCurve(path, ["ratioAll_Baseline", "ratioAll", "ratioNormal", "ratioTerminal", "ratioTrans"], 5)
+    # a.drawBar([500], "All", path, 5)
     
     return
 
 if __name__ == "__main__":
     # First round analysis
-    for country in ["EU", "US", "CH"]:
+    for country in []: # "EU" Trans baseline has problem need to regeneralite
         path = "..\\Export\\" + country + "\\"
         metroPath = path + country + "_Metro.csv"
         metro = pd.read_csv(metroPath, encoding="utf-8")
@@ -144,7 +153,7 @@ if __name__ == "__main__":
         runAnalysis(a, path)
     
     # Analysis using saved csv file
-    for country in []:
+    for country in ["US", "CH"]:
         path = "..\\Export\\" + country + "\\"
         metroPath = path + country + "_Metro.csv"
         dataPath = path + country + ".csv"

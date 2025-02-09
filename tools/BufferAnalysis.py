@@ -1,3 +1,5 @@
+# -*- coding: utf-8 -*-
+
 import arcpy, os, random
 import pandas as pd
 
