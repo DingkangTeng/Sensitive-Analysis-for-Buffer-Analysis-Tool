@@ -10,12 +10,13 @@ class analysis:
     yticks = [0, 0.5, 1] # Unify y-axis
 
     def __init__(self, metro: pd.DataFrame = metro, data: pd.DataFrame = data):
-        if not metro.empty:
-            # metro & data change city name using CITY_STANDER
-            metro["city"] = metro["city"].map(CITY_STANDER())
-            self.cities += metro["city"].unique().tolist()
         self.metro = pd.concat([self.metro, metro])
         self.data = pd.concat([self.data, data])
+        if not metro.empty:
+            # metro & data change city name using CITY_STANDER
+            self.metro["city"] = self.metro["city"].map(CITY_STANDER())
+            self.cities += self.metro["city"].unique().tolist()
+            self.data.sort_values(by=["city", "distance"], inplace=True)
             
     def append(self, metro: pd.DataFrame, data: pd.DataFrame) -> None:
         self.__init__(metro, data)
@@ -38,6 +39,7 @@ class analysis:
             # Skip city whose metro station number is less than the thresold
             metro = self.metro.loc[self.metro["city"] == city]
             if metro["FREQUENCY"].iloc[0] < threshold:
+                result.drop(result.loc[result["city"] == city].index, inplace=True)
                 continue
             
             for i in distance:
@@ -52,11 +54,11 @@ class analysis:
         
         # Save result
         if path != "":
-            result.to_csv(path, encoding="utf-8", index=False)
+            result.sort_values(by=["city"]).to_csv(path, encoding="utf-8", index=False)
 
         return result
     
-    def calculateAccumulation(self, path: str) -> None:
+    def calculateAccumulation(self, path: str, interval: int = 10, threshold: int = 2000) -> None:
         def formular(sequencesA: list[int | float], sequencesB: list[int | float], interval: int) -> float:
             segmaA = np.sum(sequencesA[:-1])
             resultA = (segmaA + 0.5 * sequencesA[-1]) * interval
@@ -70,7 +72,6 @@ class analysis:
         # Initialize results
         cities = self.data["city"].unique().tolist()
         cityNum = len(cities)
-        interval = 10 # Buffer distance
         result = pd.DataFrame({"city": cities,
                                "Accumulation of all stations": [0] * cityNum,
                                "Accumulaiton of normal stations": [0] * cityNum,
@@ -78,20 +79,20 @@ class analysis:
                                "Accumulation of terminal stations": [0] * cityNum
                             })
         for i in range(cityNum):
-            data = self.data.loc[self.data["city"] == cities[i]]
+            data = self.data.loc[(self.data["city"] == cities[i]) & (self.data["distance"] <= threshold)]
             result.loc[i, "Accumulation of all stations"] = formular(data["ratioAll"].to_list(), data["ratioAll_Baseline"].to_list(), interval)
             result.loc[i, "Accumulaiton of normal stations"] = formular(data["ratioNormal"].to_list(), data["ratioNormal_Baseline"].to_list(), interval)
             result.loc[i, "Accululation of transfer stations"] = formular(data["ratioTerminal"].to_list(), data["ratioTerminal_Baseline"].to_list(), interval)
             result.loc[i, "Accumulation of terminal stations"] = formular(data["ratioTrans"].to_list(), data["ratioTrans_Baseline"].to_list(), interval)
         
-        result.to_csv(path, encoding="utf-8", index=False)
+        result.sort_values(by=["city"]).to_csv(path, encoding="utf-8", index=False)
 
         return
 
 if __name__ == "__main__":
     a = analysis()
     
-    for country in ["US", "CH", ]: #"EU"
+    for country in ["US", "CH", "EU"]:
         path = "..\\Export\\" + country + "\\"
         metroPath = path + country + "_Metro.csv"
         dataPath = path + country + ".csv"
@@ -100,4 +101,6 @@ if __name__ == "__main__":
         a.append(metro, data)
     
     # a.compareRatio([500, 1000], ["All", "Normal", "Terminal", "Trans"], "..\\Export\\global.csv", 5)
-    a.calculateAccumulation("..\\Export\\Accumulation.csv")
+    # a.calculateAccumulation("..\\Export\\Accumulation.csv")
+    a.calculateAccumulation("..\\Export\\Accumulation500.csv", threshold=500)
+    a.calculateAccumulation("..\\Export\\Accumulation1000.csv", threshold=1000)

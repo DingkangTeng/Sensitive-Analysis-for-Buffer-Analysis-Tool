@@ -1,6 +1,6 @@
 import pandas as pd
 import matplotlib.pyplot as plt
-from pylab import mpl
+from typing import Tuple
 
 from globalAnalysis import analysis as GA
 from function import CITY_STANDER, STANDER_NAME
@@ -38,7 +38,6 @@ class analysis(GA):
         data = pd.merge(data, dataBaseline, how="inner", on=["city", "distance"])
         # data change city name using CITY_STANDER
         data["city"] = data["city"].map(CITY_STANDER())
-        data.to_csv(name + "temp.csv", encoding="utf-8")
         self.data.append(data)
 
         return
@@ -52,38 +51,7 @@ class analysis(GA):
 
         return
     
-    # 加上baseline后线太多了，想想咋重新画图
-    def drawCurve(self, path: str, columnList: list[str], threshold: int = 0) -> None:
-        columns = ["distance"] + columnList
-        cityNum = len(self.cities)
-        colNum = int(cityNum ** 0.5)
-        rowNum = (cityNum + colNum - 1) // colNum
-        fig, axs = plt.subplots(rowNum, colNum, figsize=(20, 20))
-        axs = axs.flatten() # Flatten the 2D array of axes to 1D for easy indexing
-
-        i = 0
-        for city in self.cities: 
-            # Skip city whose metro station number is less than the thresold
-            metro = self.metro.loc[self.metro["city"] == city]
-            if metro["FREQUENCY"].iloc[0] < threshold:
-                continue
-
-            data = self.data.loc[self.data["city"] == city, columns].set_index("distance")
-
-            # Plot curve
-            if i == 0:
-                data.plot(ax=axs[i], marker='o', title=city, ylabel="ratio")
-                axs[i].set_xlabel("distance")
-                axs[i].set_yticks(self.yticks)
-                lines, labels = fig.axes[i].get_legend_handles_labels()
-                fig.axes[i].get_legend().remove()
-                i = 1
-                continue
-            data.plot(ax=axs[i], marker='.', title=city, ylabel="ratio", legend=False)
-            axs[i].set_xlabel("distance")
-            axs[i].set_yticks(self.yticks)
-            i += 1
-        
+    def saveFig(self, i: int, axs: plt.Axes, fig: plt.Figure, lines: list, labels: list, savePath: str):
         # Hide unused subplots
         for j in range(i, len(axs)):
             fig.delaxes(axs[j])
@@ -93,8 +61,104 @@ class analysis(GA):
         labels = [STANDER_NAME[x] if x in STANDER_NAME else x for x in labels]
         fig.legend(lines, labels, loc = "lower right")
         plt.tight_layout()
-        plt.savefig(path + '\\multiple_dataframes_plot.png', bbox_inches='tight')
+        plt.savefig(savePath, bbox_inches="tight")
         plt.close()
+
+        return
+
+    def skipFirst(self, threshold: int) -> int:
+        j = 0
+        while True:
+            metro = self.metro.loc[self.metro["city"] == self.cities[j]]
+            if metro["FREQUENCY"].iloc[0] >= threshold:
+                break
+            j += 1
+        
+        return j
+    
+    def calRowCol(self) -> Tuple[int, int]:
+        cityNum = len(self.cities)
+        colNum = int(cityNum ** 0.5)
+        rowNum = (cityNum + colNum - 1) // colNum
+
+        return colNum, rowNum
+
+    def drawCurveAcc(self, path: str, columnList: list[str], threshold: int = 0) -> None:
+        def plotDatas(i: int, axs: plt.Axes, city: str, columnStation: list[str], columnBaseline: list[str]) -> None:
+            dataStation = self.data.loc[self.data["city"] == city, columnStation].set_index("distance")
+            dataBaseline = self.data.loc[self.data["city"] == city, columnBaseline].set_index("distance")
+            dataBaseline.plot(ax=axs[i], marker=',', color="gray")
+            dataStation.plot(ax=axs[i], marker='.', title=city, ylabel="ratio")
+            axs[i].set_xlabel("distance")
+            axs[i].set_yticks(self.yticks)
+
+            return
+        
+        colNum, rowNum = self.calRowCol()
+        
+        # Draw different condition
+        for column in columnList:
+            columnStation = ["distance", column]
+            columnBaseline = ["distance", column + "_Baseline"]
+            fig, axs = plt.subplots(rowNum, colNum, figsize=(20, 20))
+            axs = axs.flatten() # Flatten the 2D array of axes to 1D for easy indexing
+
+            # Plot the first sub plot
+            j = self.skipFirst(threshold)
+            plotDatas(0, axs, self.cities[j], columnStation, columnBaseline)
+            lines, labels = fig.axes[0].get_legend_handles_labels()
+            fig.axes[0].get_legend().remove()
+
+            i = 1
+            for city in self.cities[j + 1:]: 
+                # Skip city whose metro station number is less than the thresold
+                metro = self.metro.loc[self.metro["city"] == city]
+                if metro["FREQUENCY"].iloc[0] < threshold:
+                    continue
+                # Plot curve
+                plotDatas(i, axs, city, columnStation, columnBaseline)
+                fig.axes[i].get_legend().remove()
+                i += 1
+            
+            savePath = path + "\\accum" + column + ".png"
+            self.saveFig(i, axs, fig, lines, labels, savePath)
+
+        return
+
+    def drawCurveAll(self, path: str, columnList: list[str], threshold: int = 0) -> None:
+        def plotDatas(i: int, axs: plt.Axes, city: str, columns: list[str]) -> None:
+            dataStation = self.data.loc[self.data["city"] == city, columns].set_index("distance")
+            dataStation.plot(ax=axs[i], marker='.', title=city, ylabel="ratio")
+            axs[i].set_xlabel("distance")
+            axs[i].set_yticks(self.yticks)
+
+            return
+        
+        colNum, rowNum = self.calRowCol()
+        
+        columns = ["distance"] + columnList
+        fig, axs = plt.subplots(rowNum, colNum, figsize=(20, 20))
+        axs = axs.flatten() # Flatten the 2D array of axes to 1D for easy indexing
+
+        # Plot the first sub plot
+        j = self.skipFirst(threshold)
+        plotDatas(0, axs, self.cities[j], columns)
+        lines, labels = fig.axes[0].get_legend_handles_labels()
+        fig.axes[0].get_legend().remove()
+
+        i = 1
+        for city in self.cities[j + 1:]: 
+            # Skip city whose metro station number is less than the thresold
+            metro = self.metro.loc[self.metro["city"] == city]
+            if metro["FREQUENCY"].iloc[0] < threshold:
+                continue
+            # Plot curve
+            plotDatas(i, axs, city, columns)
+            fig.axes[i].get_legend().remove()
+            i += 1
+        
+        savePath = path + "\\sensative.png"
+        self.saveFig(i, axs, fig, lines, labels, savePath)
 
         return
     
@@ -103,15 +167,17 @@ class analysis(GA):
         data = self.compareRatio(distance, typestr, threshold=threshold)
         data.set_index("city", inplace=True)
         data.sort_values("ratio" + typestr + str(distance[0]), ascending=False, inplace=True)
+        # Delete city where has no station
+        # ..........
         # Only display the top 20 cities
         data.iloc[:20].plot.bar()
         plt.yticks(self.yticks)
-        plt.savefig(path + '\\rankingsTop20.png', bbox_inches='tight')
+        plt.savefig(path + "\\rankings" + typestr + "Top20.png", bbox_inches="tight")
         plt.close()
 
         # All cities
         data.plot.bar(figsize=(20,15))
-        plt.savefig(path + '\\rankings.png', bbox_inches='tight')
+        plt.savefig(path + "\\rankings" + typestr + ".png", bbox_inches="tight")
         plt.close()
 
         return
@@ -120,17 +186,19 @@ class analysis(GA):
 class analysisAll(analysis):
     def __init__(self, metro: pd.DataFrame, data: pd.DataFrame):
         super().__init__(metro)
-        self.data = data
+        self.data = data.sort_values(by=["city", "distance"])
 
 def runAnalysis(a: analysis | analysisAll, path: str) -> None:
-    a.drawCurve(path, ["ratioAll_Baseline", "ratioAll", "ratioNormal", "ratioTerminal", "ratioTrans"], 5)
-    # a.drawBar([500], "All", path, 5)
+    # a.drawCurveAcc(path, ["ratioAll", "ratioNormal", "ratioTerminal", "ratioTrans"], 5)
+    # a.drawCurveAll(path, ["ratioAll", "ratioNormal", "ratioTerminal", "ratioTrans"], 5)
+    # for stationType in ["All", "Normal", "Terminal", "Trans"]:
+    #     a.drawBar([1000, 500], stationType, path, 5)
     
     return
 
 if __name__ == "__main__":
     # First round analysis
-    for country in []: # "EU" Trans baseline has problem need to regeneralite
+    for country in []:
         path = "..\\Export\\" + country + "\\"
         metroPath = path + country + "_Metro.csv"
         metro = pd.read_csv(metroPath, encoding="utf-8")
@@ -153,7 +221,7 @@ if __name__ == "__main__":
         runAnalysis(a, path)
     
     # Analysis using saved csv file
-    for country in ["US", "CH"]:
+    for country in ["US", "CH", "EU"]:
         path = "..\\Export\\" + country + "\\"
         metroPath = path + country + "_Metro.csv"
         dataPath = path + country + ".csv"
