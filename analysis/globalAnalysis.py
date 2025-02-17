@@ -58,7 +58,7 @@ class analysis:
 
         return result
     
-    def calculateAccumulation(self, path: str, interval: int = 10, threshold: int = 2000) -> None:
+    def calculateAccumulation(self, path: str, interval: int = 10, threshold: int = 2000, sub: str = "") -> None:
         def formular(sequencesA: list[int | float], sequencesB: list[int | float], interval: int) -> float:
             segmaA = np.sum(sequencesA[:-1])
             resultA = (segmaA + 0.5 * sequencesA[-1]) * interval
@@ -71,6 +71,7 @@ class analysis:
         
         # Initialize results
         cities = self.data["city"].unique().tolist()
+        cities.sort()
         cityNum = len(cities)
         result = pd.DataFrame({"city": cities,
                                "Accumulation of all stations": [0] * cityNum,
@@ -78,12 +79,23 @@ class analysis:
                                "Accululation of transfer stations": [0] * cityNum,
                                "Accumulation of terminal stations": [0] * cityNum
                             })
+        if sub != "":
+            result["Accumulation of all stations_" + sub] = 0
+            result["Accumulaiton of normal stations_" + sub] = 0
+            result["Accululation of transfer stations_" + sub] = 0
+            result["Accumulation of terminal stations_" + sub] = 0
+        
         for i in range(cityNum):
             data = self.data.loc[(self.data["city"] == cities[i]) & (self.data["distance"] <= threshold)]
             result.loc[i, "Accumulation of all stations"] = formular(data["ratioAll"].to_list(), data["ratioAll_Baseline"].to_list(), interval)
             result.loc[i, "Accumulaiton of normal stations"] = formular(data["ratioNormal"].to_list(), data["ratioNormal_Baseline"].to_list(), interval)
             result.loc[i, "Accululation of transfer stations"] = formular(data["ratioTerminal"].to_list(), data["ratioTerminal_Baseline"].to_list(), interval)
             result.loc[i, "Accumulation of terminal stations"] = formular(data["ratioTrans"].to_list(), data["ratioTrans_Baseline"].to_list(), interval)
+            if sub != "":
+                result.loc[i, "Accumulation of all stations_" + sub] = formular(data["ratioAll_" + sub].to_list(), data["ratioAll_Baseline"].to_list(), interval)
+                result.loc[i, "Accumulaiton of normal stations_" + sub] = formular(data["ratioNormal_" + sub].to_list(), data["ratioNormal_Baseline"].to_list(), interval)
+                result.loc[i, "Accululation of transfer stations_" + sub] = formular(data["ratioTerminal_" + sub].to_list(), data["ratioTerminal_Baseline"].to_list(), interval)
+                result.loc[i, "Accumulation of terminal stations_" + sub] = formular(data["ratioTrans_" + sub].to_list(), data["ratioTrans_Baseline"].to_list(), interval)
         
         result.sort_values(by=["city"]).to_csv(path, encoding="utf-8", index=False)
 
@@ -102,5 +114,5 @@ if __name__ == "__main__":
     
     # a.compareRatio([500, 1000], ["All", "Normal", "Terminal", "Trans"], "..\\Export\\global.csv", 5)
     # a.calculateAccumulation("..\\Export\\Accumulation.csv")
-    a.calculateAccumulation("..\\Export\\Accumulation500.csv", threshold=500)
-    a.calculateAccumulation("..\\Export\\Accumulation1000.csv", threshold=1000)
+    a.calculateAccumulation("..\\Export\\Accumulation500.csv", threshold=500, sub="PaR")
+    a.calculateAccumulation("..\\Export\\Accumulation1000.csv", threshold=1000, sub="PaR")

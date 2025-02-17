@@ -16,18 +16,17 @@ class analysis(GA):
         metro.drop(metro.loc[metro["city"] == "San Juan"].index, inplace=True) # Delete San Juan
         # metro change city name using CITY_STANDER
         metro["city"] = metro["city"].map(CITY_STANDER())
-        self.cities = metro["city"].unique()
+        self.cities = metro["city"].unique().tolist()
+        self.cities.sort()
         self.metro = metro
 
-    def addData(self, dataPath: str, name: str) -> None:
+    def addData(self, dataPath: str, name: str, sub: str = "") -> None:
         # Read data
         ratioName = "ratio" + name
         data = pd.read_csv(dataPath + ".csv", encoding="utf-8")
         data.drop(data.loc[data["city"] == "San Juan"].index, inplace=True) # Delete San Juan
         data[ratioName] = data["Num"] / data["totalNum"]
         data.rename(columns={"Num": "Num" + name}, inplace=True)
-        # Read baseline
-        # dataPath.replace("PaR", "CaR") # For parking and charging analysis
         dataBaseline = pd.read_csv(dataPath + "_Baseline.csv", encoding="utf-8")
         dataBaseline.drop(dataBaseline.loc[dataBaseline["city"] == "San Juan"].index, inplace=True) # Delete San Juan
         # Some buffer zone exceed the district area, recalculate the ratio into 100%
@@ -36,6 +35,12 @@ class analysis(GA):
         dataBaseline[ratioName + "_Baseline"] = dataBaseline["Num"] / dataBaseline["totalNum"]
         dataBaseline = dataBaseline[["city", "distance", ratioName + "_Baseline"]]
         data = pd.merge(data, dataBaseline, how="inner", on=["city", "distance"])
+        # Add sub data
+        if sub !="":
+            subData = pd.read_csv(dataPath.replace("CaR", "PaR") + ".csv", encoding="utf-8")
+            subData[ratioName+ '_' + sub] = subData["Num"] / subData["totalNum"]
+            subData.rename(columns={"totalNum": "total" + name + '_' + sub, "Num": "Num" + name + '_' + sub}, inplace=True)
+            data = pd.merge(data, subData, how="inner", on=["city", "distance"])
         # data change city name using CITY_STANDER
         data["city"] = data["city"].map(CITY_STANDER())
         self.data.append(data)
@@ -98,7 +103,7 @@ class analysis(GA):
         
         # Draw different condition
         for column in columnList:
-            columnStation = ["distance", column]
+            columnStation = ["distance", column, column + "_PaR"]
             columnBaseline = ["distance", column + "_Baseline"]
             fig, axs = plt.subplots(rowNum, colNum, figsize=(20, 20))
             axs = axs.flatten() # Flatten the 2D array of axes to 1D for easy indexing
@@ -189,8 +194,10 @@ class analysisAll(analysis):
         self.data = data.sort_values(by=["city", "distance"])
 
 def runAnalysis(a: analysis | analysisAll, path: str) -> None:
-    # a.drawCurveAcc(path, ["ratioAll", "ratioNormal", "ratioTerminal", "ratioTrans"], 5)
-    # a.drawCurveAll(path, ["ratioAll", "ratioNormal", "ratioTerminal", "ratioTrans"], 5)
+    a.drawCurveAcc(path, ["ratioAll", "ratioNormal", "ratioTerminal", "ratioTrans"], 5) # Draw the comparation cruve bteween charging, parking and baseline
+    # a.drawCurveAll(path, ["ratioAll", "ratioNormal", "ratioTerminal", "ratioTrans"], 5) # Draw charging and riding cruve
+    # a.drawCurveAll(path, ["ratioAll_PaR", "ratioNormal_PaR", "ratioTerminal_PaR", "ratioTrans_PaR"], 5) # Draw parking and riding cruve
+    # # Draw bar based on column name and buffer range
     # for stationType in ["All", "Normal", "Terminal", "Trans"]:
     #     a.drawBar([1000, 500], stationType, path, 5)
     
@@ -198,7 +205,7 @@ def runAnalysis(a: analysis | analysisAll, path: str) -> None:
 
 if __name__ == "__main__":
     # First round analysis
-    for country in []:
+    for country in []: #"US", "EU"
         path = "..\\Export\\" + country + "\\"
         metroPath = path + country + "_Metro.csv"
         metro = pd.read_csv(metroPath, encoding="utf-8")
@@ -212,7 +219,7 @@ if __name__ == "__main__":
         '''
         for stationType in ["All", "Normal", "Terminal", "Trans"]:
             dataPath = path + country + "_CaR_" + stationType
-            a.addData(dataPath, stationType)
+            a.addData(dataPath, stationType, "PaR")
         
         # Merger all different data and save to one csv file
         a.merge(path + country + ".csv")
@@ -221,7 +228,7 @@ if __name__ == "__main__":
         runAnalysis(a, path)
     
     # Analysis using saved csv file
-    for country in ["US", "CH", "EU"]:
+    for country in ["CH"]:
         path = "..\\Export\\" + country + "\\"
         metroPath = path + country + "_Metro.csv"
         dataPath = path + country + ".csv"
