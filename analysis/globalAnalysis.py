@@ -1,7 +1,11 @@
 import pandas as pd
 import numpy as np
+import matplotlib.pyplot as plt
 
-from function import CITY_STANDER
+from matplotlib import ticker
+from matplotlib.patches import Patch
+
+from function import CITY_STANDER, COLOR, STANDER_NAME, TITLE_FONT
 
 class analysis:
     metro = pd.DataFrame()
@@ -10,13 +14,13 @@ class analysis:
     yticks = [0, 0.5, 1] # Unify y-axis
 
     def __init__(self, metro: pd.DataFrame = metro, data: pd.DataFrame = data):
-        self.metro = pd.concat([self.metro, metro])
-        self.data = pd.concat([self.data, data])
         if not metro.empty:
             # metro & data change city name using CITY_STANDER
-            self.metro["city"] = self.metro["city"].map(CITY_STANDER())
-            self.cities += self.metro["city"].unique().tolist()
-            self.data.sort_values(by=["city", "distance"], inplace=True)
+            metro["city"] = metro["city"].map(CITY_STANDER())
+            self.cities += metro["city"].unique().tolist()
+            data.sort_values(by=["city", "distance"], inplace=True)
+        self.metro = pd.concat([self.metro, metro])
+        self.data = pd.concat([self.data, data])
             
     def append(self, metro: pd.DataFrame, data: pd.DataFrame) -> None:
         self.__init__(metro, data)
@@ -58,7 +62,7 @@ class analysis:
 
         return result
     
-    def calculateAccumulation(self, path: str, interval: int = 10, threshold: int = 2000, sub: str = "") -> None:
+    def calculateAccumulation(self, path: str, interval: int = 10, threshold: int = 500, sub: str = "") -> None:
         def formular(sequencesA: list[int | float], sequencesB: list[int | float], interval: int) -> float:
             segmaA = np.sum(sequencesA[:-1])
             resultA = (segmaA + 0.5 * sequencesA[-1]) * interval
@@ -100,6 +104,71 @@ class analysis:
         result.sort_values(by=["city"]).to_csv(path, encoding="utf-8", index=False)
 
         return
+    
+    # Distributuin Plot
+    def distributionPlot(self, path: str, areas: list[str], distance: int = 500, threshold: int = 0) -> None:
+        metro = self.metro.loc[self.metro["FREQUENCY"] >= threshold].copy()
+        metro["MTRPer"] = metro["hasCharging" + str(distance)] / metro["FREQUENCY"]
+        metro = metro[["city", "MTRPer"]]
+        data = self.data.loc[self.data["distance"] == distance].copy()
+        data = data.merge(metro, how="inner", on="city")
+        
+        plt.figure(figsize=(10, 10))
+        ax = plt.axes()
+        for area in areas:
+            subData = data.loc[data["city"].str[0:2] == area].copy()
+            subData.plot.scatter("ratioAll", "MTRPer", color=COLOR.get(area), label=area, ax=ax)
+        
+        # Set Plots
+        ## 1:1 Line
+        ax.plot(ax.get_xlim(), ax.get_ylim(), ls="--", c=".3")
+        ax.set_xlabel("% of EVCS")
+        ax.xaxis.set_major_formatter(ticker.PercentFormatter(1,0))
+        ax.set_ylabel("% of MTR Station \n who has EVCS withing {} meters".format(distance))
+        ax.yaxis.set_major_formatter(ticker.PercentFormatter(1,0))
+        plt.legend(loc=4)
+
+        plt.show()
+        # plt.savefig(path)
+        # plt.close()
+
+    def drawGolbalBar(self, path: str, typelist: list[str], sub :str, distances: int = 500, threshold: int = 0) -> None:
+        fullList = typelist + [x + sub for x in typelist]
+        result = self.compareRatio([distances], fullList, threshold=threshold)
+        result.sort_values(by=["city"], inplace=True)
+        result["color"] = result["city"].str[0:2]
+        countries = result["color"].unique().tolist()
+        result["color"] = result["color"].replace(COLOR)
+        result.set_index("city", inplace=True)
+        types = ["ratio" + x + str(distances) for x in typelist]
+        typesLen = len(types)
+
+        # Plot
+        fig, axs = plt.subplots(typesLen, 1, figsize=(10, 3 * typesLen))
+        axs = axs.flatten() # Flatten the 2D array of axes to 1D for easy indexing
+        for i in range(typesLen):
+            result.sort_values(by=["city", types[i]], inplace=True)
+            result[types[i]].plot.bar(width=0.8, ax=axs[i], color=result["color"])
+
+            # Add parking
+            result[types[i].replace(str(distances),"") + sub + str(distances)].plot(ax=axs[i], marker=',', color='black')
+
+            axs[i].set_yticks(self.yticks)
+            axs[i].set_xlabel(None)
+            axs[i].set_xticks([])
+            axs[i].set_title("({}) {}".format(chr(i+97), STANDER_NAME.get(types[i])), fontdict=TITLE_FONT) # unicode 97 is a
+
+        # Add legend
+        customLegend = []
+        for i in countries:
+            customLegend.append(
+                Patch(color=COLOR.get(i), label=i)
+            )
+        plt.legend(handles=customLegend, bbox_to_anchor=(0.5, -0.3), loc=8, ncol = len(countries))
+        
+        plt.show()
+        # plt.savefig(path)
+        # plt.close()
 
 if __name__ == "__main__":
     a = analysis()
@@ -111,8 +180,8 @@ if __name__ == "__main__":
         metro = pd.read_csv(metroPath, encoding="utf-8")
         data = pd.read_csv(dataPath, encoding="utf-8")
         a.append(metro, data)
-    
-    # a.compareRatio([500, 1000], ["All", "Normal", "Terminal", "Trans"], "..\\Export\\global.csv", 5)
+
     # a.calculateAccumulation("..\\Export\\Accumulation.csv")
-    a.calculateAccumulation("..\\Export\\Accumulation500.csv", threshold=500, sub="PaR")
-    a.calculateAccumulation("..\\Export\\Accumulation1000.csv", threshold=1000, sub="PaR")
+    a.compareRatio([500], ["All", "Normal", "Terminal", "Trans"], "..\\Export\\global500.csv", 5)
+    # a.distributionPlot("..\\Export\\G-generlaDistribution.jpg", ["US", "CN", "EU"], threshold=5)
+    # a.drawGolbalBar("..\\Export\\G-bar.jpg", ["All", "Normal", "Terminal", "Trans"], "_PaR", threshold=5)

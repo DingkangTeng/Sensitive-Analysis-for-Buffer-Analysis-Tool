@@ -10,7 +10,7 @@ from function import CITY_STANDER, STANDER_NAME
 # mpl.rcParams["axes.unicode_minus"] = False
 
 class analysis(GA):
-    data = []
+    dataList = []
 
     def __init__(self, metro: pd.DataFrame):
         metro.drop(metro.loc[metro["city"] == "San Juan"].index, inplace=True) # Delete San Juan
@@ -21,6 +21,17 @@ class analysis(GA):
         self.metro = metro
 
     def addData(self, dataPath: str, name: str, sub: str = "") -> None:
+        """
+        Add data into memory
+
+        Parameter:
+        dataPath: Input data path
+        name: Input data category ("All", "Normal", "Terminal", "Trans")
+        sub: Input sub data, default is Null string.
+
+        Return:
+        None
+        """
         # Read data
         ratioName = "ratio" + name
         data = pd.read_csv(dataPath + ".csv", encoding="utf-8")
@@ -36,23 +47,24 @@ class analysis(GA):
         dataBaseline = dataBaseline[["city", "distance", ratioName + "_Baseline"]]
         data = pd.merge(data, dataBaseline, how="inner", on=["city", "distance"])
         # Add sub data
-        if sub !="":
-            subData = pd.read_csv(dataPath.replace("CaR", "PaR") + ".csv", encoding="utf-8")
+        if sub != "":
+            subData = pd.read_csv(dataPath.replace("CaR", sub) + ".csv", encoding="utf-8")
             subData[ratioName+ '_' + sub] = subData["Num"] / subData["totalNum"]
             subData.rename(columns={"totalNum": "total" + name + '_' + sub, "Num": "Num" + name + '_' + sub}, inplace=True)
             data = pd.merge(data, subData, how="inner", on=["city", "distance"])
         # data change city name using CITY_STANDER
         data["city"] = data["city"].map(CITY_STANDER())
-        self.data.append(data)
+        self.dataList.append(data)
 
         return
     
     # Merge all data into one csv
     def merge(self, path: str) -> None:
-        self.data = pd.concat(self.data)
+        self.data = pd.concat(self.dataList)
         self.data = self.data.groupby(["city", "distance", "totalNum"], as_index=False).agg("sum")
         self.data.sort_values(["city", "distance"], inplace=True)
         self.data.to_csv(path, encoding="utf-8", index=False)
+        self.dataList = []
 
         return
     
@@ -166,26 +178,6 @@ class analysis(GA):
         self.saveFig(i, axs, fig, lines, labels, savePath)
 
         return
-    
-    # Draw the distribution of the PCR ration in different area
-    def drawBar(self, distance: list[int], typestr: str, path: str, threshold: int = 0) -> None:
-        data = self.compareRatio(distance, typestr, threshold=threshold)
-        data.set_index("city", inplace=True)
-        data.sort_values("ratio" + typestr + str(distance[0]), ascending=False, inplace=True)
-        # Delete city where has no station
-        # ..........
-        # Only display the top 20 cities
-        data.iloc[:20].plot.bar()
-        plt.yticks(self.yticks)
-        plt.savefig(path + "\\rankings" + typestr + "Top20.png", bbox_inches="tight")
-        plt.close()
-
-        # All cities
-        data.plot.bar(figsize=(20,15))
-        plt.savefig(path + "\\rankings" + typestr + ".png", bbox_inches="tight")
-        plt.close()
-
-        return
 
 # Analysis using saved output csv file
 class analysisAll(analysis):
@@ -194,18 +186,15 @@ class analysisAll(analysis):
         self.data = data.sort_values(by=["city", "distance"])
 
 def runAnalysis(a: analysis | analysisAll, path: str) -> None:
-    a.drawCurveAcc(path, ["ratioAll", "ratioNormal", "ratioTerminal", "ratioTrans"], 5) # Draw the comparation cruve bteween charging, parking and baseline
+    # a.drawCurveAcc(path, ["ratioAll", "ratioNormal", "ratioTerminal", "ratioTrans"], 5) # Draw the comparation cruve bteween charging, parking and baseline
     # a.drawCurveAll(path, ["ratioAll", "ratioNormal", "ratioTerminal", "ratioTrans"], 5) # Draw charging and riding cruve
     # a.drawCurveAll(path, ["ratioAll_PaR", "ratioNormal_PaR", "ratioTerminal_PaR", "ratioTrans_PaR"], 5) # Draw parking and riding cruve
-    # # Draw bar based on column name and buffer range
-    # for stationType in ["All", "Normal", "Terminal", "Trans"]:
-    #     a.drawBar([1000, 500], stationType, path, 5)
     
     return
 
 if __name__ == "__main__":
     # First round analysis
-    for country in []: #"US", "EU"
+    for country in ["CH", "US", "EU"]:
         path = "..\\Export\\" + country + "\\"
         metroPath = path + country + "_Metro.csv"
         metro = pd.read_csv(metroPath, encoding="utf-8")
@@ -224,17 +213,17 @@ if __name__ == "__main__":
         # Merger all different data and save to one csv file
         a.merge(path + country + ".csv")
 
-        # Run analysis method
-        runAnalysis(a, path)
+        # # Run analysis method
+        # runAnalysis(a, path)
     
-    # Analysis using saved csv file
-    for country in ["CH"]:
-        path = "..\\Export\\" + country + "\\"
-        metroPath = path + country + "_Metro.csv"
-        dataPath = path + country + ".csv"
-        metro = pd.read_csv(metroPath, encoding="utf-8")
-        data = pd.read_csv(dataPath, encoding="utf-8")
-        a = analysisAll(metro, data)
+    # # Analysis using saved csv file (country by country)
+    # for country in ["CH", "US", "EU"]:
+    #     path = "..\\Export\\" + country + "\\"
+    #     metroPath = path + country + "_Metro.csv"
+    #     dataPath = path + country + ".csv"
+    #     metro = pd.read_csv(metroPath, encoding="utf-8")
+    #     data = pd.read_csv(dataPath, encoding="utf-8")
+    #     a = analysisAll(metro, data)
         
-        # Run analysis method
-        runAnalysis(a, path)
+    #     # Run analysis method
+    #     runAnalysis(a, path)
