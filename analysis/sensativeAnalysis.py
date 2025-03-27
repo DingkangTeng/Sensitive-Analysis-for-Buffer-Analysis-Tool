@@ -3,7 +3,7 @@ import matplotlib.pyplot as plt
 from typing import Tuple
 
 from globalAnalysis import analysis as GA
-from function import CITY_STANDER, STANDER_NAME
+from function import CITY_STANDER, STANDER_NAME, wrapLabels
 
 # # Setting Chinese front
 # mpl.rcParams["font.sans-serif"] = ["SimHei"]
@@ -75,10 +75,11 @@ class analysis(GA):
         
         # Add one legend
         # Change labels into a friendly name
-        labels = [STANDER_NAME[x] if x in STANDER_NAME else x for x in labels]
-        fig.legend(lines, labels, loc = "lower right")
+        labels = wrapLabels([STANDER_NAME[x] if x in STANDER_NAME else x for x in labels], 25)
+        # fig.legend(lines, labels, loc="lower right")
+        fig.legend(lines, labels, bbox_to_anchor=(1, 0.18))
         plt.tight_layout()
-        plt.savefig(savePath, bbox_inches="tight")
+        plt.savefig(savePath, bbox_inches="tight", dpi=300)
         plt.close()
 
         return
@@ -100,14 +101,16 @@ class analysis(GA):
 
         return colNum, rowNum
 
-    def drawCurveAcc(self, path: str, columnList: list[str], threshold: int = 0) -> None:
+    def drawCurveAcc(self, path: str, columnList: list[str], threshold: int = 0, distance: int = 500) -> None:
         def plotDatas(i: int, axs: plt.Axes, city: str, columnStation: list[str], columnBaseline: list[str]) -> None:
-            dataStation = self.data.loc[self.data["city"] == city, columnStation].set_index("distance")
-            dataBaseline = self.data.loc[self.data["city"] == city, columnBaseline].set_index("distance")
+            quary = (self.data["city"] == city) & (self.data["distance"] <= distance)
+            dataStation = self.data.loc[quary, columnStation].set_index("distance")
+            dataBaseline = self.data.loc[quary, columnBaseline].set_index("distance")
             dataBaseline.plot(ax=axs[i], marker=',', color="gray")
-            dataStation.plot(ax=axs[i], marker='.', title=city, ylabel="ratio")
+            dataStation.plot(ax=axs[i], marker='.', title=city, ylabel="ratio", color=["#5F8B4C", "#EB5B00"])
             axs[i].set_xlabel("distance")
             axs[i].set_yticks(self.yticks)
+            axs[i].set_xticks([0, 100, 200, 300, 400, 500])
 
             return
         
@@ -142,12 +145,13 @@ class analysis(GA):
 
         return
 
-    def drawCurveAll(self, path: str, columnList: list[str], threshold: int = 0) -> None:
-        def plotDatas(i: int, axs: plt.Axes, city: str, columns: list[str]) -> None:
-            dataStation = self.data.loc[self.data["city"] == city, columns].set_index("distance")
-            dataStation.plot(ax=axs[i], marker='.', title=city, ylabel="ratio")
+    def drawCurveAll(self, path: str, columnList: list[str], threshold: int = 0, distance: int = 500) -> None:
+        def plotDatas(i: int, axs: plt.Axes, city: str, columns: list[str], distance: int) -> None:
+            dataStation = self.data.loc[(self.data["city"] == city) & (self.data["distance"] <= distance), columns].set_index("distance")
+            dataStation.plot(ax=axs[i], marker='.', title=city, ylabel="ratio", color=["#5F8B4C", "#FFDDAB", "#FF9A9A", "#945034"])
             axs[i].set_xlabel("distance")
             axs[i].set_yticks(self.yticks)
+            axs[i].set_xticks([0, 100, 200, 300, 400, 500])
 
             return
         
@@ -159,7 +163,7 @@ class analysis(GA):
 
         # Plot the first sub plot
         j = self.skipFirst(threshold)
-        plotDatas(0, axs, self.cities[j], columns)
+        plotDatas(0, axs, self.cities[j], columns, distance)
         lines, labels = fig.axes[0].get_legend_handles_labels()
         fig.axes[0].get_legend().remove()
 
@@ -170,7 +174,7 @@ class analysis(GA):
             if metro["FREQUENCY"].iloc[0] < threshold:
                 continue
             # Plot curve
-            plotDatas(i, axs, city, columns)
+            plotDatas(i, axs, city, columns, distance)
             fig.axes[i].get_legend().remove()
             i += 1
         
@@ -186,44 +190,44 @@ class analysisAll(analysis):
         self.data = data.sort_values(by=["city", "distance"])
 
 def runAnalysis(a: analysis | analysisAll, path: str) -> None:
-    # a.drawCurveAcc(path, ["ratioAll", "ratioNormal", "ratioTerminal", "ratioTrans"], 5) # Draw the comparation cruve bteween charging, parking and baseline
-    # a.drawCurveAll(path, ["ratioAll", "ratioNormal", "ratioTerminal", "ratioTrans"], 5) # Draw charging and riding cruve
+    a.drawCurveAcc(path, ["ratioAll"], 5) # Draw the comparation cruve bteween charging, parking and baseline
+    a.drawCurveAll(path, ["ratioAll", "ratioNormal", "ratioTerminal", "ratioTrans"], 5) # Draw charging and riding cruve
     # a.drawCurveAll(path, ["ratioAll_PaR", "ratioNormal_PaR", "ratioTerminal_PaR", "ratioTrans_PaR"], 5) # Draw parking and riding cruve
     
     return
 
 if __name__ == "__main__":
-    # First round analysis
-    for country in ["CH", "US", "EU"]:
-        path = "..\\Export\\" + country + "\\"
-        metroPath = path + country + "_Metro.csv"
-        metro = pd.read_csv(metroPath, encoding="utf-8")
-        a = analysis(metro)
-
-        '''
-        All - All station
-        Terminal - Only terminal station
-        Trans - Only transfer staiton
-        Normal - Neither terminal station nor transfer station
-        '''
-        for stationType in ["All", "Normal", "Terminal", "Trans"]:
-            dataPath = path + country + "_CaR_" + stationType
-            a.addData(dataPath, stationType, "PaR")
-        
-        # Merger all different data and save to one csv file
-        a.merge(path + country + ".csv")
-
-        # # Run analysis method
-        # runAnalysis(a, path)
-    
-    # # Analysis using saved csv file (country by country)
+    # # First round analysis
     # for country in ["CH", "US", "EU"]:
     #     path = "..\\Export\\" + country + "\\"
     #     metroPath = path + country + "_Metro.csv"
-    #     dataPath = path + country + ".csv"
     #     metro = pd.read_csv(metroPath, encoding="utf-8")
-    #     data = pd.read_csv(dataPath, encoding="utf-8")
-    #     a = analysisAll(metro, data)
+    #     a = analysis(metro)
+
+    #     '''
+    #     All - All station
+    #     Terminal - Only terminal station
+    #     Trans - Only transfer staiton
+    #     Normal - Neither terminal station nor transfer station
+    #     '''
+    #     for stationType in ["All", "Normal", "Terminal", "Trans"]:
+    #         dataPath = path + country + "_CaR_" + stationType
+    #         a.addData(dataPath, stationType, "PaR")
         
-    #     # Run analysis method
-    #     runAnalysis(a, path)
+    #     # Merger all different data and save to one csv file
+    #     a.merge(path + country + ".csv")
+
+    #     # # Run analysis method
+    #     # runAnalysis(a, path)
+    
+    # Analysis using saved csv file (country by country)
+    for country in ["CH", "US", "EU"]:
+        path = "..\\Export\\" + country + "\\"
+        metroPath = path + country + "_Metro.csv"
+        dataPath = path + country + ".csv"
+        metro = pd.read_csv(metroPath, encoding="utf-8")
+        data = pd.read_csv(dataPath, encoding="utf-8")
+        a = analysisAll(metro, data)
+        
+        # Run analysis method
+        runAnalysis(a, path)
