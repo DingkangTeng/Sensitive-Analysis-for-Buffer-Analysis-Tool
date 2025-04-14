@@ -1,9 +1,13 @@
 import pandas as pd
 import matplotlib.pyplot as plt
+import matplotlib.ticker as ticker
+import seaborn as sns
+import numpy as np
 from typing import Tuple
+from scipy.interpolate import PchipInterpolator
 
 from globalAnalysis import analysis as GA
-from function import CITY_STANDER, STANDER_NAME, wrapLabels
+from function import CITY_STANDER, STANDER_NAME, wrapLabels, TICK_FONT_INT, TICK_FONT, MARK_FONT
 
 # # Setting Chinese front
 # mpl.rcParams["font.sans-serif"] = ["SimHei"]
@@ -12,13 +16,14 @@ from function import CITY_STANDER, STANDER_NAME, wrapLabels
 class analysis(GA):
     dataList = []
 
-    def __init__(self, metro: pd.DataFrame):
+    def __init__(self, metro: pd.DataFrame, interval: int = 10):
         metro.drop(metro.loc[metro["city"] == "San Juan"].index, inplace=True) # Delete San Juan
         # metro change city name using CITY_STANDER
         metro["city"] = metro["city"].map(CITY_STANDER())
         self.cities = metro["city"].unique().tolist()
         self.cities.sort()
         self.metro = metro
+        self.interval = interval
 
     def addData(self, dataPath: str, name: str, sub: str = "") -> None:
         """
@@ -182,6 +187,112 @@ class analysis(GA):
         self.saveFig(i, axs, fig, lines, labels, savePath)
 
         return
+    
+    def drawHeatMap(self, path: str, columnList: list[str], sub: list[str] = [], threshold: int = 0, distance: int = 500) -> None:
+        columns = ["distance"] + columnList
+        if sub != []:
+            for i in sub:
+                columns += [x + i for x in columnList]
+
+        # Get data
+        baseNum = len(columnList)
+        count = 0
+        sortCity = []
+        cities = self.metro.loc[self.metro["FREQUENCY"] >= threshold, "city"].to_list()
+        data = self.data.loc[(self.data["city"].isin(cities)) & (self.data["distance"] <= distance)].copy()
+
+        # Change city name into identifier and save the table
+        origCities = data["city"].unique().tolist()
+        ## Save tabel
+        cityTable = pd.DataFrame({"Region": origCities})
+        cityTable.index.name = "ID"
+        discription = pd.read_csv(r"analysis//cityList.csv", usecols=[3,4,5,6])
+        discription.set_index("UID", inplace=True)
+        cityTable = cityTable.join(discription, on="Region")
+        cityTable.to_csv(path + "cityIndex.csv", encoding="utf-8")
+        ## Change city name to identifer
+        data.replace({"city": dict(zip(origCities, cityTable.index.astype(str)))}, inplace=True)
+
+        for column in columns[1:]:
+            dataPivot = data.pivot(index="city", columns="distance", values=column)
+            # Main data
+            if count < baseNum:
+                dataPivot.sort_values(by=distance, ascending=False, inplace=True)
+                sortCity = dataPivot.index
+            # Sub data
+            else:
+                dataPivot = dataPivot.loc[sortCity] # Sort sub data based on the main data
+
+            plt.figure(figsize=(15, 15))  # Set the figure size
+            heatmap = sns.heatmap(
+                dataPivot,
+                cmap="Reds",
+                annot=False, cbar=True,
+                vmin=0, vmax=1,
+                linewidths=0.05, linecolor="white",
+                cbar_kws={"pad": 0.07}, # gap between colorbar and heatmap
+            )
+
+            # Adjust the color bar
+            colorbar = heatmap.collections[0].colorbar
+            colorbar.ax.tick_params(
+                labelsize=TICK_FONT_INT, # Set the font size for color bar ticks
+                left=True, labelleft=True, # Show left axis
+                right=False, labelright=False # Hide right axis
+            )
+            colorbar.ax.set_yticks([0, 0.2, 0.4, 0.6, 0.8, 1])
+            colorbar.ax.set_yticklabels(["0%", "20%", "40%", "60%", "80%", "100%"])
+            colorbar.ax.set_xlabel(
+                "% of\n{}".format(STANDER_NAME.get(column)[:-29]),
+                fontdict={"size": 10}
+            )
+
+            # Add titles and labels
+            plt.xticks(
+                ticks=[x for x in range(distance // self.interval + 1)],
+                labels=[10 * x if x % 10 == 0 else '' for x in range(distance // self.interval)] + [distance],
+                rotation=0,
+                fontdict=TICK_FONT
+                )
+            plt.yticks(rotation=0)
+            # Adjust minor x axis
+            ax = plt.gca()
+            ax.xaxis.set_major_locator(ticker.MultipleLocator(10))  # Major ticks every 10 unit
+            ax.tick_params(axis='x', which='major', length=5)
+            ax.xaxis.set_minor_locator(ticker.MultipleLocator(1))  # Minor ticks every 1 units
+            ax.tick_params(axis='x', which='minor', length=3, color='gray')
+            plt.xlabel("Distance", fontdict=MARK_FONT)
+            plt.ylabel('Cities ID', fontdict=MARK_FONT)
+
+            # Create a new axis for the curve
+            curveAx = plt.gca().inset_axes([1.2, 0, 0.11, 1])  # [x0, y0, width, height(multiple of existing length)] of the curveAx
+            # Generate data for the curve
+            valueCounts = dataPivot[distance].round(1).value_counts().sort_index()
+            valueSum = valueCounts.sum()
+            valueCounts = valueCounts / valueSum
+            x = [0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1]
+            tmp = pd.DataFrame(index=x)
+            y = tmp.join(valueCounts).fillna(0)["count"].to_list()
+            # Create a smooth curve using interpolation
+            xSmooth = np.linspace(0, 1, 100)  # 100 points for smoothness
+            pchipInterpolator = PchipInterpolator(x, y)  # Cubic spline interpolation
+            ySmooth = np.maximum(pchipInterpolator(xSmooth), 0)
+            ySmooth = np.minimum(max(valueCounts), ySmooth)
+            # Plot the curve
+            curveAx.plot(ySmooth, xSmooth, color="darkblue")
+            curveAx.set_ylim(0, 1)
+            curveAx.set_xlim(0, 0.5)
+            curveAx.set_yticks([])
+            curveAx.set_xlabel("PDF of Cities", fontdict={"size": 10})
+            # curveAx.axis('off')  # Hide the axis
+
+            # Show the plot
+            count += 1
+            # plt.show()
+            plt.savefig(path + column + "_HeatMap.jpg", bbox_inches="tight", dpi=300)
+            plt.close()
+
+        return
 
 # Analysis using saved output csv file
 class analysisAll(analysis):
@@ -190,9 +301,10 @@ class analysisAll(analysis):
         self.data = data.sort_values(by=["city", "distance"])
 
 def runAnalysis(a: analysis | analysisAll, path: str) -> None:
-    a.drawCurveAcc(path, ["ratioAll"], 5) # Draw the comparation cruve bteween charging, parking and baseline
-    a.drawCurveAll(path, ["ratioAll", "ratioNormal", "ratioTerminal", "ratioTrans"], 5) # Draw charging and riding cruve
+    # a.drawCurveAcc(path, ["ratioAll"], 5) # Draw the comparation cruve bteween charging, parking and baseline
+    # a.drawCurveAll(path, ["ratioAll", "ratioNormal", "ratioTerminal", "ratioTrans"], 5) # Draw charging and riding cruve
     # a.drawCurveAll(path, ["ratioAll_PaR", "ratioNormal_PaR", "ratioTerminal_PaR", "ratioTrans_PaR"], 5) # Draw parking and riding cruve
+    a.drawHeatMap(path, ["ratioAll"], ["_PaR"], 5)
     
     return
 
@@ -207,8 +319,8 @@ if __name__ == "__main__":
     #     '''
     #     All - All station
     #     Terminal - Only terminal station
-    #     Trans - Only transfer staiton
-    #     Normal - Neither terminal station nor transfer station
+    #     Trans - Only interchange staiton
+    #     Normal - Neither terminal station nor interchange station
     #     '''
     #     for stationType in ["All", "Normal", "Terminal", "Trans"]:
     #         dataPath = path + country + "_CaR_" + stationType
@@ -221,7 +333,7 @@ if __name__ == "__main__":
     #     # runAnalysis(a, path)
     
     # Analysis using saved csv file (country by country)
-    for country in ["CH", "US", "EU"]:
+    for country in ["CH", "US", "EU"]: #
         path = "..\\Export\\" + country + "\\"
         metroPath = path + country + "_Metro.csv"
         dataPath = path + country + ".csv"

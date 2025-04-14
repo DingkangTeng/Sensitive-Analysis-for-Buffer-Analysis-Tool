@@ -3,25 +3,35 @@ import pandas as pd
 import matplotlib.colors as mcolors
 
 STANDER_NAME = {
-    "ratioTrans500": "% of EVCS around transport metro stations within 500 meters",
+    "ratioTrans500": "% of EVCS around interchange metro stations within 500 meters",
     "ratioTerminal500": "% of EVCS around terminal metro stations within 500 meters",
     "ratioNormal500": "% of EVCS around normal metro stations within 500 meters",
     "ratioAll500": "% of EVCS around all metro stations within 500 meters",
-    "ratioAll": "EVCS ratio for all MTR stations",
-    "ratioAll_Baseline": "Average distributuion ratio for all MTR stations",
-    "ratioAll_PaR": "Parking lots ratio for all MTR stations",
-    "ratioNormal": "EVCS ratio for normal MTR stations",
-    "ratioTerminal": "EVCS ratio for terminal MTR stations",
-    "ratioTrans": "EVCS ratio for interchange MTR stations",
+    "ratioAll": "EVCS ratio for all metro stations",
+    "ratioAll_Baseline": "Average distributuion ratio for all metro stations",
+    "ratioAll_PaR": "Parking lots ratio for all metro stations",
+    "ratioNormal": "EVCS ratio for normal metro stations",
+    "ratioTerminal": "EVCS ratio for terminal metro stations",
+    "ratioTrans": "EVCS ratio for interchange metro stations",
+    "All": "All metro stations within 500 meters",
+    "Normal": "Normal metro stations within 500 meters",
+    "Terminal": "Terminal metro stations within 500 meters",
+    "Trans": "Interchange metro stations wtihin 500 meters",
+    "_PaR": "Parking lots"
 }
 
 COLOR = {
     "US": "teal",
     "CN": "orangered",
-    "EU": "deepskyblue"
+    "EU": "deepskyblue",
 }
 
-TITLE_FONT = {"style":"italic","weight":"bold"}
+# Font control
+TITLE_FONT = {"style": "italic", "weight": "bold", "size": 16}
+TICK_FONT_INT = 14
+TICK_FONT = {"size": TICK_FONT_INT}
+MARK_FONT_INT = 16
+MARK_FONT = {"size": MARK_FONT_INT}
 
 def CITY_STANDER() -> dict:
     stander = pd.read_csv("analysis\\cityList.csv", encoding="utf-8")
