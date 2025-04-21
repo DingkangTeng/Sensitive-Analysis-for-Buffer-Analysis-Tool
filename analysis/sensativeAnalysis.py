@@ -205,13 +205,14 @@ class analysis(GA):
         origCities = data["city"].unique().tolist()
         ## Save tabel
         cityTable = pd.DataFrame({"Region": origCities})
+        cityTable.index = cityTable["Region"].str[0] + cityTable.index.astype(str)
         cityTable.index.name = "ID"
         discription = pd.read_csv(r"analysis//cityList.csv", usecols=[3,4,5,6])
         discription.set_index("UID", inplace=True)
         cityTable = cityTable.join(discription, on="Region")
         cityTable.to_csv(path + "cityIndex.csv", encoding="utf-8")
         ## Change city name to identifer
-        data.replace({"city": dict(zip(origCities, cityTable.index.astype(str)))}, inplace=True)
+        data.replace({"city": dict(zip(origCities, cityTable.index))}, inplace=True)
 
         for column in columns[1:]:
             dataPivot = data.pivot(index="city", columns="distance", values=column)
@@ -244,7 +245,7 @@ class analysis(GA):
             colorbar.ax.set_yticklabels(["0%", "20%", "40%", "60%", "80%", "100%"])
             colorbar.ax.set_xlabel(
                 "% of\n{}".format(STANDER_NAME.get(column)[:-29]),
-                fontdict={"size": 10}
+                fontdict={"size": 14}
             )
 
             # Add titles and labels
@@ -262,7 +263,7 @@ class analysis(GA):
             ax.xaxis.set_minor_locator(ticker.MultipleLocator(1))  # Minor ticks every 1 units
             ax.tick_params(axis='x', which='minor', length=3, color='gray')
             plt.xlabel("Distance", fontdict=MARK_FONT)
-            plt.ylabel('Cities ID', fontdict=MARK_FONT)
+            plt.ylabel('Study Unites ID', fontdict=MARK_FONT)
 
             # Create a new axis for the curve
             curveAx = plt.gca().inset_axes([1.2, 0, 0.11, 1])  # [x0, y0, width, height(multiple of existing length)] of the curveAx
@@ -283,7 +284,7 @@ class analysis(GA):
             curveAx.set_ylim(0, 1)
             curveAx.set_xlim(0, 0.5)
             curveAx.set_yticks([])
-            curveAx.set_xlabel("PDF of Cities", fontdict={"size": 10})
+            curveAx.set_xlabel("PDF of\nStudy Unites", fontdict={"size": 14})
             # curveAx.axis('off')  # Hide the axis
 
             # Show the plot
@@ -301,10 +302,10 @@ class analysisAll(analysis):
         self.data = data.sort_values(by=["city", "distance"])
 
 def runAnalysis(a: analysis | analysisAll, path: str) -> None:
-    # a.drawCurveAcc(path, ["ratioAll"], 5) # Draw the comparation cruve bteween charging, parking and baseline
-    # a.drawCurveAll(path, ["ratioAll", "ratioNormal", "ratioTerminal", "ratioTrans"], 5) # Draw charging and riding cruve
-    # a.drawCurveAll(path, ["ratioAll_PaR", "ratioNormal_PaR", "ratioTerminal_PaR", "ratioTrans_PaR"], 5) # Draw parking and riding cruve
-    a.drawHeatMap(path, ["ratioAll"], ["_PaR"], 5)
+    # a.drawCurveAcc(path, ["ratioAll"], 7) # Draw the comparation cruve bteween charging, parking and baseline
+    # a.drawCurveAll(path, ["ratioAll", "ratioNormal", "ratioTerminal", "ratioTrans"], 7) # Draw charging and riding cruve
+    # a.drawCurveAll(path, ["ratioAll_PaR", "ratioNormal_PaR", "ratioTerminal_PaR", "ratioTrans_PaR"], 7) # Draw parking and riding cruve
+    a.drawHeatMap(path, ["ratioAll"], ["_PaR"], 7)
     
     return
 

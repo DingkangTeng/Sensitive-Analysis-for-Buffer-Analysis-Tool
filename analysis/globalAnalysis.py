@@ -174,7 +174,7 @@ class analysis:
         plt.close()
 
     # Distributuin Plot ( metro station number )
-    def distributionPlot2(self, path: str, areas: list[str], distance: int = 500, threshold: int = 0) -> None:
+    def distributionPlot_Num(self, path: str, areas: list[str], distance: int = 500, threshold: int = 0) -> None:
         cities = self.metro.loc[self.metro["FREQUENCY"] >= threshold, "city"].to_list()
         data = self.data.loc[(self.data["city"].isin(cities)) & (self.data["distance"] == distance)].copy()
         data = data.join(self.metro.set_index("city"), on="city")
@@ -264,7 +264,7 @@ class analysis:
         plt.legend(handles=customLegend, bbox_to_anchor=(0.5, -0.4), loc=8, ncol = len(countries) + 1)
         fig.text(0.1, 0.5, "%  of  EVCS or parking lot",
                  fontsize=MARK_FONT_INT, verticalalignment="center", horizontalalignment="right", rotation=90)
-        fig.text(0.5, 0.1, "Cities",
+        fig.text(0.5, 0.1, "Study areas",
                  fontsize=MARK_FONT_INT, verticalalignment="top", horizontalalignment="center")
         
         # plt.show()
@@ -324,7 +324,7 @@ class analysis:
 
             # Chage color:
             color = [COLOR.get(x[0]) for x in result2.columns]
-            adjColor = [adjustBrightness(x, 0.8) for x in color]
+            adjColor = [adjustBrightness(x, 0.6) for x in color]
             ## Change other color
             children = bplot.get_children()
             for i, box in enumerate(children):
@@ -335,7 +335,7 @@ class analysis:
             for i, patch in enumerate(bplot.patches):
                 # Box and its edge color
                 if i % 2 == 0:
-                    patch.set(facecolor=adjColor[i], edgecolor=color[i])
+                    patch.set(facecolor=color[i], edgecolor=color[i])
                 else:
                     patch.set(hatch='///', facecolor=adjColor[i], edgecolor=color[i]) # Add /// hatch
                 # Background color
@@ -469,13 +469,13 @@ if __name__ == "__main__":
         a.append(metro, data)
     
     # # a.calculateAccumulation("..\\Export\\Accumulation.csv")
-    # allList = ["All", "Normal", "Terminal", "Trans"]
-    # for i in allList.copy():
-    #     allList.append(i + "_PaR")
-    #     allList.append(i + "_Baseline")
-    # a.compareRatio([500], allList, "..\\Export\\global500.csv", 5)
-    # a.distributionPlot("..\\Export\\G-generlaDistribution.jpg", ["US", "CN", "EU"], "ratioAll_Baseline", threshold=5)
-    # a.distributionPlot("..\\Export\\G-generlaDistribution_PaR.jpg", ["US", "CN", "EU"], "ratioAll_PaR", threshold=5)
-    # a.distributionPlot2("..\\Export\\G-generlaDistribution_number.jpg", ["US", "CN", "EU"], threshold=5)
-    # a.drawGolbalBar("..\\Export\\G-bar.jpg", ["All", "Normal", "Terminal", "Trans"], "_PaR", threshold=5)
-    a.drawGlobalBoxplot2("..\\Export\\G-box.jpg", ["All", "Normal", "Terminal", "Trans"], "_PaR", threshold=5)
+    allList = ["All", "Normal", "Terminal", "Trans"]
+    for i in allList.copy():
+        allList.append(i + "_PaR")
+        allList.append(i + "_Baseline")
+    a.compareRatio([500], allList, "..\\Export\\global500.csv", 7)
+    # a.distributionPlot("..\\Export\\G-generlaDistribution.jpg", ["US", "CN", "EU"], "ratioAll_Baseline", threshold=7)
+    # a.distributionPlot("..\\Export\\G-generlaDistribution_PaR.jpg", ["US", "CN", "EU"], "ratioAll_PaR", threshold=7)
+    # a.distributionPlot_Num("..\\Export\\G-generlaDistribution_number.jpg", ["US", "CN", "EU"], threshold=7)
+    # a.drawGolbalBar("..\\Export\\G-bar.jpg", ["All", "Normal", "Terminal", "Trans"], "_PaR", threshold=7)
+    # a.drawGlobalBoxplot2("..\\Export\\G-box.jpg", ["All", "Normal", "Terminal", "Trans"], "_PaR", threshold=7)
