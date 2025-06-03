@@ -38,7 +38,7 @@ class analysis:
         tag.sort(reverse=True)
         for i in tag:
             customLegend.append(
-                Patch(color=COLOR.get(i), label=i)
+                Patch(color=COLOR[i], label=i)
             )
         
         return customLegend
@@ -49,6 +49,7 @@ class analysis:
         if type(typelist) is list:
             typestr = typelist[-1]
         else:
+            assert typelist is str
             typestr = typelist
         
         col = "ratio" + typestr
@@ -154,8 +155,10 @@ class analysis:
         
         # Set Plots
         # 1:1 Line
-        ax.set_xlim((-0.05,1.05))
-        ax.set_ylim((-0.05,1.05))
+        # ax.set_xlim((-0.05,1.05))
+        # ax.set_ylim((-0.05,1.05))
+        ax.set_xlim(-0.05,1.05)
+        ax.set_ylim(-0.05,1.05)
         ax.plot(ax.get_xlim(), ax.get_ylim(), ls="--", c=".3")
         ticks = [0, 0.2, 0.4, 0.6, 0.8, 1]
         ax.set_xlabel("% of EVCS", fontdict=MARK_FONT)
@@ -163,7 +166,7 @@ class analysis:
         ax.xaxis.set_major_formatter(ticker.PercentFormatter(1,0))
         ax.tick_params(axis='x', labelsize=TICK_FONT_INT)
         tmp={"ratioAll_Baseline": "% of buffer areas", "ratioAll_PaR": "% of parking lots"}
-        ax.set_ylabel(tmp.get(compare), fontdict=MARK_FONT)
+        ax.set_ylabel(tmp[compare], fontdict=MARK_FONT)
         ax.set_yticks(ticks)
         ax.yaxis.set_major_formatter(ticker.PercentFormatter(1,0))
         ax.tick_params(axis='y', labelsize=TICK_FONT_INT)

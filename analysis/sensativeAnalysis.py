@@ -3,7 +3,10 @@ import matplotlib.pyplot as plt
 import matplotlib.ticker as ticker
 import seaborn as sns
 import numpy as np
-from typing import Tuple
+from typing import Tuple, Hashable
+from matplotlib.figure import Figure
+from matplotlib.legend import Legend
+from numpy._typing import NDArray
 from scipy.interpolate import PchipInterpolator
 
 from globalAnalysis import analysis as GA
@@ -73,7 +76,7 @@ class analysis(GA):
 
         return
     
-    def saveFig(self, i: int, axs: plt.Axes, fig: plt.Figure, lines: list, labels: list, savePath: str):
+    def saveFig(self, i: int, axs: list[plt.Axes] | NDArray, fig: Figure, lines: list, labels: list, savePath: str):
         # Hide unused subplots
         for j in range(i, len(axs)):
             fig.delaxes(axs[j])
@@ -107,7 +110,7 @@ class analysis(GA):
         return colNum, rowNum
 
     def drawCurveAcc(self, path: str, columnList: list[str], threshold: int = 0, distance: int = 500) -> None:
-        def plotDatas(i: int, axs: plt.Axes, city: str, columnStation: list[str], columnBaseline: list[str]) -> None:
+        def plotDatas(i: int, axs: list[plt.Axes] | NDArray, city: str, columnStation: list[str], columnBaseline: list[str]) -> None:
             quary = (self.data["city"] == city) & (self.data["distance"] <= distance)
             dataStation = self.data.loc[quary, columnStation].set_index("distance")
             dataBaseline = self.data.loc[quary, columnBaseline].set_index("distance")
@@ -132,7 +135,9 @@ class analysis(GA):
             j = self.skipFirst(threshold)
             plotDatas(0, axs, self.cities[j], columnStation, columnBaseline)
             lines, labels = fig.axes[0].get_legend_handles_labels()
-            fig.axes[0].get_legend().remove()
+            l = fig.axes[0].get_legend()
+            assert l is not None
+            l.remove()
 
             i = 1
             for city in self.cities[j + 1:]: 
@@ -142,7 +147,9 @@ class analysis(GA):
                     continue
                 # Plot curve
                 plotDatas(i, axs, city, columnStation, columnBaseline)
-                fig.axes[i].get_legend().remove()
+                l = fig.axes[i].get_legend()
+                assert l is not None
+                l.remove()
                 i += 1
             
             savePath = path + "\\accum" + column + ".png"
@@ -151,7 +158,7 @@ class analysis(GA):
         return
 
     def drawCurveAll(self, path: str, columnList: list[str], threshold: int = 0, distance: int = 500) -> None:
-        def plotDatas(i: int, axs: plt.Axes, city: str, columns: list[str], distance: int) -> None:
+        def plotDatas(i: int, axs: list[plt.Axes] | NDArray, city: str, columns: list[str], distance: int) -> None:
             dataStation = self.data.loc[(self.data["city"] == city) & (self.data["distance"] <= distance), columns].set_index("distance")
             dataStation.plot(ax=axs[i], marker='.', title=city, ylabel="ratio", color=["#5F8B4C", "#FFDDAB", "#FF9A9A", "#945034"])
             axs[i].set_xlabel("distance")
@@ -170,7 +177,9 @@ class analysis(GA):
         j = self.skipFirst(threshold)
         plotDatas(0, axs, self.cities[j], columns, distance)
         lines, labels = fig.axes[0].get_legend_handles_labels()
-        fig.axes[0].get_legend().remove()
+        l = fig.axes[0].get_legend()
+        assert l is not None
+        l.remove()
 
         i = 1
         for city in self.cities[j + 1:]: 
@@ -180,7 +189,9 @@ class analysis(GA):
                 continue
             # Plot curve
             plotDatas(i, axs, city, columns, distance)
-            fig.axes[i].get_legend().remove()
+            l = fig.axes[i].get_legend()
+            assert l is not None
+            l.remove()
             i += 1
         
         savePath = path + "\\sensative.png"
@@ -189,6 +200,14 @@ class analysis(GA):
         return
     
     def drawHeatMap(self, path: str, columnList: list[str], sub: list[str] = [], threshold: int = 0, distance: int = 500) -> None:
+        #Front for heatmap
+        __MARK_FONT = MARK_FONT.copy()
+        __MARK_FONT["size"] = 24
+        __TICK_FONT_INT = 16
+        __TICK_FONT = TICK_FONT.copy()
+        __TICK_FONT["size"] = __TICK_FONT_INT
+        __SUB_SIZE = 16
+
         columns = ["distance"] + columnList
         if sub != []:
             for i in sub:
@@ -205,7 +224,7 @@ class analysis(GA):
         origCities = data["city"].unique().tolist()
         ## Save tabel
         cityTable = pd.DataFrame({"Region": origCities})
-        cityTable.index = cityTable["Region"].str[0] + cityTable.index.astype(str)
+        cityTable.index = pd.Index(cityTable["Region"].str[0] + cityTable.index.astype(str))
         cityTable.index.name = "ID"
         discription = pd.read_csv(r"analysis//cityList.csv", usecols=[3,4,5,6])
         discription.set_index("UID", inplace=True)
@@ -237,15 +256,15 @@ class analysis(GA):
             # Adjust the color bar
             colorbar = heatmap.collections[0].colorbar
             colorbar.ax.tick_params(
-                labelsize=TICK_FONT_INT, # Set the font size for color bar ticks
+                labelsize=__TICK_FONT_INT, # Set the font size for color bar ticks
                 left=True, labelleft=True, # Show left axis
                 right=False, labelright=False # Hide right axis
             )
             colorbar.ax.set_yticks([0, 0.2, 0.4, 0.6, 0.8, 1])
             colorbar.ax.set_yticklabels(["0%", "20%", "40%", "60%", "80%", "100%"])
             colorbar.ax.set_xlabel(
-                "% of\n{}".format(STANDER_NAME.get(column)[:-29]),
-                fontdict={"size": 14}
+                "% of\n{}".format(STANDER_NAME[column][:-29].replace(' ', "\n")),
+                fontdict={"size": __SUB_SIZE}
             )
 
             # Add titles and labels
@@ -253,17 +272,17 @@ class analysis(GA):
                 ticks=[x for x in range(distance // self.interval + 1)],
                 labels=[10 * x if x % 10 == 0 else '' for x in range(distance // self.interval)] + [distance],
                 rotation=0,
-                fontdict=TICK_FONT
+                fontdict=__TICK_FONT
                 )
-            plt.yticks(rotation=0)
+            plt.yticks(rotation=0, size=__TICK_FONT_INT)
             # Adjust minor x axis
             ax = plt.gca()
             ax.xaxis.set_major_locator(ticker.MultipleLocator(10))  # Major ticks every 10 unit
-            ax.tick_params(axis='x', which='major', length=5)
+            ax.tick_params(axis='x', which="major", length=5)
             ax.xaxis.set_minor_locator(ticker.MultipleLocator(1))  # Minor ticks every 1 units
-            ax.tick_params(axis='x', which='minor', length=3, color='gray')
-            plt.xlabel("Distance", fontdict=MARK_FONT)
-            plt.ylabel('Study Unites ID', fontdict=MARK_FONT)
+            ax.tick_params(axis='x', which="minor", length=3, color='gray')
+            plt.xlabel("Distance", fontdict=__MARK_FONT)
+            plt.ylabel('Study Unites ID', fontdict=__MARK_FONT)
 
             # Create a new axis for the curve
             curveAx = plt.gca().inset_axes([1.2, 0, 0.11, 1])  # [x0, y0, width, height(multiple of existing length)] of the curveAx
@@ -281,10 +300,11 @@ class analysis(GA):
             ySmooth = np.minimum(max(valueCounts), ySmooth)
             # Plot the curve
             curveAx.plot(ySmooth, xSmooth, color="darkblue")
+            curveAx.tick_params(labelsize=__TICK_FONT_INT)
             curveAx.set_ylim(0, 1)
             curveAx.set_xlim(0, 0.5)
             curveAx.set_yticks([])
-            curveAx.set_xlabel("PDF of\nStudy Unites", fontdict={"size": 14})
+            curveAx.set_xlabel("PDF of\nStudy Unites", fontdict={"size":__SUB_SIZE})
             # curveAx.axis('off')  # Hide the axis
 
             # Show the plot
