@@ -18,6 +18,7 @@ class analysis:
     data = pd.DataFrame()
     cities = []
     yticks = [0, 0.5, 1] # Unify y-axis
+    DROP_DATA = ["San Juan", u"香港特别行政区", u"澳门特别行政区"] # Delete San Juan, Hong Kong and Macao
 
     def __init__(self, metro: pd.DataFrame = metro, data: pd.DataFrame = data):
         if not metro.empty:
@@ -29,11 +30,14 @@ class analysis:
         self.data = pd.concat([self.data, data])
             
     def append(self, metro: pd.DataFrame, data: pd.DataFrame) -> None:
+        data = data.drop(data.loc[data["city"].isin(self.DROP_DATA)].index) # Delete San Juan, Hong Kong and Macao
+        metro = metro.drop(metro.loc[metro["city"].isin(self.DROP_DATA)].index) # Delete San Juan, Hong Kong and Macao
         self.__init__(metro, data)
 
         return
     
-    def customLegend(self, tag: list[str]) -> list[Patch]:
+    @staticmethod
+    def customLegend(tag: list[str]) -> list[Patch | Line2D]:
         customLegend = []
         tag.sort(reverse=True)
         for i in tag:
@@ -54,7 +58,7 @@ class analysis:
         
         col = "ratio" + typestr
         for i in distance:
-            result[col + str(i)] = 0
+            result[col + str(i)] = 0.0
 
         for city in self.cities:
             # Skip city whose metro station number is less than the thresold
@@ -146,7 +150,7 @@ class analysis:
             # Close the boundary by appending the first point to the end
             hullPoints = np.vstack([hullPoints, hullPoints[0]])
             # Create a B-spline representation of the hull points
-            tck, u = splprep(hullPoints.T, s=0.0001)  # s=0 means no smoothing
+            tck, u = splprep(hullPoints.T, s=0.002)  # s=0 means no smoothing
             xSmooth, ySmooth = splev(np.linspace(0, 1, 100), tck)
             # Fill the area inside the convex hull
             plt.fill(xSmooth, ySmooth, color=color, alpha=0.2)
@@ -213,7 +217,7 @@ class analysis:
         ax.set_ylabel("Number of metro stations", fontdict=MARK_FONT)
         ax.tick_params(axis='x', labelsize=TICK_FONT_INT)
         ax.set_yticks([0, 0.2, 0.4, 0.6, 0.8, 1])
-        ax.set_yticklabels([0, 100, 200, 300, 400, 500], fontdict=TICK_FONT)
+        ax.set_yticklabels(["0", "100", "200", "300", "400", "500"], fontdict=TICK_FONT)
         plt.legend(loc=4, fontsize=TICK_FONT_INT)
 
         # plt.show()
@@ -247,8 +251,8 @@ class analysis:
             for country in countries:
                 topTenIndex = result2.loc[result2["country"] == country].nlargest(5, highLight[i]).index
                 topTenIndexs = topTenIndexs.append(topTenIndex)
-            result2.loc[~result2.index.isin(topTenIndexs), "color"] = result2["color"].apply(lambda c: adjustBrightness(c, 0.6))
-            result2[types[i]].plot.bar(width=0.8, ax=axs[i], color=result2["color"])
+            result2.loc[~result2.index.isin(topTenIndexs), "color"] = result2.loc[~result2.index.isin(topTenIndexs), "color"].apply(lambda c: adjustBrightness(c, 0.6))
+            result2[types[i]].plot.bar(width=0.8, ax=axs[i], color=result2["color"].tolist())
 
             # Add parking
             result2[types[i].replace(str(distances),"") + sub + str(distances)].plot(ax=axs[i], marker='.', color="black")
@@ -257,7 +261,7 @@ class analysis:
             axs[i].tick_params(axis='y', labelsize=TICK_FONT_INT)
             axs[i].set_xlabel(None)
             axs[i].set_xticks([])
-            axs[i].set_title("({}) {}".format(chr(i+97), STANDER_NAME.get(types[i])), fontdict=TITLE_FONT) # unicode 97 is a
+            axs[i].set_title("({}) {}".format(i + 1, STANDER_NAME.get(types[i])), fontdict=TITLE_FONT) # unicode 97 is a
 
         # Add legend and fig text
         customLegend = self.customLegend(countries)
@@ -292,7 +296,7 @@ class analysis:
             columns = ["ratio" + i + str(distances), "ratio" + i + sub + str(distances)]
             for country in countries:
                 subdata = result.loc[result["country"] == country, columns].copy()
-                subdata.columns = [[country] * 2, ["EVCS", "Parking"]]
+                subdata.columns = pd.MultiIndex.from_arrays([[country] * 2, ["EVCS", "Parking"]])
                 result2.append(subdata)
             result2 = pd.concat(result2, axis=1)
             result2.sort_index(axis=1, ascending=(False, True), inplace=True)
@@ -313,7 +317,7 @@ class analysis:
                 if x[0] not in xticks:
                     xticks.append(x[0])
             topXTicks = [x[1] for x in result2.columns]
-            axs[axsN].set_title("({}) {}".format(chr(axsN+97), STANDER_NAME.get(i)), fontdict=TITLE_FONT) # unicode 97 is a
+            axs[axsN].set_title("({}) {}".format(axsN + 1, STANDER_NAME.get(i)), fontdict=TITLE_FONT) # unicode 97 is a
             ## Add a top label for areas
             ax2 = axs[axsN].twiny() # Create a twin Axes sharing the y-axis
             ax2.set_xticks(axs[axsN].get_xticks())
@@ -326,7 +330,7 @@ class analysis:
             axs[axsN].set_xticklabels(xticks, fontdict=TICK_FONT)
 
             # Chage color:
-            color = [COLOR.get(x[0]) for x in result2.columns]
+            color = [COLOR[x[0]] for x in result2.columns]
             adjColor = [adjustBrightness(x, 0.6) for x in color]
             ## Change other color
             children = bplot.get_children()

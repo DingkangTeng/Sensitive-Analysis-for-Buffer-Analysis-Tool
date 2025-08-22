@@ -3,9 +3,9 @@ import matplotlib.pyplot as plt
 import matplotlib.ticker as ticker
 import seaborn as sns
 import numpy as np
-from typing import Tuple, Hashable
+from typing import Tuple
 from matplotlib.figure import Figure
-from matplotlib.legend import Legend
+from matplotlib.axes import Axes
 from numpy._typing import NDArray
 from scipy.interpolate import PchipInterpolator
 
@@ -20,7 +20,7 @@ class analysis(GA):
     dataList = []
 
     def __init__(self, metro: pd.DataFrame, interval: int = 10):
-        metro.drop(metro.loc[metro["city"] == "San Juan"].index, inplace=True) # Delete San Juan
+        metro.drop(metro.loc[metro["city"].isin(self.DROP_DATA)].index, inplace=True) # Delete San Juan, Hong Kong and Macao
         # metro change city name using CITY_STANDER
         metro["city"] = metro["city"].map(CITY_STANDER())
         self.cities = metro["city"].unique().tolist()
@@ -43,11 +43,11 @@ class analysis(GA):
         # Read data
         ratioName = "ratio" + name
         data = pd.read_csv(dataPath + ".csv", encoding="utf-8")
-        data.drop(data.loc[data["city"] == "San Juan"].index, inplace=True) # Delete San Juan
+        data.drop(data.loc[data["city"].isin(self.DROP_DATA)].index, inplace=True) # Delete San Juan, Hong Kong and Macao
         data[ratioName] = data["Num"] / data["totalNum"]
         data.rename(columns={"Num": "Num" + name}, inplace=True)
         dataBaseline = pd.read_csv(dataPath + "_Baseline.csv", encoding="utf-8")
-        dataBaseline.drop(dataBaseline.loc[dataBaseline["city"] == "San Juan"].index, inplace=True) # Delete San Juan
+        dataBaseline.drop(dataBaseline.loc[dataBaseline["city"].isin(self.DROP_DATA)].index, inplace=True) # Delete San Juan, Hong Kong and Macao
         # Some buffer zone exceed the district area, recalculate the ratio into 100%
         dataBaseline.loc[dataBaseline["totalNum"] == 0, "Num"] = 1
         dataBaseline.loc[dataBaseline["totalNum"] == 0, "totalNum"] = 1
@@ -76,7 +76,7 @@ class analysis(GA):
 
         return
     
-    def saveFig(self, i: int, axs: list[plt.Axes] | NDArray, fig: Figure, lines: list, labels: list, savePath: str):
+    def saveFig(self, i: int, axs: list[Axes] | NDArray, fig: Figure, lines: list, labels: list, savePath: str):
         # Hide unused subplots
         for j in range(i, len(axs)):
             fig.delaxes(axs[j])
@@ -110,7 +110,7 @@ class analysis(GA):
         return colNum, rowNum
 
     def drawCurveAcc(self, path: str, columnList: list[str], threshold: int = 0, distance: int = 500) -> None:
-        def plotDatas(i: int, axs: list[plt.Axes] | NDArray, city: str, columnStation: list[str], columnBaseline: list[str]) -> None:
+        def plotDatas(i: int, axs: list[Axes] | NDArray, city: str, columnStation: list[str], columnBaseline: list[str]) -> None:
             quary = (self.data["city"] == city) & (self.data["distance"] <= distance)
             dataStation = self.data.loc[quary, columnStation].set_index("distance")
             dataBaseline = self.data.loc[quary, columnBaseline].set_index("distance")
@@ -158,7 +158,7 @@ class analysis(GA):
         return
 
     def drawCurveAll(self, path: str, columnList: list[str], threshold: int = 0, distance: int = 500) -> None:
-        def plotDatas(i: int, axs: list[plt.Axes] | NDArray, city: str, columns: list[str], distance: int) -> None:
+        def plotDatas(i: int, axs: list[Axes] | NDArray, city: str, columns: list[str], distance: int) -> None:
             dataStation = self.data.loc[(self.data["city"] == city) & (self.data["distance"] <= distance), columns].set_index("distance")
             dataStation.plot(ax=axs[i], marker='.', title=city, ylabel="ratio", color=["#5F8B4C", "#FFDDAB", "#FF9A9A", "#945034"])
             axs[i].set_xlabel("distance")
@@ -237,7 +237,7 @@ class analysis(GA):
             dataPivot = data.pivot(index="city", columns="distance", values=column)
             # Main data
             if count < baseNum:
-                dataPivot.sort_values(by=distance, ascending=False, inplace=True)
+                dataPivot.sort_values(by=distance, ascending=False, inplace=True) # type: ignore
                 sortCity = dataPivot.index
             # Sub data
             else:
@@ -255,22 +255,23 @@ class analysis(GA):
 
             # Adjust the color bar
             colorbar = heatmap.collections[0].colorbar
-            colorbar.ax.tick_params(
-                labelsize=__TICK_FONT_INT, # Set the font size for color bar ticks
-                left=True, labelleft=True, # Show left axis
-                right=False, labelright=False # Hide right axis
-            )
-            colorbar.ax.set_yticks([0, 0.2, 0.4, 0.6, 0.8, 1])
-            colorbar.ax.set_yticklabels(["0%", "20%", "40%", "60%", "80%", "100%"])
-            colorbar.ax.set_xlabel(
-                "% of\n{}".format(STANDER_NAME[column][:-29].replace(' ', "\n")),
-                fontdict={"size": __SUB_SIZE}
-            )
+            if colorbar is not None:
+                colorbar.ax.tick_params(
+                    labelsize=__TICK_FONT_INT, # Set the font size for color bar ticks
+                    left=True, labelleft=True, # Show left axis
+                    right=False, labelright=False # Hide right axis
+                )
+                colorbar.ax.set_yticks([0, 0.2, 0.4, 0.6, 0.8, 1])
+                colorbar.ax.set_yticklabels(["0%", "20%", "40%", "60%", "80%", "100%"])
+                colorbar.ax.set_xlabel(
+                    "% of\n{}".format(STANDER_NAME[column][:-29].replace(' ', "\n")),
+                    fontdict={"size": __SUB_SIZE}
+                )
 
             # Add titles and labels
             plt.xticks(
                 ticks=[x for x in range(distance // self.interval + 1)],
-                labels=[10 * x if x % 10 == 0 else '' for x in range(distance // self.interval)] + [distance],
+                labels=[str(10 * x) if x % 10 == 0 else '' for x in range(distance // self.interval)] + [str(distance)],
                 rotation=0,
                 fontdict=__TICK_FONT
                 )
@@ -285,7 +286,7 @@ class analysis(GA):
             plt.ylabel('Study Unites ID', fontdict=__MARK_FONT)
 
             # Create a new axis for the curve
-            curveAx = plt.gca().inset_axes([1.2, 0, 0.11, 1])  # [x0, y0, width, height(multiple of existing length)] of the curveAx
+            curveAx = plt.gca().inset_axes((1.2, 0, 0.11, 1))  # [x0, y0, width, height(multiple of existing length)] of the curveAx
             # Generate data for the curve
             valueCounts = dataPivot[distance].round(1).value_counts().sort_index()
             valueSum = valueCounts.sum()

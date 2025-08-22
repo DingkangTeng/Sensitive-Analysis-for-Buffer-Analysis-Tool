@@ -1,5 +1,6 @@
 import textwrap
 import pandas as pd
+import numpy as np
 import matplotlib.colors as mcolors
 
 STANDER_NAME = {
@@ -37,16 +38,21 @@ def CITY_STANDER() -> dict:
     stander = pd.read_csv("analysis\\cityList.csv", encoding="utf-8")
     return dict(zip(stander["city"], stander["UID"]))
 
-def adjustBrightness(color: str, factor: float):
+def adjustBrightness(color: str, factor: float) -> str:
     # Convert the color to HSV
     hsv = mcolors.rgb_to_hsv(mcolors.to_rgb(color))
     # Adjust the value (brightness)
     hsv[2] = max(0, min(1, hsv[2] * factor))  # Ensure value is between 0 and 1
     # Convert back to RGB
-    return mcolors.hsv_to_rgb(hsv)
+    rgb = mcolors.hsv_to_rgb(hsv)
+    return mcolors.to_hex(tuple(rgb))
 
 def wrapLabels(labels: list[str], width: int) -> list[str]:
     """
     width: The max number of characters in one line
     """
     return [textwrap.fill(label, width=width) for label in labels]
+
+# Debug
+if __name__ == "__main__":
+    print(adjustBrightness("red", 0.2))
