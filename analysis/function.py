@@ -1,23 +1,22 @@
 import textwrap
 import pandas as pd
-import numpy as np
 import matplotlib.colors as mcolors
 
 STANDER_NAME = {
-    "ratioTrans500": "% of EVCS around interchange metro stations within 500 meters",
-    "ratioTerminal500": "% of EVCS around terminal metro stations within 500 meters",
-    "ratioNormal500": "% of EVCS around normal metro stations within 500 meters",
-    "ratioAll500": "% of EVCS around all metro stations within 500 meters",
-    "ratioAll": "EVCS ratio for all metro stations",
-    "ratioAll_Baseline": "Average distributuion ratio for all metro stations",
-    "ratioAll_PaR": "Parking lots ratio for all metro stations",
-    "ratioNormal": "EVCS ratio for normal metro stations",
-    "ratioTerminal": "EVCS ratio for terminal metro stations",
-    "ratioTrans": "EVCS ratio for interchange metro stations",
-    "All": "All metro stations within 500 meters",
-    "Normal": "Normal metro stations within 500 meters",
-    "Terminal": "Terminal metro stations within 500 meters",
-    "Trans": "Interchange metro stations wtihin 500 meters",
+    "ratioTrans500": "% of EVCS around interchange stations within 500 meters",
+    "ratioTerminal500": "% of EVCS around terminal stations within 500 meters",
+    "ratioNormal500": "% of EVCS around normal stations within 500 meters",
+    "ratioAll500": "% of EVCS around all stations within 500 meters",
+    "ratioAll": "EVCS ratio for all stations",
+    "ratioAll_Baseline": "Average distributuion ratio for all stations",
+    "ratioAll_PaR": "Parking lots ratio for all stations",
+    "ratioNormal": "EVCS ratio for normal stations",
+    "ratioTerminal": "EVCS ratio for terminal stations",
+    "ratioTrans": "EVCS ratio for interchange stations",
+    "All": "All stations within 500 meters",
+    "Normal": "Normal stations within 500 meters",
+    "Terminal": "Terminal stations within 500 meters",
+    "Trans": "Interchange stations wtihin 500 meters",
     "_PaR": "Parking lots"
 }
 
@@ -28,11 +27,11 @@ COLOR = {
 }
 
 # Font control
-TITLE_FONT = {"style": "italic", "weight": "bold", "size": 16}
-TICK_FONT_INT = 14
+TICK_FONT_INT = 21
 TICK_FONT = {"size": TICK_FONT_INT}
-MARK_FONT_INT = 16
+MARK_FONT_INT = 24
 MARK_FONT = {"size": MARK_FONT_INT}
+TITLE_FONT = {"font": "DejaVu Sans", "style": "italic", "weight": "bold", "size": MARK_FONT_INT}
 
 def CITY_STANDER() -> dict:
     stander = pd.read_csv("analysis\\cityList.csv", encoding="utf-8")
@@ -52,7 +51,3 @@ def wrapLabels(labels: list[str], width: int) -> list[str]:
     width: The max number of characters in one line
     """
     return [textwrap.fill(label, width=width) for label in labels]
-
-# Debug
-if __name__ == "__main__":
-    print(adjustBrightness("red", 0.2))

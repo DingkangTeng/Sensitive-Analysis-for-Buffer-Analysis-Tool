@@ -6,12 +6,20 @@ import matplotlib.patches as patches
 from matplotlib import ticker
 from matplotlib.patches import Patch
 from matplotlib.lines import Line2D
+from matplotlib.axes import Axes
 from scipy.spatial import ConvexHull
 from scipy.interpolate import splprep, splev
 
-from function import CITY_STANDER, COLOR, STANDER_NAME, adjustBrightness, \
+from function import (
+    CITY_STANDER, COLOR, STANDER_NAME, adjustBrightness,
     TITLE_FONT, TICK_FONT, TICK_FONT_INT, MARK_FONT, MARK_FONT_INT
+)
 
+LEGEND_TITLE = {
+    "US": "U.S.",
+    "EU": "Europe",
+    "CN": "China"
+}
 
 class analysis:
     metro = pd.DataFrame()
@@ -21,6 +29,12 @@ class analysis:
     DROP_DATA = ["San Juan", u"香港特别行政区", u"澳门特别行政区"] # Delete San Juan, Hong Kong and Macao
 
     def __init__(self, metro: pd.DataFrame = metro, data: pd.DataFrame = data):
+        plt.style.use("seaborn-v0_8-whitegrid")
+        plt.rcParams["font.sans-serif"] = "Sans Serif Collection"
+        plt.rcParams["legend.facecolor"] = "white"
+        plt.rcParams["legend.edgecolor"] = "lightgray"
+        plt.rcParams['legend.frameon'] = True
+        plt.rcParams["legend.framealpha"] = 1.0
         if not metro.empty:
             # metro & data change city name using CITY_STANDER
             metro["city"] = metro["city"].map(CITY_STANDER())
@@ -42,7 +56,7 @@ class analysis:
         tag.sort(reverse=True)
         for i in tag:
             customLegend.append(
-                Patch(color=COLOR[i], label=i)
+                Patch(color=COLOR[i], label=LEGEND_TITLE.get(i, i))
             )
         
         return customLegend
@@ -83,49 +97,6 @@ class analysis:
 
         return result
     
-    # def calculateAccumulation(self, path: str, interval: int = 10, threshold: int = 500, sub: str = "") -> None:
-    #     def formular(sequencesA: list[int | float], sequencesB: list[int | float], interval: int) -> float:
-    #         segmaA = np.sum(sequencesA[:-1])
-    #         resultA = (segmaA + 0.5 * sequencesA[-1]) * interval
-    #         segmaB = np.sum(sequencesB[:-1])
-    #         resultB = (segmaB + 0.5 * sequencesB[-1]) * interval
-    #         if resultA == 0 and resultB == 0:
-    #             return None
-    #         else:
-    #             return np.around(resultA - resultB, 4)
-        
-    #     # Initialize results
-    #     cities = self.data["city"].unique().tolist()
-    #     cities.sort()
-    #     cityNum = len(cities)
-    #     result = pd.DataFrame({"city": cities,
-    #                            "Accumulation of all stations": [0] * cityNum,
-    #                            "Accumulaiton of normal stations": [0] * cityNum,
-    #                            "Accululation of interchange stations": [0] * cityNum,
-    #                            "Accumulation of terminal stations": [0] * cityNum
-    #                         })
-    #     if sub != "":
-    #         result["Accumulation of all stations_" + sub] = 0
-    #         result["Accumulaiton of normal stations_" + sub] = 0
-    #         result["Accululation of interchange stations_" + sub] = 0
-    #         result["Accumulation of terminal stations_" + sub] = 0
-        
-    #     for i in range(cityNum):
-    #         data = self.data.loc[(self.data["city"] == cities[i]) & (self.data["distance"] <= threshold)]
-    #         result.loc[i, "Accumulation of all stations"] = formular(data["ratioAll"].to_list(), data["ratioAll_Baseline"].to_list(), interval)
-    #         result.loc[i, "Accumulaiton of normal stations"] = formular(data["ratioNormal"].to_list(), data["ratioNormal_Baseline"].to_list(), interval)
-    #         result.loc[i, "Accululation of interchange stations"] = formular(data["ratioTerminal"].to_list(), data["ratioTerminal_Baseline"].to_list(), interval)
-    #         result.loc[i, "Accumulation of terminal stations"] = formular(data["ratioTrans"].to_list(), data["ratioTrans_Baseline"].to_list(), interval)
-    #         if sub != "":
-    #             result.loc[i, "Accumulation of all stations_" + sub] = formular(data["ratioAll_" + sub].to_list(), data["ratioAll_Baseline"].to_list(), interval)
-    #             result.loc[i, "Accumulaiton of normal stations_" + sub] = formular(data["ratioNormal_" + sub].to_list(), data["ratioNormal_Baseline"].to_list(), interval)
-    #             result.loc[i, "Accululation of interchange stations_" + sub] = formular(data["ratioTerminal_" + sub].to_list(), data["ratioTerminal_Baseline"].to_list(), interval)
-    #             result.loc[i, "Accumulation of terminal stations_" + sub] = formular(data["ratioTrans_" + sub].to_list(), data["ratioTrans_Baseline"].to_list(), interval)
-        
-    #     result.sort_values(by=["city"]).to_csv(path, encoding="utf-8", index=False)
-
-    #     return
-    
     # Distributuin Plot
     def distributionPlot(self, path: str, areas: list[str], compare: str, distance: int = 500, threshold: int = 0) -> None:
         cities = self.metro.loc[self.metro["FREQUENCY"] >= threshold, "city"].to_list()
@@ -136,15 +107,9 @@ class analysis:
         for area in areas:
             subData = data.loc[data["city"].str[0:2] == area].copy()
             color = COLOR.get(area)
-            subData.plot.scatter("ratioAll", compare, color=color, label=area, ax=ax)
+            subData.plot.scatter("ratioAll", compare, color=color, label=LEGEND_TITLE.get(area, area), ax=ax)
             # Draw boundary
             hull = ConvexHull(subData[["ratioAll", compare]].values)
-            # # Fill the area inside the convex hull
-            # plt.fill(subData[["ratioAll"]].values[hull.vertices], subData[["MTRPer"]].values[hull.vertices], color=color, alpha=0.2)
-            # # Plot the hull edges
-            # for simplex in hull.simplices:
-            #     plt.plot(subData[["ratioAll"]].values[simplex], subData[["MTRPer"]].values[simplex], color=color, alpha=0.2)
-            # Draw boundary in smooth
             # Get the hull points
             hullPoints = subData[["ratioAll", compare]].values[hull.vertices]
             # Close the boundary by appending the first point to the end
@@ -159,8 +124,6 @@ class analysis:
         
         # Set Plots
         # 1:1 Line
-        # ax.set_xlim((-0.05,1.05))
-        # ax.set_ylim((-0.05,1.05))
         ax.set_xlim(-0.05,1.05)
         ax.set_ylim(-0.05,1.05)
         ax.plot(ax.get_xlim(), ax.get_ylim(), ls="--", c=".3")
@@ -174,9 +137,9 @@ class analysis:
         ax.set_yticks(ticks)
         ax.yaxis.set_major_formatter(ticker.PercentFormatter(1,0))
         ax.tick_params(axis='y', labelsize=TICK_FONT_INT)
-        plt.legend(loc=4, fontsize=TICK_FONT_INT)
+        plt.legend(loc="upper right", fontsize=TICK_FONT_INT)
 
-        # plt.show()
+        plt.tight_layout()
         plt.savefig(path, dpi=300)
         plt.close()
 
@@ -192,7 +155,7 @@ class analysis:
         for area in areas:
             subData = data.loc[data["city"].str[0:2] == area].copy()
             color = COLOR.get(area)
-            subData.plot.scatter("ratioAll", "FREQUENCY", color=color, label=area, ax=ax)
+            subData.plot.scatter("ratioAll", "FREQUENCY", color=color, label=LEGEND_TITLE.get(area, area), ax=ax)
             # Draw boundary
             hull = ConvexHull(subData[["ratioAll", "FREQUENCY"]].values)
             # Get the hull points
@@ -218,9 +181,9 @@ class analysis:
         ax.tick_params(axis='x', labelsize=TICK_FONT_INT)
         ax.set_yticks([0, 0.2, 0.4, 0.6, 0.8, 1])
         ax.set_yticklabels(["0", "100", "200", "300", "400", "500"], fontdict=TICK_FONT)
-        plt.legend(loc=4, fontsize=TICK_FONT_INT)
+        plt.legend(loc="upper right", fontsize=TICK_FONT_INT)
 
-        # plt.show()
+        plt.tight_layout()
         plt.savefig(path, dpi=300)
         plt.close()
 
@@ -239,7 +202,7 @@ class analysis:
         result = result.join(self.metro.set_index("city"), on="city")
 
         # Plot
-        fig, axs = plt.subplots(typesLen, 1, figsize=(20, 3 * typesLen))
+        fig, axs = plt.subplots(typesLen, 1, figsize=(20, 5 * typesLen), sharex=True, sharey=True)
         axs = axs.flatten() # Flatten the 2D array of axes to 1D for easy indexing
         ## Prepared for high light different type with different count
         highLight = ["FREQUENCY"] * typesLen
@@ -268,20 +231,18 @@ class analysis:
         customLegend.append(
             Line2D([0], [0], marker='.', color="black", label=STANDER_NAME.get(sub))
         )
-        plt.legend(handles=customLegend, bbox_to_anchor=(0.5, -0.4), loc=8, ncol = len(countries) + 1)
-        fig.text(0.1, 0.5, "%  of  EVCS or parking lot",
-                 fontsize=MARK_FONT_INT, verticalalignment="center", horizontalalignment="right", rotation=90)
-        fig.text(0.5, 0.1, "Study areas",
-                 fontsize=MARK_FONT_INT, verticalalignment="top", horizontalalignment="center")
+        plt.legend(handles=customLegend, bbox_to_anchor=(0.5, -0.3), loc=8, ncol = len(countries) + 1, fontsize=MARK_FONT_INT)
+        plt.xlabel("%  of  EVCS or parking lot", fontsize=MARK_FONT_INT)
+        fig.supylabel("Study areas", fontsize=MARK_FONT_INT, x=-0.0000001)
         
-        # plt.show()
+        plt.tight_layout()
         plt.savefig(path, dpi=300)
         plt.close()
 
         return
     
     # Draw separately by location
-    def drawGlobalBoxplot2(self, path: str, typelist: list[str], sub :str, distances: int = 500, threshold: int = 0) -> None:
+    def drawGlobalBoxplot(self, path: str, typelist: list[str], sub :str, distances: int = 500, threshold: int = 0, ylim: float = 0.8) -> None:
         fullList = typelist + [x + sub for x in typelist]
         result = self.compareRatio([distances], fullList, threshold=threshold)
         result["country"] = result["city"].str[0:2]
@@ -304,7 +265,6 @@ class analysis:
                 ax=axs[axsN],
                 patch_artist=True,
                 showfliers=False,
-                # boxprops={"linewidth": 0},
                 whiskerprops={"linewidth": 1.5},
                 capprops={"linewidth": 1.5},
                 medianprops={"color": "lime"},
@@ -319,15 +279,21 @@ class analysis:
             topXTicks = [x[1] for x in result2.columns]
             axs[axsN].set_title("({}) {}".format(axsN + 1, STANDER_NAME.get(i)), fontdict=TITLE_FONT) # unicode 97 is a
             ## Add a top label for areas
-            ax2 = axs[axsN].twiny() # Create a twin Axes sharing the y-axis
-            ax2.set_xticks(axs[axsN].get_xticks())
-            ax2.set_xticklabels(topXTicks, fontdict=TICK_FONT)
-            ax2.set_xlim(axs[axsN].get_xlim()) # Set the start location of new top ax
-            ax2.xaxis.set_ticks_position('top')
-            ax2.xaxis.set_label_position('top')
+            if axsN == 0 or axsN == 1:
+                ax2 = axs[axsN].twiny() # Create a twin Axes sharing the y-axis
+                ax2.set_xticks(axs[axsN].get_xticks())
+                ax2.set_xticklabels(topXTicks, fontdict=TICK_FONT)
+                ax2.set_xlim(axs[axsN].get_xlim()) # Set the start location of new top ax
+                ax2.xaxis.set_ticks_position('top')
+                ax2.xaxis.set_label_position('top')
             ## Change bottom xticks
             axs[axsN].set_xticks([1.5 + x + x for x in range(len(countries))])
-            axs[axsN].set_xticklabels(xticks, fontdict=TICK_FONT)
+            if axsN == 2 or axsN == 3:
+                axs[axsN].set_xticklabels([LEGEND_TITLE.get(x, x) for x in xticks], fontdict=TICK_FONT)
+            else:
+                axs[axsN].set_xticklabels([None] * len(xticks))
+            
+            axs[axsN].set_ylim(0, ylim)
 
             # Chage color:
             color = [COLOR[x[0]] for x in result2.columns]
@@ -356,113 +322,20 @@ class analysis:
                 axs[axsN].add_patch(rect)
 
             # Add y label
-            axs[axsN].set_ylabel("% of EVCS or parking lots", fontdict=MARK_FONT)
-            axs[axsN].set_yticks([x/10 for x in range(9)]) # y axis 0-0.8
-            axs[axsN].tick_params(axis='y', labelsize=TICK_FONT_INT)
+            n = int(ylim * 10 + 1)
+            axs[axsN].set_yticks([x/10 for x in range(n)]) # y axis 0-0.8
+            axs[axsN].tick_params(axis='y', labelsize=MARK_FONT_INT)
+            if axsN == 0 or axsN == 2:
+                axs[axsN].set_ylabel("% of EVCS or parking lots", fontdict=MARK_FONT)
+            else:
+                axs[axsN].set_yticklabels([None] * n)
             axsN += 1
 
-        # Add legend
-        customLegend = self.customLegend(countries)
-        plt.legend(handles=customLegend, bbox_to_anchor=(0.1, -0.1), loc=0, ncol=3, fontsize=TICK_FONT_INT)
-
-        # plt.show()
+        plt.tight_layout()
         plt.savefig(path, dpi=300)
         plt.close()
 
         return
-    
-    # # Draw separately by type
-    # def drawGlobalBoxplot(self, path: str, typelist: list[str], sub :str, distances: int = 500, threshold: int = 0) -> None:
-    #     fullList = typelist + [x + sub for x in typelist]
-    #     result = self.compareRatio([distances], fullList, threshold=threshold)
-    #     result["country"] = result["city"].str[0:2]
-    #     countries = result["country"].unique().tolist()
-    #     evcs = ["ratio" + x + str(distances) for x in typelist]
-    #     parking = ["ratio" + x + sub + str(distances) for x in typelist]
-    #     typelen = len(typelist)
-
-    #     fig, axs = plt.subplots(2, 1, figsize=(20, 20))
-        
-    #     axsN = 0
-    #     yLable = ["EVCS", "Parking"]
-    #     for i in [evcs, parking]:
-    #         result2 = []
-    #         for country in countries:
-    #             subdata = result.loc[result["country"] == country, i].copy()
-    #             subdata.columns = [typelist, [country] * typelen]
-    #             result2.append(subdata)
-    #         result2 = pd.concat(result2, axis=1)
-    #         result2.sort_index(axis=1, ascending=(True, False), inplace=True)
-    #         bplot = result2.boxplot(
-    #             ax=axs[axsN],
-    #             patch_artist=True,
-    #             showfliers=False,
-    #             # boxprops={"linewidth": 0},
-    #             whiskerprops={"linewidth": 1.5},
-    #             capprops={"linewidth": 1.5}
-    #         )
-
-    #         # Modify the label
-    #         ## Modify the main label
-    #         xticks = [x[0] for x in result2.columns]
-    #         topXTicks = [x[1] for x in result2.columns]
-    #         group = len(countries)
-    #         middle = (group - 1) // 2
-    #         colorBack = []
-    #         for i in range(len(xticks) // group):
-    #             start = i * group
-    #             for j in range(group):
-    #                 if j != middle:
-    #                     xticks[start + j] = None
-    #         axs[axsN].set_xticklabels(xticks)
-    #         ## Add a top label for areas
-    #         ax2 = axs[axsN].twiny() # Create a twin Axes sharing the y-axis
-    #         ax2.set_xticks(axs[axsN].get_xticks())
-    #         ax2.set_xticklabels(topXTicks)
-    #         ax2.set_xlim(axs[axsN].get_xlim()) # Set the start location of new top ax
-    #         ax2.xaxis.set_ticks_position('top')
-    #         ax2.xaxis.set_label_position('top')
-
-    #         # Chage color:
-    #         color = [COLOR.get(x[1]) for x in result2.columns]
-    #         adjColor = [adjustBrightness(x, 0.8) for x in color]
-    #         ## Background color is fixd for four group, if the group number exceed four, the index would out of range
-    #         colorBack = ["lightblue"] * group + ["lightgreen"] * group + ["lightcoral"] * group + ["lightyellow"] * group
-    #         ## Change other color
-    #         children = bplot.get_children()
-    #         for i, box in enumerate(children):
-    #             INTERVAL = 6 # How many color in one group, it depends
-    #             if i % INTERVAL in [1, 2, 3, 4] and i // INTERVAL < len(color):  # 1, 2 are the bottom and top tails, and 3, 4 are bottom and top tails end
-    #                 box.set_color(color[i // INTERVAL])  # Set the color for each cap
-    #         ## Change box and its edge color
-    #         for i, patch in enumerate(bplot.patches):
-    #             # Box and its edge color
-    #             patch.set_facecolor(adjColor[i])
-    #             patch.set_edgecolor(color[i])
-    #             # Background color
-    #             rect = patches.Rectangle(
-    #                 (i + 0.5, axs[axsN].get_ylim()[0]), # The anchor point
-    #                 1, # Rectangle width
-    #                 1.1, # Rectangle height # get automatically: axs[axsN].get_ylim()[1] - axs[axsN].get_ylim()[0]
-    #                 color=colorBack[i],
-    #                 alpha=0.5 # Adjust alpha for transparency
-    #             )
-    #             axs[axsN].add_patch(rect)
-
-    #         # Add y label
-    #         axs[axsN].set_ylabel(yLable[axsN], fontdict=MARK_FONT)
-    #         axs[axsN].set_yticks([x/10 for x in range(9)]) # y axis 0-0.8
-    #         axsN += 1
-
-    #     # Add legend
-    #     customLegend = self.customLegend(countries)
-    #     plt.legend(handles=customLegend, bbox_to_anchor=(0.5, -0.1), loc=8, ncol=group, fontsize=TICK_FONT_INT)
-
-    #     # plt.show()
-    #     plt.savefig(path, dpi=300)
-    #     plt.close()
-
-    #     return
 
 if __name__ == "__main__":
     a = analysis()
@@ -480,9 +353,9 @@ if __name__ == "__main__":
     for i in allList.copy():
         allList.append(i + "_PaR")
         allList.append(i + "_Baseline")
-    a.compareRatio([500], allList, "..\\Export\\global500.csv", 7)
+    # a.compareRatio([500], allList, "..\\Export\\global500.csv", 7)
     # a.distributionPlot("..\\Export\\G-generlaDistribution.jpg", ["US", "CN", "EU"], "ratioAll_Baseline", threshold=7)
     # a.distributionPlot("..\\Export\\G-generlaDistribution_PaR.jpg", ["US", "CN", "EU"], "ratioAll_PaR", threshold=7)
     # a.distributionPlot_Num("..\\Export\\G-generlaDistribution_number.jpg", ["US", "CN", "EU"], threshold=7)
     # a.drawGolbalBar("..\\Export\\G-bar.jpg", ["All", "Normal", "Terminal", "Trans"], "_PaR", threshold=7)
-    # a.drawGlobalBoxplot2("..\\Export\\G-box.jpg", ["All", "Normal", "Terminal", "Trans"], "_PaR", threshold=7)
+    a.drawGlobalBoxplot("..\\Export\\G-box.jpg", ["All", "Normal", "Terminal", "Trans"], "_PaR", threshold=7, ylim=0.4)

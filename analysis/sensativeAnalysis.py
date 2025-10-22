@@ -10,16 +10,13 @@ from numpy._typing import NDArray
 from scipy.interpolate import PchipInterpolator
 
 from globalAnalysis import analysis as GA
-from function import CITY_STANDER, STANDER_NAME, wrapLabels, TICK_FONT_INT, TICK_FONT, MARK_FONT
-
-# # Setting Chinese front
-# mpl.rcParams["font.sans-serif"] = ["SimHei"]
-# mpl.rcParams["axes.unicode_minus"] = False
+from function import CITY_STANDER, STANDER_NAME, wrapLabels, TICK_FONT, MARK_FONT
 
 class analysis(GA):
     dataList = []
 
     def __init__(self, metro: pd.DataFrame, interval: int = 10):
+        plt.rcParams["font.sans-serif"] = "Sans Serif Collection"
         metro.drop(metro.loc[metro["city"].isin(self.DROP_DATA)].index, inplace=True) # Delete San Juan, Hong Kong and Macao
         # metro change city name using CITY_STANDER
         metro["city"] = metro["city"].map(CITY_STANDER())
@@ -203,7 +200,7 @@ class analysis(GA):
         #Front for heatmap
         __MARK_FONT = MARK_FONT.copy()
         __MARK_FONT["size"] = 24
-        __TICK_FONT_INT = 16
+        __TICK_FONT_INT = 21
         __TICK_FONT = TICK_FONT.copy()
         __TICK_FONT["size"] = __TICK_FONT_INT
         __SUB_SIZE = 16
@@ -264,7 +261,7 @@ class analysis(GA):
                 colorbar.ax.set_yticks([0, 0.2, 0.4, 0.6, 0.8, 1])
                 colorbar.ax.set_yticklabels(["0%", "20%", "40%", "60%", "80%", "100%"])
                 colorbar.ax.set_xlabel(
-                    "% of\n{}".format(STANDER_NAME[column][:-29].replace(' ', "\n")),
+                    "% of\n{}".format(STANDER_NAME[column][:-23].replace(' ', "\n")),
                     fontdict={"size": __SUB_SIZE}
                 )
 
@@ -281,9 +278,9 @@ class analysis(GA):
             ax.xaxis.set_major_locator(ticker.MultipleLocator(10))  # Major ticks every 10 unit
             ax.tick_params(axis='x', which="major", length=5)
             ax.xaxis.set_minor_locator(ticker.MultipleLocator(1))  # Minor ticks every 1 units
-            ax.tick_params(axis='x', which="minor", length=3, color='gray')
+            ax.tick_params(axis='x', which="minor", length=3, color="gray")
             plt.xlabel("Distance", fontdict=__MARK_FONT)
-            plt.ylabel('Study Unites ID', fontdict=__MARK_FONT)
+            plt.ylabel("Study Unit ID", fontdict=__MARK_FONT)
 
             # Create a new axis for the curve
             curveAx = plt.gca().inset_axes((1.2, 0, 0.11, 1))  # [x0, y0, width, height(multiple of existing length)] of the curveAx
@@ -292,11 +289,11 @@ class analysis(GA):
             valueSum = valueCounts.sum()
             valueCounts = valueCounts / valueSum
             x = [0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1]
-            tmp = pd.DataFrame(index=x)
-            y = tmp.join(valueCounts).fillna(0)["count"].to_list()
+            tmp = pd.DataFrame(index=x).join(valueCounts)
+            y = tmp.fillna(0)["count"]
             # Create a smooth curve using interpolation
             xSmooth = np.linspace(0, 1, 100)  # 100 points for smoothness
-            pchipInterpolator = PchipInterpolator(x, y)  # Cubic spline interpolation
+            pchipInterpolator = PchipInterpolator(x, y.to_list())  # Cubic spline interpolation
             ySmooth = np.maximum(pchipInterpolator(xSmooth), 0)
             ySmooth = np.minimum(max(valueCounts), ySmooth)
             # Plot the curve
@@ -305,12 +302,15 @@ class analysis(GA):
             curveAx.set_ylim(0, 1)
             curveAx.set_xlim(0, 0.5)
             curveAx.set_yticks([])
-            curveAx.set_xlabel("PDF of\nStudy Unites", fontdict={"size":__SUB_SIZE})
+            curveAx.set_xlabel("PDF", fontdict={"size":__SUB_SIZE})
+            # Plot median line
+            median = dataPivot[distance].median()
+            curveAx.axhline(y=median, color="red", linestyle="--")
             # curveAx.axis('off')  # Hide the axis
 
             # Show the plot
             count += 1
-            # plt.show()
+            plt.tight_layout()
             plt.savefig(path + column + "_HeatMap.jpg", bbox_inches="tight", dpi=300)
             plt.close()
 
@@ -331,29 +331,6 @@ def runAnalysis(a: analysis | analysisAll, path: str) -> None:
     return
 
 if __name__ == "__main__":
-    # # First round analysis
-    # for country in ["CH", "US", "EU"]:
-    #     path = "..\\Export\\" + country + "\\"
-    #     metroPath = path + country + "_Metro.csv"
-    #     metro = pd.read_csv(metroPath, encoding="utf-8")
-    #     a = analysis(metro)
-
-    #     '''
-    #     All - All station
-    #     Terminal - Only terminal station
-    #     Trans - Only interchange staiton
-    #     Normal - Neither terminal station nor interchange station
-    #     '''
-    #     for stationType in ["All", "Normal", "Terminal", "Trans"]:
-    #         dataPath = path + country + "_CaR_" + stationType
-    #         a.addData(dataPath, stationType, "PaR")
-        
-    #     # Merger all different data and save to one csv file
-    #     a.merge(path + country + ".csv")
-
-    #     # # Run analysis method
-    #     # runAnalysis(a, path)
-    
     # Analysis using saved csv file (country by country)
     for country in ["CH", "US", "EU"]: #
         path = "..\\Export\\" + country + "\\"
