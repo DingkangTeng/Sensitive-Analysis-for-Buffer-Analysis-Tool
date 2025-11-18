@@ -232,8 +232,8 @@ class analysis:
             Line2D([0], [0], marker='.', color="black", label=STANDER_NAME.get(sub))
         )
         plt.legend(handles=customLegend, bbox_to_anchor=(0.5, -0.3), loc=8, ncol = len(countries) + 1, fontsize=MARK_FONT_INT)
-        plt.xlabel("%  of  EVCS or parking lot", fontsize=MARK_FONT_INT)
-        fig.supylabel("Study areas", fontsize=MARK_FONT_INT, x=-0.0000001)
+        plt.xlabel("Study unit", fontsize=MARK_FONT_INT)
+        fig.supylabel("%  of  EVCS or parking lot", fontsize=MARK_FONT_INT, x=-0.0000001)
         
         plt.tight_layout()
         plt.savefig(path, dpi=300)
@@ -348,14 +348,20 @@ if __name__ == "__main__":
         data = pd.read_csv(dataPath, encoding="utf-8")
         a.append(metro, data)
     
-    # # a.calculateAccumulation("..\\Export\\Accumulation.csv")
     allList = ["All", "Normal", "Terminal", "Trans"]
     for i in allList.copy():
         allList.append(i + "_PaR")
         allList.append(i + "_Baseline")
-    # a.compareRatio([500], allList, "..\\Export\\global500.csv", 7)
-    # a.distributionPlot("..\\Export\\G-generlaDistribution.jpg", ["US", "CN", "EU"], "ratioAll_Baseline", threshold=7)
-    # a.distributionPlot("..\\Export\\G-generlaDistribution_PaR.jpg", ["US", "CN", "EU"], "ratioAll_PaR", threshold=7)
-    # a.distributionPlot_Num("..\\Export\\G-generlaDistribution_number.jpg", ["US", "CN", "EU"], threshold=7)
-    # a.drawGolbalBar("..\\Export\\G-bar.jpg", ["All", "Normal", "Terminal", "Trans"], "_PaR", threshold=7)
-    a.drawGlobalBoxplot("..\\Export\\G-box.jpg", ["All", "Normal", "Terminal", "Trans"], "_PaR", threshold=7, ylim=0.4)
+    # a.compareRatio([500], allList, "..\\Export\\global500.csv", 7) # Compaer ratio and export csv, not used in paper
+    
+    # Figure 6
+    a.drawGolbalBar("..\\Export\\G-bar.jpg", ["All", "Normal", "Terminal", "Trans"], "_PaR", threshold=7)
+    # Figure 7
+    a.drawGlobalBoxplot("..\\Export\\G-box.jpg", ["All", "Normal", "Terminal", "Trans"], "_PaR", threshold=7, ylim=0.8)
+    # Figures 8
+    a.distributionPlot("..\\Export\\G-generlaDistribution_PaR.jpg", ["US", "CN", "EU"], "ratioAll_PaR", threshold=7)
+    # Figures 9
+    a.distributionPlot_Num("..\\Export\\G-generlaDistribution_number.jpg", ["US", "CN", "EU"], threshold=7)
+    # Figures 10
+    a.distributionPlot("..\\Export\\G-generlaDistribution.jpg", ["US", "CN", "EU"], "ratioAll_Baseline", threshold=7)
+   

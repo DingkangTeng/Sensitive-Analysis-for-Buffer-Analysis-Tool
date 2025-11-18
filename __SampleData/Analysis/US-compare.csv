@@ -1,0 +1,23 @@
+city,old,new,difference
+Atlanta,38.0,39.0,1.0
+Baltimore,14.0,46.0,32.0
+Boston,121.0,160.0,39.0
+Chicago,143.0,143.0,0.0
+Cleveland,18.0,49.0,31.0
+Los Angeles,98.0,104.0,6.0
+Miami,23.0,43.0,20.0
+New York,505.0,489.0,-16.0
+Newark,0.0,23.0,23.0
+Hudson,0.0,27.0,27.0
+Philadelphia,242.0,277.0,35.0
+San Francisco,50.0,50.0,0.0
+San Juan,16.0,16.0,0.0
+Washington,101.0,101.0,0.0
+Detroit,0.0,13.0,13.0
+Jacksonville,0.0,8.0,8.0
+Las Vegas,0.0,7.0,7.0
+Pittsburgh,0.0,51.0,51.0
+Saint Louis,0.0,27.0,27.0
+Saint Clair,0.0,11.0,11.0
+Seattle,0.0,32.0,32.0
+Minnesota,0.0,43.0,43.0

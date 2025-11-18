@@ -273,6 +273,8 @@ class analysis(GA):
                 fontdict=__TICK_FONT
                 )
             plt.yticks(rotation=0, size=__TICK_FONT_INT)
+
+            # Add PDF
             # Adjust minor x axis
             ax = plt.gca()
             ax.xaxis.set_major_locator(ticker.MultipleLocator(10))  # Major ticks every 10 unit
@@ -323,16 +325,28 @@ class analysisAll(analysis):
         self.data = data.sort_values(by=["city", "distance"])
 
 def runAnalysis(a: analysis | analysisAll, path: str) -> None:
-    # a.drawCurveAcc(path, ["ratioAll"], 7) # Draw the comparation cruve bteween charging, parking and baseline
-    # a.drawCurveAll(path, ["ratioAll", "ratioNormal", "ratioTerminal", "ratioTrans"], 7) # Draw charging and riding cruve
-    # a.drawCurveAll(path, ["ratioAll_PaR", "ratioNormal_PaR", "ratioTerminal_PaR", "ratioTrans_PaR"], 7) # Draw parking and riding cruve
+    # a.drawCurveAcc(path, ["ratioAll"], 7) # Draw the comparation cruve bteween charging, parking and baseline, not uesed in paper
+    # a.drawCurveAll(path, ["ratioAll", "ratioNormal", "ratioTerminal", "ratioTrans"], 7) # Draw charging and riding cruve, not used in paper
+    # a.drawCurveAll(path, ["ratioAll_PaR", "ratioNormal_PaR", "ratioTerminal_PaR", "ratioTrans_PaR"], 7) # Draw parking and riding cruve, not used in paper
+    # Figure 3 to 5
     a.drawHeatMap(path, ["ratioAll"], ["_PaR"], 7)
     
     return
 
 if __name__ == "__main__":
+    # Merge data
+    for country in ["CH"]: #, "US", "EU"
+        path = "..\\Export\\" + country + "\\"
+        metroPath = path + country + "_Metro.csv"
+        metro = pd.read_csv(metroPath, encoding="utf-8")
+        a = analysis(metro)
+        for t in ["All", "Normal", "Terminal", "Trans"]:
+            subdata = f"{country}_CaR_{t}"
+            a.addData(path + subdata, t, "PaR")
+        a.merge(path + country + ".csv")
+
     # Analysis using saved csv file (country by country)
-    for country in ["CH", "US", "EU"]: #
+    for country in ["CH"]: #, "US", "EU"
         path = "..\\Export\\" + country + "\\"
         metroPath = path + country + "_Metro.csv"
         dataPath = path + country + ".csv"

@@ -1,2 +1,4 @@
 .code-workspace
 __pycache__
+pyEnv.cmd
+requirements.txt

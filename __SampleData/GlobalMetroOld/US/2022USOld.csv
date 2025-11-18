@@ -1,0 +1,1370 @@
+city,地铁站名,线路名称,是否是换乘站,Lat,Lon,是否换乘站
+Atlanta-US,Airport†,"Red Line, Gold Line",yes,33.6407121,-84.4462272,
+Atlanta-US,Arts Center,"Red Line, Gold Line",yes,33.7891209,-84.3873247,
+Atlanta-US,Ashby,"Blue Line, Green Line",yes,33.7564795,-84.4173474,
+Atlanta-US,Avondale,Blue Line,no,33.7751541,-84.2822446,
+Atlanta-US,Bankhead†,Green Line,no,33.7722571,-84.4289408,
+Atlanta-US,Brookhaven/Oglethorpe,Gold Line,no,33.8601971,-84.3392787,
+Atlanta-US,Buckhead,Red Line,no,33.8489627,-84.3684019,
+Atlanta-US,Chamblee,Gold Line,no,33.8874715,-84.3063596,
+Atlanta-US,Civic Center,"Red Line, Gold Line",yes,33.7665094,-84.3875419,
+Atlanta-US,College Park,"Red Line, Gold Line",yes,33.6516643,-84.4487904,
+Atlanta-US,Decatur,Blue Line,no,33.7746104,-84.2960337,
+Atlanta-US,Dome/GWCC/Philips Arena/CNN Center,"Blue Line, Green Line",yes,33.7561897,-84.3975955,
+Atlanta-US,Doraville†,Gold Line,no,33.9030174,-84.2802057,
+Atlanta-US,Dunwoody,Red Line,no,33.9210622,-84.34433,
+Atlanta-US,East Lake,Blue Line,no,33.7651943,-84.3128808,
+Atlanta-US,East Point,"Red Line, Gold Line",yes,33.6770378,-84.4406902,
+Atlanta-US,Edgewood/Candler Park,"Blue Line, Green Line",yes,33.7619053,-84.3398665,
+Atlanta-US,Five Points*,"Red Line, Gold Line, Blue Line, Green Line",yes,33.7538868,-84.3915963,
+Atlanta-US,Garnett,"Red Line, Gold Line",yes,33.748163,-84.3961654,
+Atlanta-US,Georgia State,"Blue Line, Green Line",yes,33.7501652,-84.3859566,
+Atlanta-US,H. E. Holmes†,Blue Line,no,33.7545134,-84.4699478,
+Atlanta-US,Indian Creek†,Blue Line,no,33.769837,-84.2297224,
+Atlanta-US,Inman Park/Reynoldstown,"Blue Line, Green Line",yes,33.7578223,-84.3523602,
+Atlanta-US,Kensington,Blue Line,no,33.7726386,-84.2518908,
+Atlanta-US,King Memorial,"Blue Line, Green Line",yes,33.7500081,-84.3754514,
+Atlanta-US,Lakewood/Fort McPherson,"Red Line, Gold Line",yes,33.7001356,-84.4288957,
+Atlanta-US,Lenox,Gold Line,no,33.8455868,-84.3577479,
+Atlanta-US,Lindbergh Center,"Red Line, Gold Line",yes,33.8227538,-84.3695494,
+Atlanta-US,Medical Center,Red Line,no,33.9107658,-84.3514569,
+Atlanta-US,Midtown,"Red Line, Gold Line",yes,33.7810921,-84.3865175,
+Atlanta-US,North Avenue,"Red Line, Gold Line",yes,33.7721081,-84.3869361,
+Atlanta-US,North Springs†,Red Line,no,33.9451211,-84.3571916,
+Atlanta-US,Oakland City,"Red Line, Gold Line",yes,33.7167992,-84.425187,
+Atlanta-US,Peachtree Center,"Red Line, Gold Line",yes,33.7581455,-84.3876126,
+Atlanta-US,Sandy Springs,Red Line,no,33.9321993,-84.3520404,
+Atlanta-US,Vine City,"Blue Line, Green Line",yes,33.7565641,-84.4040115,
+Atlanta-US,West End,"Red Line, Gold Line",yes,33.7360535,-84.4136642,
+Atlanta-US,West Lake,Blue Line,no,33.7533207,-84.4453009,
+Baltimore-US,Owings Mills,Baltimore Metro SubwayLink,no,39.4073725,-76.7799141,
+Baltimore-US,Old Court,Baltimore Metro SubwayLink,no,39.3712742,-76.7441047,
+Baltimore-US,Milford Mill,Baltimore Metro SubwayLink,no,39.359624,-76.7205921,
+Baltimore-US,Reisterstown Plaza,Baltimore Metro SubwayLink,no,39.3519262,-76.7046658,
+Baltimore-US,Rogers Avenue,Baltimore Metro SubwayLink,no,39.344815,-76.691882,
+Baltimore-US,West Cold Spring,Baltimore Metro SubwayLink,no,39.3362694,-76.6723867,
+Baltimore-US,Mondawmin,Baltimore Metro SubwayLink,no,39.3178024,-76.6525247,
+Baltimore-US,Penn – North,Baltimore Metro SubwayLink,no,39.310296,-76.6424623,
+Baltimore-US,Upton – Avenue Market,Baltimore Metro SubwayLink,no,39.3039734,-76.6357499,
+Baltimore-US,State Center / Cultural Center,Baltimore Metro SubwayLink,no,39.3017915,-76.6228395,
+Baltimore-US,Lexington Market,Baltimore Metro SubwayLink,no,39.2922394,-76.6196356,
+Baltimore-US,Charles Center,Baltimore Metro SubwayLink,no,39.2895301,-76.6139275,
+Baltimore-US,Shot Tower,Baltimore Metro SubwayLink,no,39.2899838,-76.6060037,
+Baltimore-US,Johns Hopkins Hospital,Baltimore Metro SubwayLink,no,39.2978326,-76.594229,
+Boston-US,Airport ,  Blue Line,no,42.3743325,-71.0302794,
+Boston-US,Alewife ,  Red Line,no,42.3961502,-71.1406803,
+Boston-US,Allston Street,  Green Line (B),no,42.3486046,-71.1376139,
+Boston-US,Amory Street ,  Green Line (B),no,42.3509874,-71.1147441,
+Boston-US,Andrew ,  Red Line,no,42.3300185,-71.0571623,
+Boston-US,Aquarium ,  Blue Line,no,42.3595622,-71.0520083,
+Boston-US,Arlington ,  Green Line,no,42.3517307,-71.0712863,
+Boston-US,Ashmont ,"  Red Line (Ashmont), Red Line (Mattapan)",yes,42.2836794,-71.0630699,
+Boston-US,Assembly ,  Orange Line,no,42.3926452,-71.0772595,
+Boston-US,Babcock Street ,  Green Line (B),no,42.3516104,-71.1199247,
+Boston-US,Back Bay ,  Orange Line,no,42.3475422,-71.07499,
+Boston-US,Back of the Hill,  Green Line (E),no,42.3294298,-71.1110058,
+Boston-US,Beachmont ,  Blue Line,no,42.3973855,-70.9924965,
+Boston-US,Beaconsfield,  Green Line (D),no,42.3357966,-71.1405583,
+Boston-US,Blandford Street,  Green Line (B),no,42.3492264,-71.1000939,
+Boston-US,Boston College ,  Green Line (B),no,42.3401284,-71.1668292,
+Boston-US,Boston University Central ,  Green Line (B),no,42.3500779,-71.1071864,
+Boston-US,Boston University East ,  Green Line (B),no,42.3497275,-71.104313,
+Boston-US,Bowdoin ,  Blue Line,no,42.3613939,-71.0621197,
+Boston-US,Boylston ,  Green Line,no,42.3532022,-71.064534,
+Boston-US,Braintree ,  Red Line (Braintree),no,42.2075707,-71.0016289,
+Boston-US,Brandon Hall,  Green Line (C),no,42.3400343,-71.1287941,
+Boston-US,Brigham Circle ,  Green Line (E),no,42.3346084,-71.1036922,
+Boston-US,Broadway ,  Red Line,no,42.34236,-71.0571919,
+Boston-US,Brookline Hills ,  Green Line (D),no,42.3313086,-71.1266389,
+Boston-US,Brookline Village ,  Green Line (D),no,42.3325698,-71.1169495,
+Boston-US,Butler ,  Red Line (Mattapan),no,42.2724325,-71.0625194,
+Boston-US,Capen Street ,  Red Line (Mattapan),no,42.2676149,-71.0873955,
+Boston-US,Cedar Grove ,  Red Line (Mattapan),no,42.2795773,-71.060352,
+Boston-US,Central ,  Red Line,no,42.3653334,-71.1036028,
+Boston-US,Central Avenue ,  Red Line (Mattapan),no,42.2700364,-71.073491,
+Boston-US,Charles/MGH ,  Red Line,no,42.3612148,-71.0714527,
+Boston-US,Chelsea ,  Silver Line (SL3),no,42.3973004,-71.0424538,
+Boston-US,Chestnut Hill,  Green Line (D),no,42.3267628,-71.1646379,
+Boston-US,Chestnut Hill Avenue,  Green Line (B),no,42.338352,-71.1528837,
+Boston-US,Chinatown ,  Orange Line,no,42.3522166,-71.0626074,
+Boston-US,Chiswick Road,  Green Line (B),no,42.3406469,-71.1509237,
+Boston-US,Cleveland Circle ,  Green Line (C),no,42.3362291,-71.1490016,
+Boston-US,Community College ,  Orange Line,no,42.3736234,-71.0697182,
+Boston-US,Coolidge Corner ,  G+B2:B46en Line (C),no,42.3421622,-71.1213029,
+Boston-US,Copley ,  Green Line,no,42.3499964,-71.0777332,
+Boston-US,Davis ,  Red Line,no,42.3968234,-71.1226481,
+Boston-US,Dean Road,  Green Line (C),no,42.3377285,-71.1419597,
+Boston-US,Downtown Crossing ,"  Orange Line, Red Line",yes,42.3554309,-71.0605001,
+Boston-US,Eliot,  Green Line (D),no,42.3189632,-71.2165133,
+Boston-US,Englewood Avenue,  Green Line (C),no,42.3369849,-71.1456041,
+Boston-US,Fairbanks Street,  Green Line (C),no,42.3396668,-71.1311491,
+Boston-US,Fenway ,  Green Line (D),no,42.3451868,-71.1045987,
+Boston-US,Fenwood Road,  Green Line (E),no,42.3336167,-71.1059115,
+Boston-US,Fields Corner ,  Red Line (Ashmont),no,42.2999988,-71.0618652,
+Boston-US,Forest Hills ,  Orange Line,no,42.3006593,-71.1139175,
+Boston-US,Government Center,"  Blue Line, Green Line (B, C, D, E)",yes,42.3596262,-71.059488,
+Boston-US,Green Street ,  Orange Line,no,42.3103718,-71.1076496,
+Boston-US,Griggs Street/Long Avenue,  Green Line (B),no,42.3488466,-71.1343789,
+Boston-US,Harvard ,  Red Line,no,42.3733634,-71.1189464,
+Boston-US,Harvard Avenue ,  Green Line (B),no,42.3504313,-71.1310251,
+Boston-US,Hawes Street,  Green Line (C),no,42.3448062,-71.111459,
+Boston-US,Haymarket ,"  Orange Line, Green Line (D, E)",yes,42.3620909,-71.058025,
+Boston-US,Heath Street ,  Green Line (E),no,42.328273,-71.1103291,
+Boston-US,Hynes Convention Center,"  Green Line (B, C, D)",no,42.3480379,-71.0876524,
+Boston-US,Jackson Square ,  Orange Line,no,42.322596,-71.1002569,
+Boston-US,JFK/UMass ,  Red Line,no,42.3205447,-71.0521108,
+Boston-US,Kendall/MIT ,  Red Line,no,42.3624028,-71.0857205,
+Boston-US,Kenmore ,"  Green Line (B, C, D)",no,42.3489438,-71.0952999,
+Boston-US,Kent Street,  Green Line (C),no,42.3440124,-71.114352,
+Boston-US,Lechmere ,"  Green Line (D, E)",no,42.37128,-71.07615,
+Boston-US,Longwood ,  Green Line (D),no,42.3417067,-71.1099518,
+Boston-US,Longwood Medical Area ,  Green Line (E),no,42.3361773,-71.099545,
+Boston-US,Malden Center ,  Orange Line,no,42.4265943,-71.0743731,
+Boston-US,Massachusetts Avenue ,  Orange Line,no,42.341035,-71.0839643,
+Boston-US,Mattapan ,  Red Line (Mattapan),no,42.2675657,-71.0924273,
+Boston-US,Maverick ,  Blue Line,no,42.3691041,-71.0395764,
+Boston-US,Milton ,  Red Line (Mattapan),no,42.2703406,-71.0673729,
+Boston-US,Mission Park,  Green Line (E),no,42.3332023,-71.1094548,
+Boston-US,Museum of Fine Arts ,  Green Line (E),no,42.3379182,-71.0950201,
+Boston-US,Newton Centre ,  Green Line (D),no,42.3294468,-71.1923842,
+Boston-US,Newton Highlands ,  Green Line (D),no,42.3224872,-71.2054057,
+Boston-US,North Quincy ,  Red Line (Braintree),no,42.2758631,-71.0302411,
+Boston-US,North Station ,"  Orange Line, Green Line (D, E)",yes,42.3651771,-71.0603228,
+Boston-US,Northeastern University ,  Green Line (E),no,42.3400544,-71.0896964,
+Boston-US,Oak Grove ,  Orange Line,no,42.437512,-71.0708872,
+Boston-US,Orient Heights ,  Blue Line,no,42.3868747,-71.0047749,
+Boston-US,Packards Corner,  Green Line (B),no,42.3517437,-71.1253218,
+Boston-US,Park Street ,"  Red Line, Green Line",yes,42.3563732,-71.0624614,
+Boston-US,Porter ,  Red Line,no,42.3881267,-71.1188003,
+Boston-US,Prudential ,  Green Line (E),no,42.3456782,-71.0813915,
+Boston-US,Quincy Adams ,  Red Line (Braintree),no,42.233274,-71.0068894,
+Boston-US,Quincy Center ,  Red Line (Braintree),no,42.2519622,-71.0054942,
+Boston-US,Reservoir ,  Green Line (D),no,42.3351797,-71.1482358,
+Boston-US,Revere Beach ,  Blue Line,no,42.407816,-70.9925369,
+Boston-US,Riverside ,  Green Line (D),no,42.3373847,-71.2525527,
+Boston-US,Riverway,  Green Line (E),no,42.3315426,-71.1119043,
+Boston-US,Roxbury Crossing ,  Orange Line,no,42.3312546,-71.0955776,
+Boston-US,Ruggles ,  Orange Line,no,42.336654,-71.0894228,
+Boston-US,Savin Hill ,  Red Line (Ashmont),no,42.3108218,-71.0535376,
+Boston-US,Science Park ,"  Green Line (D, E)",no,42.3667525,-71.0678231,
+Boston-US,Shawmut ,  Red Line (Ashmont),no,42.2931386,-71.0658172,
+Boston-US,South Station ,  Red Line,no,42.352474,-71.0549737,
+Boston-US,South Street,  Green Line (B),no,42.3394672,-71.1572443,
+Boston-US,St. Mary's Street ,  Green Line (C),no,42.3459344,-71.1074235,
+Boston-US,St. Paul Street,  Green Line (C),no,42.3432287,-71.1171913,
+Boston-US,State ,"  Blue Line, Orange Line",yes,42.358796,-71.0577937,
+Boston-US,Stony Brook ,  Orange Line,no,42.3172274,-71.1043073,
+Boston-US,Suffolk Downs ,  Blue Line,no,42.39051,-70.9971875,
+Boston-US,Sullivan Square ,  Orange Line,no,42.3840946,-71.0769752,
+Boston-US,Summit Avenue,  Green Line (C),no,42.3410445,-71.1257713,
+Boston-US,Sutherland Road,  Green Line (B),no,42.341582,-71.1462998,
+Boston-US,Symphony,  Green Line (E),no,42.3427676,-71.0849488,
+Boston-US,Tappan Street,  Green Line (C),no,42.338532,-71.1384521,
+Boston-US,Tufts Medical Center ,  Orange Line,no,42.3496554,-71.0638505,
+Boston-US,Union Square ,  Green Line (E),no,42.3769871,-71.0939352,
+Boston-US,Valley Road,  Red Line (Mattapan),no,42.2683695,-71.0814766,
+Boston-US,Waban,  Green Line (D),no,42.3258346,-71.2305997,
+Boston-US,Warren Street,  Green Line (B),no,42.3486367,-71.1402269,
+Boston-US,Washington Square ,  Green Line (C),no,42.3395019,-71.1348841,
+Boston-US,Washington Street ,  Green Line (B),no,42.3440492,-71.1426244,
+Boston-US,Wellington ,  Orange Line,no,42.4016297,-71.0771978,
+Boston-US,Wollaston,  Red Line (Braintree),no,42.2667647,-71.020485,
+Boston-US,Wonderland,  Blue Line,no,42.4134836,-70.991668,
+Boston-US,Wood Island ,  Blue Line,no,42.3796991,-71.0228172,
+Boston-US,Woodland ,  Green Line (D),no,42.3328868,-71.2433312,
+Chicago-US,18th ,Pink,no,41.8578877,-87.6691951,
+Chicago-US,35th–Bronzeville–IIT ,Green,no,41.8312899,-87.6258603,
+Chicago-US,35th/Archer ,Orange,no,41.8294155,-87.6807582,
+Chicago-US,43rd ,Green,no,41.8167421,-87.6190527,
+Chicago-US,47th ,Green,no,41.8093513,-87.6188653,
+Chicago-US,47th ,Red,no,41.8103504,-87.6310468,
+Chicago-US,51st ,Green,no,41.8019141,-87.6185232,
+Chicago-US,54th/Cermak ,Pink,no,41.85177,-87.7565827,
+Chicago-US,63rd ,Red,no,41.7808889,-87.6310219,
+Chicago-US,69th ,Red,no,41.768939,-87.625824,
+Chicago-US,79th ,Red,no,41.7506879,-87.6251831,
+Chicago-US,87th ,Red,no,41.7360865,-87.6247647,
+Chicago-US,95th/Dan Ryan ,Red,no,41.7217117,-87.624395,
+Chicago-US,Adams/Wabash ,"Brown, Green, Orange, Pink, Purple",yes,41.8796269,-87.6261185,
+Chicago-US,Addison ,Blue,no,41.9472819,-87.7190061,
+Chicago-US,Addison ,Brown,no,41.9470516,-87.6747689,
+Chicago-US,Addison ,Red,no,41.9475198,-87.6536271,
+Chicago-US,Argyle,Red,no,41.9734115,-87.6585658,
+Chicago-US,Armitage ,"Brown, Purple",yes,41.9182415,-87.6526308,
+Chicago-US,Ashland ,"Green, Pink",yes,41.8853413,-87.6662819,
+Chicago-US,Ashland/63rd ,Green,no,41.7789527,-87.663857,
+Chicago-US,Ashland ,Orange,no,41.8393864,-87.6652585,
+Chicago-US,Austin,Blue,no,41.8708988,-87.7767955,
+Chicago-US,Austin,Green,no,41.8873138,-87.7743606,
+Chicago-US,Belmont,Blue,no,41.9391414,-87.7125131,
+Chicago-US,Belmont ,"Brown, Purple, Red",yes,41.9397964,-87.6533276,
+Chicago-US,Berwyn,Red,no,41.977833,-87.658683,
+Chicago-US,Bryn Mawr,Red,no,41.9835208,-87.6588407,
+Chicago-US,California,Blue,no,41.9221873,-87.697195,
+Chicago-US,California ,Green,no,41.8842639,-87.6964047,
+Chicago-US,California ,Pink,no,41.8542933,-87.6947406,
+Chicago-US,Central ,Green,no,41.8874269,-87.7655456,
+Chicago-US,Central,Purple,no,42.0641381,-87.6858108,
+Chicago-US,Central Park ,Pink,no,41.8540073,-87.714946,
+Chicago-US,Cermak–Chinatown ,Red,no,41.8538308,-87.6311761,
+Chicago-US,Cermak–McCormick Place ,Green,no,41.8522342,-87.6264127,
+Chicago-US,Chicago,Blue,no,41.8961978,-87.6553579,
+Chicago-US,Chicago ,"Brown, Purple",yes,41.8964706,-87.6357194,
+Chicago-US,Chicago ,Red,no,41.8966529,-87.6281533,
+Chicago-US,Cicero,Blue,no,41.871599,-87.7469459,
+Chicago-US,Cicero ,Green,no,41.8865719,-87.7451325,
+Chicago-US,Cicero ,Pink,no,41.8518987,-87.745501,
+Chicago-US,Clark/Division ,Red,no,41.9038971,-87.6322077,
+Chicago-US,Clark/Lake ,"Blue, Brown, Green, Orange, Pink, Purple",yes,41.8857568,-87.6310418,
+Chicago-US,Clinton ,Blue,no,41.8755678,-87.6409722,
+Chicago-US,Clinton ,"Green, Pink",yes,41.8857166,-87.6419195,
+Chicago-US,Conservatory–Central Park Drive ,Green,no,41.8849779,-87.7168892,
+Chicago-US,Cottage Grove ,Green,no,41.7804151,-87.6059877,
+Chicago-US,Cumberland ,Blue,no,41.984284,-87.8381565,
+Chicago-US,Damen,Blue,no,41.9098732,-87.6776202,
+Chicago-US,Damen ,Brown,no,41.9664089,-87.6791399,
+Chicago-US,Damen ,Pink,no,41.8544975,-87.6768033,
+Chicago-US,Davis ,Purple,no,42.0478699,-87.6837037,
+Chicago-US,Dempster,Purple,no,42.0416422,-87.681742,
+Chicago-US,Dempster–Skokie ,Yellow,no,42.0390464,-87.7520594,
+Chicago-US,Diversey ,"Brown, Purple",yes,41.9325905,-87.6531259,
+Chicago-US,Division,Blue,no,41.9035505,-87.6672159,
+Chicago-US,Forest Park ,Blue,no,41.8742698,-87.8167554,
+Chicago-US,Foster,Purple,no,42.0539501,-87.6836726,
+Chicago-US,Francisco ,Brown,no,41.9661531,-87.7017658,
+Chicago-US,Fullerton ,"Brown, Purple, Red",yes,41.9252001,-87.6528122,
+Chicago-US,Garfield ,Green,no,41.7949554,-87.6183299,
+Chicago-US,Garfield ,Red,no,41.7947032,-87.6311867,
+Chicago-US,Grand,Blue,no,41.8913796,-87.6478466,
+Chicago-US,Grand ,Red,no,41.8918117,-87.6280753,
+Chicago-US,Granville ,Red,no,41.9943851,-87.6591827,
+Chicago-US,Halsted ,Green,no,41.7790375,-87.6445259,
+Chicago-US,Halsted ,Orange,no,41.8469108,-87.6481333,
+Chicago-US,Harlem,Blue,no,41.8735427,-87.8068832,
+Chicago-US,Harlem ,Blue,no,41.9823273,-87.8088359,
+Chicago-US,Harlem/Lake ,Green,no,41.8868675,-87.8040124,
+Chicago-US,Harold Washington Library–State/Van Buren ,"Brown, Orange, Pink, Purple",yes,41.8769288,-87.6286681,
+Chicago-US,Harrison,Red,no,41.8738512,-87.6275824,
+Chicago-US,Howard ,"Red, Purple, Yellow",yes,42.0190502,-87.6729134,
+Chicago-US,Illinois Medical District ,Blue,no,41.8756639,-87.673256,
+Chicago-US,Indiana ,Green,no,41.8217983,-87.621299,
+Chicago-US,Irving Park ,Blue,no,41.9528456,-87.7290161,
+Chicago-US,Irving Park ,Brown,no,41.9540657,-87.6749434,
+Chicago-US,Jackson ,Blue,no,41.8782004,-87.6293261,
+Chicago-US,Jackson ,Red,no,41.878227,-87.627698,
+Chicago-US,Jarvis,Red,no,42.0160012,-87.669268,
+Chicago-US,Jefferson Park ,Blue,no,41.971018,-87.7625262,
+Chicago-US,Kedzie ,Brown,no,41.9660985,-87.7091267,
+Chicago-US,Kedzie ,Green,no,41.8842876,-87.7062325,
+Chicago-US,Kedzie ,Orange,no,41.8043554,-87.7043147,
+Chicago-US,Kedzie ,Pink,no,41.8541965,-87.7057414,
+Chicago-US,Kedzie–Homan ,Blue,no,41.8741351,-87.7084286,
+Chicago-US,Kimball ,Brown,no,41.9680905,-87.7131924,
+Chicago-US,King Drive ,Green,no,41.7802058,-87.6156434,
+Chicago-US,Kostner ,Pink,no,41.8537498,-87.7331954,
+Chicago-US,Lake ,Red,no,41.8845237,-87.6278918,
+Chicago-US,Laramie ,Green,no,41.887196,-87.7553478,
+Chicago-US,LaSalle ,Blue,no,41.8756443,-87.6312369,
+Chicago-US,LaSalle/Van Buren ,"Brown, Orange, Pink, Purple",yes,41.876854,-87.6317875,
+Chicago-US,Lawrence,Red,no,41.9689268,-87.6584393,
+Chicago-US,Linden ,Purple,no,42.0729109,-87.6905973,
+Chicago-US,Logan Square ,Blue,no,41.9302678,-87.709328,
+Chicago-US,Loyola ,Red,no,42.0011453,-87.661069,
+Chicago-US,Main ,Purple,no,42.0331862,-87.6796482,
+Chicago-US,Merchandise Mart ,"Brown, Purple",yes,41.8886631,-87.6339805,
+Chicago-US,Midway ,Orange,no,41.7866971,-87.7380542,
+Chicago-US,Monroe,Blue,no,41.880744,-87.6294101,
+Chicago-US,Monroe,Red,no,41.8807984,-87.6277409,
+Chicago-US,Montrose ,Blue,no,41.9614126,-87.7435493,
+Chicago-US,Montrose ,Brown,no,41.96148,-87.6751324,
+Chicago-US,Morgan ,"Green, Pink",yes,41.8855988,-87.6514744,
+Chicago-US,Morse,Red,no,42.0080864,-87.6659686,
+Chicago-US,North/Clybourn,Red,no,41.9105593,-87.6490089,
+Chicago-US,Noyes,Purple,no,42.05847,-87.683465,
+Chicago-US,O'Hare ,Blue,no,41.9779212,-87.9031406,
+Chicago-US,Oak Park,Blue,no,41.872089,-87.7915458,
+Chicago-US,Oak Park,Green,no,41.8869987,-87.7937877,
+Chicago-US,Oakton–Skokie ,Yellow,no,42.027104,-87.747566,
+Chicago-US,Paulina ,Brown,no,41.9436936,-87.6717045,
+Chicago-US,Polk ,Pink,no,41.8713869,-87.6695728,
+Chicago-US,Pulaski,Blue,no,41.873879,-87.7278948,
+Chicago-US,Pulaski ,Green,no,41.8854937,-87.7261097,
+Chicago-US,Pulaski ,Orange,no,41.7998813,-87.7245078,
+Chicago-US,Pulaski ,Pink,no,41.8538497,-87.724371,
+Chicago-US,Quincy ,"Brown, Orange, Pink, Purple",yes,41.878862,-87.6337415,
+Chicago-US,Racine,Blue,no,41.8758947,-87.6593253,
+Chicago-US,Ridgeland,Green,no,41.887195,-87.7837068,
+Chicago-US,Rockwell ,Brown,no,41.9662193,-87.6944936,
+Chicago-US,Roosevelt ,"Green, Orange, Red",yes,41.8674355,-87.6266447,
+Chicago-US,Rosemont ,Blue,no,41.9835558,-87.8595389,
+Chicago-US,Sedgwick ,"Brown, Purple",yes,41.9104056,-87.6388065,
+Chicago-US,Sheridan,Red,no,41.9538873,-87.654928,
+Chicago-US,South Boulevard,Purple,no,42.0273939,-87.6784193,
+Chicago-US,Southport ,Brown,no,41.9438161,-87.6635881,
+Chicago-US,Sox–35th ,Red,no,41.8327586,-87.6307006,
+Chicago-US,State/Lake ,"Brown, Green, Orange, Pink, Purple",yes,41.8857506,-87.6278662,
+Chicago-US,Thorndale,Red,no,41.9901837,-87.6590539,
+Chicago-US,UIC–Halsted ,Blue,no,41.8754875,-87.6496998,
+Chicago-US,Washington ,Blue,no,41.8832591,-87.6294739,
+Chicago-US,Washington/​Wabash ,"Brown, Green, Orange, Pink, Purple",yes,41.8828687,-87.6261993,
+Chicago-US,Washington/Wells ,"Brown, Orange, Pink, Purple",yes,41.8826344,-87.6338448,
+Chicago-US,Wellington ,"Brown, Purple",yes,41.9364321,-87.6532711,
+Chicago-US,Western ,Blue,no,41.9160135,-87.6870816,
+Chicago-US,Western,Blue,no,41.8755235,-87.6886187,
+Chicago-US,Western ,Brown,no,41.9662691,-87.6885491,
+Chicago-US,Western ,Orange,no,41.804676,-87.684347,
+Chicago-US,Western ,Pink,no,41.8543704,-87.684898,
+Chicago-US,Wilson ,"Purple, Red",yes,41.9647782,-87.6579209,
+Cleveland-US,Airport,Red Line,no,41.4111337,-81.8381721,
+Cleveland-US,Brookpark,Red Line,no,41.4197915,-81.8238184,
+Cleveland-US,Puritas–West 150th,Red Line,no,41.4409867,-81.8059391,
+Cleveland-US,West Park,Red Line,no,41.456879,-81.7927211,
+Cleveland-US,Triskett,Red Line,no,41.4662124,-81.7848686,
+Cleveland-US,West 117th–Madison,Red Line,no,41.4756486,-81.7688276,
+Cleveland-US,West Boulevard–Cudell,Red Line,no,41.4801833,-81.7527262,
+Cleveland-US,West 65th–Lorain,Red Line,no,41.4766551,-81.7282997,
+Cleveland-US,West 25th–Ohio City,Red Line,no,41.4847091,-81.7012276,
+Cleveland-US,Tower City,Red Line,no,41.4977756,-81.694568,
+Cleveland-US,Tri-C–Campus District,Red Line,no,41.4862489,-81.665409,
+Cleveland-US,East 55th,Red Line,no,41.4804457,-81.6521346,
+Cleveland-US,East 79th,Red Line,no,41.4858836,-81.633798,
+Cleveland-US,East 105th–Quincy,Red Line,no,41.493679,-81.6158381,
+Cleveland-US,Cedar–University,Red Line,no,41.4999967,-81.6053193,
+Cleveland-US,Little Italy–University Circle,Red Line,no,41.5091093,-81.6004893,
+Cleveland-US,Superior,Red Line,no,41.5232341,-81.5919958,
+Cleveland-US,Windermere,Red Line,no,41.5305093,-81.5850152,
+Los Angeles-US,1st Street, A Line,,33.7687147, -118.1893988,no
+Los Angeles-US,5th Street, A Line,,33.7735381, -118.1893802,no
+Los Angeles-US,7th Street/Metro Center," A, B, D, E Line",,34.0486587, -118.2587430,yes
+Los Angeles-US,17th Street/Santa Monica College, E Line,,34.0231598, -118.4803790,no
+Los Angeles-US,26th Street/Bergamot, E Line,,34.0280089, -118.4690898,no
+Los Angeles-US,103rd Street/Watts Towers, A Line,,33.942642, -118.2431680,no
+Los Angeles-US,Allen, L Line,,34.1524415, -118.1135600,no
+Los Angeles-US,Anaheim Street, A Line,,33.7819667, -118.1893846,no
+Los Angeles-US,APU/Citrus College, L Line,,34.1371127, -117.8908309,no
+Los Angeles-US,Arcadia, L Line,,34.1428827, -118.0292409,no
+Los Angeles-US,Artesia, A Line,,33.8764585, -118.2226502,no
+Los Angeles-US,Atlantic, L Line,,34.0334012, -118.1545923,no
+Los Angeles-US,Avalon, C Line,,33.9274857, -118.2652233,no
+Los Angeles-US,Aviation/LAX, C Line,,33.9296211, -118.3772137,no
+Los Angeles-US,Azusa Downtown, L Line,,34.1359172, -117.9067015,no
+Los Angeles-US,Chinatown, L Line,,34.0637846, -118.2358713,no
+Los Angeles-US,Civic Center/Grand Park," B, D Line",,34.0548968, -118.2460939,yes
+Los Angeles-US,Compton, A Line,,33.8979265, -118.2243044,no
+Los Angeles-US,Crenshaw, C Line,,33.9252122, -118.3265295,no
+Los Angeles-US,Culver City, E Line,,34.0278787, -118.3888493,no
+Los Angeles-US,Del Amo, A Line,,33.8478836, -118.2108753,no
+Los Angeles-US,Del Mar, L Line,,34.1419849, -118.1482104,no
+Los Angeles-US,Douglas, C Line,,33.9051265, -118.3829334,no
+Los Angeles-US,Downtown Inglewood, K Line,,33.9672685, -118.3514230,no
+Los Angeles-US,Downtown Long Beach, A Line,,33.7680387, -118.1929586,no
+Los Angeles-US,Downtown Santa Monica, E Line,,34.0136604, -118.4916499,no
+Los Angeles-US,Duarte/City of Hope, L Line,,34.1325154, -117.9675010,no
+Los Angeles-US,East LA Civic Center, L Line,,34.0333643, -118.1612157,no
+Los Angeles-US,El Segundo, C Line,,33.9162001, -118.3867319,no
+Los Angeles-US,Expo/Bundy, E Line,,34.0316631, -118.4531105,no
+Los Angeles-US,Expo/Crenshaw," E, K Line",,34.0219818, -118.3348500,yes
+Los Angeles-US,Expo/La Brea, E Line,,34.0248103, -118.3551479,no
+Los Angeles-US,Expo/Sepulveda, E Line,,34.0354335, -118.4341435,no
+Los Angeles-US,Expo/Vermont, E Line,,34.01825, -118.2917403,no
+Los Angeles-US,Expo/Western, E Line,,34.0182911, -118.3087112,no
+Los Angeles-US,Expo Park/USC, E Line,,34.0182377, -118.2856994,no
+Los Angeles-US,Fairview Heights, K Line,,33.9751834, -118.3362720,no
+Los Angeles-US,Farmdale, E Line,,34.0238958, -118.3462035,no
+Los Angeles-US,Fillmore, L Line,,34.1335508, -118.1481170,no
+Los Angeles-US,Firestone, A Line,,33.959948, -118.2432163,no
+Los Angeles-US,Florence, A Line,,33.9741588, -118.2432856,no
+Los Angeles-US,Grand/LATTC, A Line,,34.0331172, -118.2692364,no
+Los Angeles-US,Harbor Freeway, C Line,,33.9287193, -118.2812626,no
+Los Angeles-US,Hawthorne/Lennox, C Line,,33.9335004, -118.3519756,no
+Los Angeles-US,Heritage Square, L Line,,34.087127, -118.2132887,no
+Los Angeles-US,Highland Park, L Line,,34.1112098, -118.1925442,no
+Los Angeles-US,Hollywood/Highland, B Line,,34.1017097, -118.3392518,no
+Los Angeles-US,Hollywood/Vine, B Line,,34.1014183, -118.3257421,no
+Los Angeles-US,Hollywood/Western, B Line,,34.1015578, -118.3090574,no
+Los Angeles-US,Hyde Park, K Line,,33.9883602, -118.3308410,no
+Los Angeles-US,Indiana, L Line,,34.0342673, -118.1921717,no
+Los Angeles-US,Irwindale, L Line,,34.128813, -117.9333393,no
+Los Angeles-US,Jefferson/USC, E Line,,34.02213, -118.2781224,no
+Los Angeles-US,La Cienega/Jefferson, E Line,,34.0263634, -118.3721521,no
+Los Angeles-US,Lake, L Line,,34.1518118, -118.1321159,no
+Los Angeles-US,Lakewood Boulevard, C Line,,33.9130799, -118.1406419,no
+Los Angeles-US,LATTC/Ortho Institute, E Line,,34.0291645, -118.2735701,no
+Los Angeles-US,Leimert Park, K Line,,34.0046294, -118.3326690,no
+Los Angeles-US,Lincoln/Cypress, L Line,,34.0807497, -118.2207106,no
+Los Angeles-US,Long Beach Boulevard, C Line,,33.9248873, -118.2099680,no
+Los Angeles-US,Maravilla, L Line,,34.0332976, -118.1681507,no
+Los Angeles-US,Mariachi Plaza, L Line,,34.0474812, -118.2190832,no
+Los Angeles-US,Mariposa, C Line,,33.9232168, -118.3875790,no
+Los Angeles-US,Martin Luther King Jr., K Line,,34.0102787, -118.3353790,no
+Los Angeles-US,Memorial Park, L Line,,34.148477, -118.1474604,no
+Los Angeles-US,Monrovia, L Line,,34.1331459, -118.0034453,no
+Los Angeles-US,North Hollywood, B Line,,34.168894, -118.3766314,no
+Los Angeles-US,Norwalk, C Line,,33.9140388, -118.1046324,no
+Los Angeles-US,Pacific Avenue, A Line,,33.7723341, -118.1937561,no
+Los Angeles-US,Pacific Coast Highway, A Line,,33.7894805, -118.1893842,no
+Los Angeles-US,Palms, E Line,,34.0293247, -118.4042754,no
+Los Angeles-US,Pershing Square," B, D Line",,34.0496322, -118.2510126,yes
+Los Angeles-US,Pico," A, E Line",,34.0406717, -118.2661915,yes
+Los Angeles-US,Pico/Aliso, L Line,,34.0476438, -118.2260163,no
+Los Angeles-US,Redondo Beach, C Line,,33.8945006, -118.3689778,no
+Los Angeles-US,San Pedro Street, A Line,,34.0270236, -118.2559563,no
+Los Angeles-US,Sierra Madre Villa, L Line,,34.1484546, -118.0814884,no
+Los Angeles-US,Slauson, A Line,,33.9891467, -118.2434203,no
+Los Angeles-US,Soto, L Line,,34.0436132, -118.2102316,no
+Los Angeles-US,South Pasadena, L Line,,34.1152538, -118.1577981,no
+Los Angeles-US,Southwest Museum, L Line,,34.0982784, -118.2066457,no
+Los Angeles-US,Union Station," B, D, L Line",,39.75363, -105.0007481,yes
+Los Angeles-US,Universal City/Studio City, B Line,,34.1393585, -118.3623590,no
+Los Angeles-US,Vermont/Athens, C Line,,33.9286905, -118.2918683,no
+Los Angeles-US,Vermont/Beverly, B Line,,34.0766342, -118.2919583,no
+Los Angeles-US,Vermont/Santa Monica, B Line,,34.090641, -118.2920440,no
+Los Angeles-US,Vermont/Sunset, B Line,,34.0983459, -118.2915579,no
+Los Angeles-US,Vernon, A Line,,34.0033442, -118.2433076,no
+Los Angeles-US,Wardlow, A Line,,33.8198514, -118.1960776,no
+Los Angeles-US,Washington, A Line,,34.0200544, -118.2430755,no
+Los Angeles-US,Westchester/Veterans, K Line,,33.961979, -118.3745670,no
+Los Angeles-US,Westlake/MacArthur Park," B, D Line",,34.05674, -118.2754786,yes
+Los Angeles-US,Westwood/Rancho Park, E Line,,34.0368181, -118.4245788,no
+Los Angeles-US,Willow Street, A Line,,33.8066989, -118.1896702,no
+Los Angeles-US,Willowbrook/Rosa Parks," A, C Line",,33.9282894, -118.2383745,yes
+Los Angeles-US,Wilshire/Normandie, D Line,,34.0614318, -118.3009228,no
+Los Angeles-US,Wilshire/Vermont," B, D Line",,34.0626617, -118.2906103,yes
+Los Angeles-US,Wilshire/Western, D Line,,34.0621149, -118.3088618,no
+Miami-US,Allapattah,"  Green, Orange Line",,25.808706, -80.2154675,yes
+Miami-US,Brickell,"  Green, Orange Line",,25.7637907, -80.1954604,yes
+Miami-US,Brownsville,  Green Line,,25.8220299, -80.2407144,no
+Miami-US,Civic Center,"  Green, Orange Line",,25.7896904, -80.2150352,yes
+Miami-US,Coconut Grove,"  Green, Orange Line",,25.7398164, -80.2388468,yes
+Miami-US,Culmer,"  Green, Orange Line",,25.7845569, -80.2075405,yes
+Miami-US,Dadeland North,"  Green, Orange Line",,25.691956, -80.3051175,yes
+Miami-US,Dadeland South,"  Green, Orange Line",,25.6850336, -80.3136848,yes
+Miami-US,Douglas Road,"  Green, Orange Line",,25.7327678, -80.2548678,yes
+Miami-US,Dr. Martin Luther King Jr.,  Green Line,,25.8323868, -80.2411958,no
+Miami-US,Earlington Heights,"  Green, Orange Line",,25.8124614, -80.2299699,yes
+Miami-US,Government Center,"  Green, Orange Line",,25.7760632, -80.1961058,yes
+Miami-US,Hialeah,  Green Line,,25.8411684, -80.2790512,no
+Miami-US,Historic Overtown/Lyric Theatre,"  Green, Orange Line",,25.7809166, -80.1962822,yes
+Miami-US,Miami International Airport,  Orange Line,,25.7979241, -80.2586662,no
+Miami-US,Northside,  Green Line,,25.8458214, -80.2488239,no
+Miami-US,Okeechobee,  Green Line,,25.8398296, -80.3015392,no
+Miami-US,Palmetto,  Green Line,,25.8433852, -80.3236991,no
+Miami-US,Santa Clara,"  Green, Orange Line",,25.7957871, -80.2152009,yes
+Miami-US,South Miami,"  Green, Orange Line",,25.7050582, -80.2890739,yes
+Miami-US,Tri-Rail,  Green Line,,25.8454673, -80.2596553,no
+Miami-US,University,"  Green, Orange Line",,25.7148148, -80.2769765,yes
+Miami-US,Vizcaya,"  Green, Orange Line",,25.7497117, -80.2117456,yes
+New York-US,Van Cortlandt Park - 242 St,NYCS-IRT Broadway–Seventh Avenue Line,否,40.8894635,-73.898489,
+New York-US,238 St,NYCS-IRT Broadway–Seventh Avenue Line,否,40.8849733,-73.900691,
+New York-US,231 St,NYCS-IRT Broadway–Seventh Avenue Line,否,40.8789536,-73.904797,
+New York-US,Marble Hill - 225 St,NYCS-IRT Broadway–Seventh Avenue Line,否,40.8742974,-73.9101947,
+New York-US,215 St,NYCS-IRT Broadway–Seventh Avenue Line,否,40.8695689,-73.9151877,
+New York-US,207 St,NYCS-IRT Broadway–Seventh Avenue Line,否,40.8644038,-73.9189683,
+New York-US,Dyckman St (IRT Broadway–Seventh Avenue Line),NYCS-IRT Broadway–Seventh Avenue Line,否,40.8609284,-73.9252547,
+New York-US,191 St,NYCS-IRT Broadway–Seventh Avenue Line,否,40.8552578,-73.9293981,
+New York-US,181 St (IRT Broadway–Seventh Avenue Line),NYCS-IRT Broadway–Seventh Avenue Line,否,40.849301,-73.9337563,
+New York-US,168 St (IRT Broadway–Seventh Avenue Line),NYCS-IRT Broadway–Seventh Avenue Line,否,40.8405084,-73.9402259,
+New York-US,157 St,NYCS-IRT Broadway–Seventh Avenue Line,否,40.8340678,-73.944916,
+New York-US,145 St (IRT Broadway–Seventh Avenue Line 1),NYCS-IRT Broadway–Seventh Avenue Line,否,40.8264999,-73.9504381,
+New York-US,137 St - City College,NYCS-IRT Broadway–Seventh Avenue Line,否,40.8214204,-73.9541465,
+New York-US,125 St (IRT Broadway–Seventh Avenue Line 1),NYCS-IRT Broadway–Seventh Avenue Line,否,40.8157366,-73.9582809,
+New York-US,116 St - Columbia University,NYCS-IRT Broadway–Seventh Avenue Line,否,40.8080596,-73.9639029,
+New York-US,Cathedral Pkwy (110 St) (IRT Broadway–Seventh Avenue Line),NYCS-IRT Broadway–Seventh Avenue Line,否,40.8042494,-73.9665992,
+New York-US,103 St (IRT Broadway–Seventh Avenue Line),NYCS-IRT Broadway–Seventh Avenue Line,否,40.7991792,-73.9685325,
+New York-US,96 St (IRT Broadway–Seventh Avenue Line),NYCS-IRT Broadway–Seventh Avenue Line,否,40.7943793,-73.9719996,
+New York-US,86 St (IRT Broadway–Seventh Avenue Line),NYCS-IRT Broadway–Seventh Avenue Line,否,40.7883389,-73.9765049,
+New York-US,79 St (IRT Broadway–Seventh Avenue Line),NYCS-IRT Broadway–Seventh Avenue Line,否,40.7838618,-73.9799918,
+New York-US,72 St (IRT Broadway–Seventh Avenue Line),NYCS-IRT Broadway–Seventh Avenue Line,否,40.7790162,-73.9818557,
+New York-US,66 St - Lincoln Center,NYCS-IRT Broadway–Seventh Avenue Line,否,40.7732766,-73.9822029,
+New York-US,59 St - Columbus Circle (IRT Broadway–Seventh Avenue Line),NYCS-IRT Broadway–Seventh Avenue Line,否,40.7683815,-73.9819162,
+New York-US,50 St (IRT Broadway–Seventh Avenue Line),NYCS-IRT Broadway–Seventh Avenue Line,否,40.7616618,-73.9838968,
+New York-US,Times Sq - 42 St (IRT Broadway–Seventh Avenue Line),NYCS-IRT Broadway–Seventh Avenue Line,否,40.7552477,-73.9875424,
+New York-US,34 St - Penn Station (IRT Broadway–Seventh Avenue Line),NYCS-IRT Broadway–Seventh Avenue Line,否,40.7510053,-73.9906229,
+New York-US,28 St (IRT Broadway–Seventh Avenue Line),NYCS-IRT Broadway–Seventh Avenue Line,否,40.747217,-73.9933621,
+New York-US,23 St (IRT Broadway–Seventh Avenue Line),NYCS-IRT Broadway–Seventh Avenue Line,否,40.7440859,-73.995641,
+New York-US,18 St,NYCS-IRT Broadway–Seventh Avenue Line,否,40.7410394,-73.9978652,
+New York-US,14 St (IRT Broadway–Seventh Avenue Line),NYCS-IRT Broadway–Seventh Avenue Line,否,40.7379008,-74.0001587,
+New York-US,Christopher St - Sheridan Sq,NYCS-IRT Broadway–Seventh Avenue Line,否,40.7336088,-74.0028294,
+New York-US,Houston St,NYCS-IRT Broadway–Seventh Avenue Line,否,40.7285993,-74.0053077,
+New York-US,Canal St (IRT Broadway–Seventh Avenue Line),NYCS-IRT Broadway–Seventh Avenue Line,否,40.7225571,-74.0062894,
+New York-US,Franklin St ,NYCS-IRT Broadway–Seventh Avenue Line,否,40.7191096,-74.0069428,
+New York-US,Chambers St (IRT Broadway–Seventh Avenue Line),NYCS-IRT Broadway–Seventh Avenue Line,否,40.7155081,-74.0092451,
+New York-US,WTC Cortlandt,NYCS-IRT Broadway–Seventh Avenue Line,否,40.7111153,-74.0122698,
+New York-US,Rector St (IRT Broadway–Seventh Avenue Line),NYCS-IRT Broadway–Seventh Avenue Line,否,40.7073629,-74.01385,
+New York-US,South Ferry,NYCS-IRT Broadway–Seventh Avenue Line,否,40.7017103,-74.0131489,
+New York-US,Wakefield - 241 St,NYCS-IRT Broadway–Seventh Avenue Line,否,40.9031569,-73.8506021,
+New York-US,Nereid Av,"NYCS-IRT Broadway–Seventh Avenue Line, IRT Lexington Avenue Line",是,40.8984462,-73.8543357,
+New York-US,233 St,"NYCS-IRT Broadway–Seventh Avenue Line, IRT Lexington Avenue Line",是,40.8933832,-73.8574009,
+New York-US,225 St,"NYCS-IRT Broadway–Seventh Avenue Line, IRT Lexington Avenue Line",是,40.8879866,-73.8603882,
+New York-US,219 St,"NYCS-IRT Broadway–Seventh Avenue Line, IRT Lexington Avenue Line",是,40.8838215,-73.8626982,
+New York-US,"Gun Hill Rd (IRT Broadway–Seventh Avenue Line, IRT Lexington Avenue)","NYCS-IRT Broadway–Seventh Avenue Line, IRT Lexington Avenue Line",是,40.8776606,-73.8663902,
+New York-US,Burke Av,"NYCS-IRT Broadway–Seventh Avenue Line, IRT Lexington Avenue Line",是,40.8714348,-73.8671748,
+New York-US,Allerton Av,"NYCS-IRT Broadway–Seventh Avenue Line, IRT Lexington Avenue Line",是,40.8654299,-73.8673652,
+New York-US,"Pelham Pkwy (IRT Broadway–Seventh Avenue Line, IRT Lexington Avenue)","NYCS-IRT Broadway–Seventh Avenue Line, IRT Lexington Avenue Line",是,40.857229,-73.8676281,
+New York-US,Bronx Park East ,"NYCS-IRT Broadway–Seventh Avenue Line, IRT Lexington Avenue Line",是,40.8489744,-73.8683841,
+New York-US,E 180 St,"NYCS-IRT Broadway–Seventh Avenue Line, IRT Lexington Avenue Line",是,40.8418946,-73.8735195,
+New York-US,West Farms Sq - E Tremont Av,"NYCS-IRT Broadway–Seventh Avenue Line, IRT Lexington Avenue Line",是,40.8406659,-73.8796826,
+New York-US,174 St,"NYCS-IRT Broadway–Seventh Avenue Line, IRT Lexington Avenue Line",是,40.8373195,-73.8877378,
+New York-US,Freeman St,"NYCS-IRT Broadway–Seventh Avenue Line, IRT Lexington Avenue Line",是,40.8301265,-73.8918422,
+New York-US,Simpson St,"NYCS-IRT Broadway–Seventh Avenue Line, IRT Lexington Avenue Line",是,40.824126,-73.8929633,
+New York-US,Intervale Av,"NYCS-IRT Broadway–Seventh Avenue Line, IRT Lexington Avenue Line",是,40.8221585,-73.8967991,
+New York-US,"Prospect Av (IRT Broadway–Seventh Avenue Line, IRT Lexington Avenue Line)","NYCS-IRT Broadway–Seventh Avenue Line, IRT Lexington Avenue Line",是,40.8196507,-73.9016566,
+New York-US,Jackson Av,"NYCS-IRT Broadway–Seventh Avenue Line, IRT Lexington Avenue Line",是,40.816519,-73.90778,
+New York-US,3 Av - 149 St,"NYCS-IRT Broadway–Seventh Avenue Line, IRT Lexington Avenue Line",是,40.8160747,-73.917684,
+New York-US,"149 St - Grand Concourse (IRT Broadway–Seventh Avenue Line, IRT Lexington Avenue)","NYCS-IRT Broadway–Seventh Avenue Line, IRT Lexington Avenue Line",是,40.8185039,-73.9270562,
+New York-US,135 St (IRT Broadway–Seventh Avenue Line),NYCS-IRT Broadway–Seventh Avenue Line,否,40.8141229,-73.9408924,
+New York-US,"125 St (IRT Broadway–Seventh Avenue Line 2,3)",NYCS-IRT Broadway–Seventh Avenue Line,否,40.8077529,-73.9455416,
+New York-US,116 St (IRT Broadway–Seventh Avenue Line),NYCS-IRT Broadway–Seventh Avenue Line,否,40.8020498,-73.9497314,
+New York-US,Central Park North (110 St),NYCS-IRT Broadway–Seventh Avenue Line,否,40.7985081,-73.9524896,
+New York-US,Park Place (IRT Broadway–Seventh Avenue Line),NYCS-IRT Broadway–Seventh Avenue Line,否,40.7132181,-74.0091645,
+New York-US,Fulton St (IRT Broadway–Seventh Avenue Line),NYCS-IRT Broadway–Seventh Avenue Line,否,40.709426,-74.0065858,
+New York-US,Wall St (IRT Broadway–Seventh Avenue Line),NYCS-IRT Broadway–Seventh Avenue Line,否,40.7067241,-74.0091832,
+New York-US,Clark St,NYCS-IRT Broadway–Seventh Avenue Line,否,40.6974653,-73.9930222,
+New York-US,Borough Hall,"NYCS-IRT Broadway–Seventh Avenue Line, IRT Lexington Avenue Line",是,40.6924142,-73.9900634,
+New York-US,Hoyt St,NYCS-IRT Broadway–Seventh Avenue Line,否,40.6905128,-73.9849862,
+New York-US,Nevins St,"NYCS-IRT Broadway–Seventh Avenue Line, IRT Lexington Avenue Line",是,40.6887102,-73.9808138,
+New York-US,"Atlantic Av - Barclays Center (IRT Broadway–Seventh Avenue Line, IRT Lexington Avenue Line)","NYCS-IRT Broadway–Seventh Avenue Line, IRT Lexington Avenue Line",是,40.6844949,-73.9777657,
+New York-US,"Bergen St (IRT Broadway–Seventh Avenue Line, IRT Lexington Avenue Line)","NYCS-IRT Broadway–Seventh Avenue Line, IRT Lexington Avenue Line",是,40.6808135,-73.9750886,
+New York-US,Grand Army Plaza,"NYCS-IRT Broadway–Seventh Avenue Line, IRT Lexington Avenue Line",是,40.6749223,-73.9708155,
+New York-US,Eastern Pkwy - Brooklyn Museum,"NYCS-IRT Broadway–Seventh Avenue Line, IRT Lexington Avenue Line",是,40.6719337,-73.9642451,
+New York-US,Franklin Av - Medgar Evers College,"NYCS-IRT Broadway–Seventh Avenue Line, IRT Lexington Avenue Line",是,40.6706813,-73.9579734,
+New York-US,President St - Medgar Evers College,"NYCS-IRT Broadway–Seventh Avenue Line, IRT Lexington Avenue Line",是,40.6680739,-73.9506525,
+New York-US,Sterling St,"NYCS-IRT Broadway–Seventh Avenue Line, IRT Lexington Avenue Line",是,40.6630955,-73.9508689,
+New York-US,Winthrop St,"NYCS-IRT Broadway–Seventh Avenue Line, IRT Lexington Avenue Line",是,40.6570982,-73.9502145,
+New York-US,"Church Av (IRT Broadway–Seventh Avenue Line, IRT Lexington Avenue Line)","NYCS-IRT Broadway–Seventh Avenue Line, IRT Lexington Avenue Line",是,40.6507967,-73.9495439,
+New York-US,Beverly Rd,"NYCS-IRT Broadway–Seventh Avenue Line, IRT Lexington Avenue Line",是,40.6451265,-73.9489324,
+New York-US,Newkirk Av - Little Haiti,"NYCS-IRT Broadway–Seventh Avenue Line, IRT Lexington Avenue Line",是,40.6399641,-73.9483922,
+New York-US,Flatbush Av - Brooklyn College,"NYCS-IRT Broadway–Seventh Avenue Line, IRT Lexington Avenue Line",是,40.6328717,-73.9476352,
+New York-US,Harlem - 148 St,NYCS-IRT Broadway–Seventh Avenue Line,否,40.823712,-73.9361014,
+New York-US,145 St (IRT Broadway–Seventh Avenue Line 3),NYCS-IRT Broadway–Seventh Avenue Line,否,40.8204635,-73.9362163,
+New York-US,"Nostrand Av (IRT Broadway–Seventh Avenue Line, IRT Lexington Avenue Line)","NYCS-IRT Broadway–Seventh Avenue Line, IRT Lexington Avenue Line",是,40.6698674,-73.9505172,
+New York-US,Kingston Av,"NYCS-IRT Broadway–Seventh Avenue Line, IRT Lexington Avenue Line",是,40.6694074,-73.9421829,
+New York-US,Crown Hts - Utica Av,"NYCS-IRT Broadway–Seventh Avenue Line, IRT Lexington Avenue Line",是,40.6688226,-73.9311116,
+New York-US,Sutter Av - Rutland Rd,"NYCS-IRT Broadway–Seventh Avenue Line, IRT Lexington Avenue Line",是,40.6648322,-73.9227587,
+New York-US,Saratoga Av,"NYCS-IRT Broadway–Seventh Avenue Line, IRT Lexington Avenue Line",是,40.6614626,-73.9162598,
+New York-US,"Rockaway Av (IRT Broadway–Seventh Avenue Line, IRT Lexington Avenue)","NYCS-IRT Broadway–Seventh Avenue Line, IRT Lexington Avenue Line",是,40.6625582,-73.9088634,
+New York-US,Junius St,"NYCS-IRT Broadway–Seventh Avenue Line, IRT Lexington Avenue Line",是,40.6635137,-73.9024354,
+New York-US,Pennsylvania Av,"NYCS-IRT Broadway–Seventh Avenue Line, IRT Lexington Avenue Line",是,40.6646501,-73.894767,
+New York-US,"Van Siclen Av (IRT Broadway–Seventh Avenue Line, IRT Lexington Avenue)","NYCS-IRT Broadway–Seventh Avenue Line, IRT Lexington Avenue Line",是,40.6654867,-73.889236,
+New York-US,"New Lots Av (IRT Broadway–Seventh Avenue Line, IRT Lexington Avenue)","NYCS-IRT Broadway–Seventh Avenue Line, IRT Lexington Avenue Line",是,40.6662999,-73.8837211,
+New York-US,Woodlawn,NYCS-IRT Lexington Avenue Line,否,40.8957527,-73.8624521,
+New York-US,Mosholu Pkwy,NYCS-IRT Lexington Avenue Line,否,40.8797323,-73.8846699,
+New York-US,Bedford Park Blvd - Lehman College,NYCS-IRT Lexington Avenue Line,否,40.8733378,-73.8901557,
+New York-US,Kingsbridge Rd (IRT Lexington Avenue Line),NYCS-IRT Lexington Avenue Line,否,40.8676734,-73.8972491,
+New York-US,Fordham Rd (IRT Lexington Avenue Line),NYCS-IRT Lexington Avenue Line,否,40.8628436,-73.9010086,
+New York-US,183 St,NYCS-IRT Lexington Avenue Line,否,40.8583564,-73.9038946,
+New York-US,Burnside Av,NYCS-IRT Lexington Avenue Line,否,40.8534266,-73.9077258,
+New York-US,176 St,NYCS-IRT Lexington Avenue Line,否,40.8484815,40.8484815,
+New York-US,Mt Eden Av,NYCS-IRT Lexington Avenue Line,否,40.8443436,-73.9147452,
+New York-US,170 St (IRT Lexington Avenue Line),NYCS-IRT Lexington Avenue Line,否,40.8400335,-73.917815,
+New York-US,167 St (IRT Lexington Avenue Line),NYCS-IRT Lexington Avenue Line,否,40.8357244,-73.9212797,
+New York-US,161 St - Yankee Stadium (IRT Lexington Avenue Line),NYCS-IRT Lexington Avenue Line,否,40.8280359,-73.9258017,
+New York-US,149 St - Grand Concourse (IRT Lexington Avenue Line),NYCS-IRT Lexington Avenue Line,否,40.8183725,-73.9274003,
+New York-US,138 St - Grand Concourse,NYCS-IRT Lexington Avenue Line,否,40.8131324,-73.929968,
+New York-US,125 St (IRT Lexington Avenue Line),NYCS-IRT Lexington Avenue Line,否,40.8043494,-73.937411,
+New York-US,116 St (IRT Lexington Avenue Line),NYCS-IRT Lexington Avenue Line,否,40.7985915,-73.9415679,
+New York-US,110 St,NYCS-IRT Lexington Avenue Line,否,40.7947868,-73.9443458,
+New York-US,103 St (IRT Lexington Avenue Line),NYCS-IRT Lexington Avenue Line,否,40.7902977,-73.9476244,
+New York-US,96 St (IRT Lexington Avenue Line),NYCS-IRT Lexington Avenue Line,否,40.7858647,-73.9508992,
+New York-US,86 St (IRT Lexington Avenue Line),NYCS-IRT Lexington Avenue Line,否,40.7794939,-73.9555295,
+New York-US,77 St (IRT Lexington Avenue Line),NYCS-IRT Lexington Avenue Line,否,40.7736528,-73.9598437,
+New York-US,68 St - Hunter College,NYCS-IRT Lexington Avenue Line,否,40.7678782,-73.9641187,
+New York-US,59 St (IRT Lexington Avenue Line),NYCS-IRT Lexington Avenue Line,否,40.7627065,-73.9678801,
+New York-US,51 St,NYCS-IRT Lexington Avenue Line,否,40.7571102,-73.9719555,
+New York-US,Grand Central - 42 St (IRT Lexington Avenue Line),NYCS-IRT Lexington Avenue Line,否,40.751776,-73.976848,
+New York-US,33 St,NYCS-IRT Lexington Avenue Line,否,40.7463947,-73.9818293,
+New York-US,28 St (IRT Lexington Avenue Line),NYCS-IRT Lexington Avenue Line,否,40.7433137,-73.9840753,
+New York-US,23 St (IRT Lexington Avenue Line),NYCS-IRT Lexington Avenue Line,否,40.7401787,-73.9863823,
+New York-US,14 St - Union Sq (IRT Lexington Avenue Line),NYCS-IRT Lexington Avenue Line,否,40.7347942,-73.9899805,
+New York-US,Astor Pl,NYCS-IRT Lexington Avenue Line,否,40.7298513,-73.991398,
+New York-US,Bleecker St,NYCS-IRT Lexington Avenue Line,否,40.7259471,-73.9946797,
+New York-US,Spring St (IRT Lexington Avenue Line),NYCS-IRT Lexington Avenue Line,否,40.7223025,-73.9971855,
+New York-US,Canal St (IRT Lexington Avenue Line),NYCS-IRT Lexington Avenue Line,否,40.7184961,-74.0004678,
+New York-US,Brooklyn Bridge - City Hall,NYCS-IRT Lexington Avenue Line,否,40.71235,-74.0050702,
+New York-US,Fulton St (IRT Lexington Avenue Line),NYCS-IRT Lexington Avenue Line,否,40.7103638,-74.0095697,
+New York-US,Wall St (IRT Lexington Avenue Line),NYCS-IRT Lexington Avenue Line,否,40.7079284,-74.0114693,
+New York-US,Bowling Green,NYCS-IRT Lexington Avenue Line,否,40.7045091,-74.0140946,
+New York-US,Eastchester - Dyre Av,NYCS-IRT Lexington Avenue Line,否,40.8880604,-73.8309856,
+New York-US,Baychester Av,NYCS-IRT Lexington Avenue Line,否,40.879437,-73.8379902,
+New York-US,Gun Hill Rd (IRT Lexington Avenue Line),NYCS-IRT Lexington Avenue Line,否,40.8700741,-73.8459107,
+New York-US,Pelham Pkwy (IRT Lexington Avenue Line),NYCS-IRT Lexington Avenue Line,否,40.8588576,-73.8554627,
+New York-US,Morris Park,NYCS-IRT Lexington Avenue Line,否,40.8545235,-73.8602968,
+New York-US,Pelham Bay Park,NYCS-IRT Lexington Avenue Line,否,40.852548,-73.827938,
+New York-US,Buhre Av,NYCS-IRT Lexington Avenue Line,否,40.847037,-73.8322772,
+New York-US,Middletown Rd,NYCS-IRT Lexington Avenue Line,否,40.8439123,-73.836261,
+New York-US,Westchester Sq - East Tremont Av,NYCS-IRT Lexington Avenue Line,否,40.8400475,-73.8427671,
+New York-US,Zerega Av,NYCS-IRT Lexington Avenue Line,否,40.8367792,-73.8466904,
+New York-US,Castle Hill Av,NYCS-IRT Lexington Avenue Line,否,40.8342413,-73.8512738,
+New York-US,Parkchester,NYCS-IRT Lexington Avenue Line,否,40.8332047,-73.8609723,
+New York-US,St Lawrence Av,NYCS-IRT Lexington Avenue Line,否,40.8316162,-73.8672666,
+New York-US,Morrison Av - Soundview,NYCS-IRT Lexington Avenue Line,否,40.8294972,-73.8746243,
+New York-US,Elder Av,NYCS-IRT Lexington Avenue Line,否,40.8285948,-73.8791931,
+New York-US,Whitlock Av,NYCS-IRT Lexington Avenue Line,否,40.8265891,-73.8862747,
+New York-US,Hunts Point Av,NYCS-IRT Lexington Avenue Line,否,40.8208004,-73.8908065,
+New York-US,Longwood Av,NYCS-IRT Lexington Avenue Line,否,40.8162916,-73.8962205,
+New York-US,E 149 St,NYCS-IRT Lexington Avenue Line,否,40.8120839,-73.9041639,
+New York-US,E 143 St - St Mary's St,NYCS-IRT Lexington Avenue Line,否,40.8082006,-73.907817,
+New York-US,Cypress Av,NYCS-IRT Lexington Avenue Line,否,40.8051423,-73.9135096,
+New York-US,Brook Av,NYCS-IRT Lexington Avenue Line,否,40.807555,-73.9192429,
+New York-US,3 Av - 138 St,NYCS-IRT Lexington Avenue Line,否,40.8104414,-73.9260537,
+New York-US,Flushing - Main St,NYCS-IRT Flushing Line,否,40.7585195,-73.8298574,
+New York-US,Mets - Willets Point,NYCS-IRT Flushing Line,否,40.7524337,-73.8441172,
+New York-US,111 St (IRT Flushing Line),NYCS-IRT Flushing Line,否,40.7517926,-73.8552317,
+New York-US,103 St - Corona Plaza,NYCS-IRT Flushing Line,否,40.7498871,-73.8626767,
+New York-US,Junction Blvd,NYCS-IRT Flushing Line,否,40.7491675,-73.8694786,
+New York-US,90 St - Elmhurst Av,NYCS-IRT Flushing Line,否,40.7483933,-73.8767862,
+New York-US,82 St - Jackson Hts,NYCS-IRT Flushing Line,否,40.7476192,-73.8841432,
+New York-US,74 St - Broadway,NYCS-IRT Flushing Line,否,40.7468762,-73.8912482,
+New York-US,69 St,NYCS-IRT Flushing Line,否,40.7463474,-73.896305,
+New York-US,61 St - Woodside,NYCS-IRT Flushing Line,否,40.7456359,-73.9030518,
+New York-US,52 St,NYCS-IRT Flushing Line,否,40.7441763,-73.9124986,
+New York-US,46 St - Bliss St,NYCS-IRT Flushing Line,否,40.7431184,-73.9182509,
+New York-US,40 St - Lowery St,NYCS-IRT Flushing Line,否,40.7438431,-73.9244296,
+New York-US,33 St - Rawson St,NYCS-IRT Flushing Line,否,40.7446199,-73.9312304,
+New York-US,Queensboro Plaza,"NYCS-IRT Flushing Line, BMT Broadway Line",是,40.750607,-73.9402599,
+New York-US,Court Sq (IRT Flushing Line),NYCS-IRT Flushing Line,否,40.7464555,-73.9454525,
+New York-US,Hunters Point Av,NYCS-IRT Flushing Line,否,40.7424147,-73.9481036,
+New York-US,Vernon Blvd - Jackson Av,NYCS-IRT Flushing Line,否,40.7426919,-73.9540014,
+New York-US,Grand Central - 42 St (IRT Flushing Line),NYCS-IRT Flushing Line,否,40.7514309,-73.976041,
+New York-US,5 Av,NYCS-IRT Flushing Line,否,40.753821,-73.9819629,
+New York-US,Times Sq - 42 St (IRT Flushing Line),NYCS-IRT Flushing Line,否,40.7552718,-73.9872256,
+New York-US,34 St - Hudson Yards,NYCS-IRT Flushing Line,否,40.7561925,-74.0016694,
+New York-US,Inwood - 207 St,NYCS-IND Eighth Avenue Line,否,40.8677645,-73.9210552,
+New York-US,Dyckman St (IND Eighth Avenue Line),NYCS-IND Eighth Avenue Line,否,40.8652769,-73.9277986,
+New York-US,190 St,NYCS-IND Eighth Avenue Line,否,40.8591154,-73.9341529,
+New York-US,181 St (IND Eighth Avenue Line),NYCS-IND Eighth Avenue Line,否,40.8517607,-73.9379597,
+New York-US,175 St,NYCS-IND Eighth Avenue Line,否,40.8475742,-73.9396291,
+New York-US,168 St (IND Eighth Avenue Line),NYCS-IND Eighth Avenue Line,否,40.8409712,-73.9394687,
+New York-US,163 St - Amsterdam Av,NYCS-IND Eighth Avenue Line,否,40.8369451,-73.9401256,
+New York-US,155 St (IND Eighth Avenue Line),NYCS-IND Eighth Avenue Line,否,40.8308908,-73.9413674,
+New York-US,"145 St (IND Eighth Avenue Line, IND Sixth Avenue Line)","NYCS-IND Eighth Avenue Line, IND Sixth Avenue Line",是,40.8242108,-73.9446318,
+New York-US,"135 St (IND Eighth Avenue Line, IND Sixth Avenue Line)","NYCS-IND Eighth Avenue Line, IND Sixth Avenue Line",是,40.817202,-73.9479825,
+New York-US,"125 St (IND Eighth Avenue Line, IND Sixth Avenue Line)","NYCS-IND Eighth Avenue Line, IND Sixth Avenue Line",是,40.8108068,-73.9525723,
+New York-US,"116 St (IND Eighth Avenue Line, IND Sixth Avenue Line)","NYCS-IND Eighth Avenue Line, IND Sixth Avenue Line",是,40.8044723,-73.9553299,
+New York-US,"Cathedral Pkwy (110 St) (IND Eighth Avenue Line, IND Sixth Avenue Line)","NYCS-IND Eighth Avenue Line, IND Sixth Avenue Line",是,40.8005967,-73.9581718,
+New York-US,"103 St (IND Eighth Avenue Line, IND Sixth Avenue Line)","NYCS-IND Eighth Avenue Line, IND Sixth Avenue Line",是,40.7961299,-73.9614554,
+New York-US,"96 St (IND Eighth Avenue Line, IND Sixth Avenue Line)","NYCS-IND Eighth Avenue Line, IND Sixth Avenue Line",是,40.7917246,-73.9646698,
+New York-US,"86 St (IND Eighth Avenue Line, IND Sixth Avenue Line)","NYCS-IND Eighth Avenue Line, IND Sixth Avenue Line",是,40.785361,-73.9693126,
+New York-US,81 St - Museum of Natural History,"NYCS-IND Eighth Avenue Line, IND Sixth Avenue Line",是,40.7817835,-73.9719225,
+New York-US,"72 St (IND Eighth Avenue Line, IND Sixth Avenue Line)","NYCS-IND Eighth Avenue Line, IND Sixth Avenue Line",是,40.7762402,-73.9760123,
+New York-US,59 St - Columbus Circle,"NYCS-IND Eighth Avenue Line, IND Sixth Avenue Line  ",是,40.7683319,-73.9816906,
+New York-US,50 St,NYCS-IND Eighth Avenue Line,否,40.7622948,-73.9861028,
+New York-US,42 St - Port Authority Bus Terminal,NYCS-IND Eighth Avenue Line,否,40.757308,-73.989735,
+New York-US,34 St - Penn Station (IND Eighth Avenue Line),NYCS-IND Eighth Avenue Line,否,40.7521961,-73.9934596,
+New York-US,23 St (IND Eighth Avenue Line),NYCS-IND Eighth Avenue Line,否,40.7452945,-73.9984813,
+New York-US,14 St (IND Eighth Avenue Line),NYCS-IND Eighth Avenue Line,否,40.7404638,-74.0019976,
+New York-US,West 4 St - Washington Sq,"NYCS-IND Eighth Avenue Line, IND Sixth Avenue Line",是,40.731643,-74.0009941,
+New York-US,Spring St (IND Eighth Avenue Line),NYCS-IND Eighth Avenue Line,否,40.7255399,-74.0040137,
+New York-US,Canal St (IND Eighth Avenue Line),NYCS-IND Eighth Avenue Line,否,40.7218493,-74.0052989,
+New York-US,Chambers St (IND Eighth Avenue Line),NYCS-IND Eighth Avenue Line,否,40.7149161,-74.0079676,
+New York-US,Fulton St (IND Eighth Avenue Line),NYCS-IND Eighth Avenue Line,否,40.7101857,-74.0076638,
+New York-US,High St,NYCS-IND Eighth Avenue Line,否,40.6992975,-73.9914349,
+New York-US,"Jay St - MetroTech (IND Eighth Avenue Line, IND Sixth Avenue Line)","NYCS-IND Eighth Avenue Line, IND Sixth Avenue Line",是,40.692338,-73.987342,
+New York-US,Hoyt - Schermerhorn,"NYCS-IND Eighth Avenue Line, IND Crosstown Line",是,40.688484,-73.985001,
+New York-US,Lafayette Av,NYCS-IND Eighth Avenue Line,否,40.6863074,-73.9744304,
+New York-US,Clinton - Washington Avs (IND Eighth Avenue Line),NYCS-IND Eighth Avenue Line,否,40.6832766,-73.9658547,
+New York-US,Franklin Av (IND Eighth Avenue Line),NYCS-IND Eighth Avenue Line,否,40.6811213,-73.9556934,
+New York-US,Nostrand Av (IND Eighth Avenue Line),NYCS-IND Eighth Avenue Line,否,40.6804309,-73.950234,
+New York-US,Kingston - Throop Avs,NYCS-IND Eighth Avenue Line,否,40.6798863,-73.9407616,
+New York-US,Utica Av,NYCS-IND Eighth Avenue Line,否,40.679347,-73.9308408,
+New York-US,Ralph Av,NYCS-IND Eighth Avenue Line,否,40.6788802,-73.9216651,
+New York-US,Rockaway Av (IND Eighth Avenue Line),NYCS-IND Eighth Avenue Line,否,40.6782698,-73.910782,
+New York-US,Broadway Junction (IND Eighth Avenue Line),NYCS-IND Eighth Avenue Line,否,40.6782946,-73.9040846,
+New York-US,Liberty Av,NYCS-IND Eighth Avenue Line,否,40.6744049,-73.8965126,
+New York-US,Van Siclen Av (IND Eighth Avenue Line),NYCS-IND Eighth Avenue Line,否,40.672717,-73.8903216,
+New York-US,Shepherd Av,NYCS-IND Eighth Avenue Line,否,40.6740912,-73.8808063,
+New York-US,Euclid Av,NYCS-IND Eighth Avenue Line,否,40.6754182,-73.871912,
+New York-US,Grant Av,NYCS-IND Eighth Avenue Line,否,40.6768466,-73.8653952,
+New York-US,80 St,NYCS-IND Eighth Avenue Line,否,40.6793809,-73.8589845,
+New York-US,88 St,NYCS-IND Eighth Avenue Line,否,40.6798468,-73.8515018,
+New York-US,Rockaway Blvd,NYCS-IND Eighth Avenue Line,否,40.6804488,-73.8437863,
+New York-US,104 St,NYCS-IND Eighth Avenue Line,否,40.6817152,-73.837694,
+New York-US,111 St (IND Eighth Avenue Line),NYCS-IND Eighth Avenue Line,否,40.6844387,-73.8318863,
+New York-US,Ozone Park - Lefferts Blvd,NYCS-IND Eighth Avenue Line,否,40.6859461,-73.8258664,
+New York-US,Aqueduct Racetrack,NYCS-IND Eighth Avenue Line,否,40.6720944,-73.8359383,
+New York-US,Aqueduct - North Conduit Av,NYCS-IND Eighth Avenue Line,否,40.6683086,-73.8340881,
+New York-US,Howard Beach - JFK Airport,NYCS-IND Eighth Avenue Line,否,40.6604335,-73.8302749,
+New York-US,Broad Channel,"NYCS-IND Eighth Avenue Line, Shuttles",是,40.6080187,-73.8158007,
+New York-US,Beach 67 St,NYCS-IND Eighth Avenue Line,否,40.5910021,-73.7963277,
+New York-US,Beach 60 St,NYCS-IND Eighth Avenue Line,否,40.5923764,-73.7887383,
+New York-US,Beach 44 St,NYCS-IND Eighth Avenue Line,否,40.5929615,-73.7759368,
+New York-US,Beach 36 St,NYCS-IND Eighth Avenue Line,否,40.5952838,-73.7683817,
+New York-US,Beach 25 St,NYCS-IND Eighth Avenue Line,否,40.5996428,-73.7617236,
+New York-US,Far Rockaway - Mott Av,NYCS-IND Eighth Avenue Line,否,40.6045336,-73.7543833,
+New York-US,Beach 90 St,"NYCS-IND Eighth Avenue Line, Shuttles",是,40.5880338,-73.8136929,
+New York-US,Beach 98 St,"NYCS-IND Eighth Avenue Line, Shuttles",是,40.5853442,-73.8204847,
+New York-US,Beach 105 St,"NYCS-IND Eighth Avenue Line, Shuttles",是,40.5832557,-73.8273814,
+New York-US,Rockaway Park - Beach 116 St,"NYCS-IND Eighth Avenue Line, Shuttles",是,40.5807608,-73.8361477,
+New York-US,Jamaica Center - Parsons/Archer,"NYCS-IND Eighth Avenue Line, BMT Nassau Street Line",是,40.7022381,-73.8008225,
+New York-US,Sutphin Blvd - Archer Av - JFK Airport,"NYCS-IND Eighth Avenue Line, BMT Nassau Street Line",是,40.700378,-73.8081426,
+New York-US,Jamaica - Van Wyck,NYCS-IND Eighth Avenue Line,否,40.7027233,-73.8172106,
+New York-US,Briarwood,"NYCS-IND Eighth Avenue Line, IND Sixth Avenue Line",是,40.7092563,-73.8201394,
+New York-US,Kew Gardens - Union Tpke,"NYCS-IND Eighth Avenue Line, IND Sixth Avenue Line",是,40.714441,-73.831008,
+New York-US,75 Av,"NYCS-IND Eighth Avenue Line, IND Sixth Avenue Line",是,40.718331,-73.837324,
+New York-US,Forest Hills - 71 Av,"NYCS-IND Eighth Avenue Line, IND Sixth Avenue Line, BMT Broadway Line",是,40.721691,-73.844521,
+New York-US,67 Av,"NYCS-IND Eighth Avenue Line, IND Sixth Avenue Line, BMT Broadway Line",是,40.7267968,-73.8532472,
+New York-US,63 Dr - Rego Park,"NYCS-IND Eighth Avenue Line, IND Sixth Avenue Line, BMT Broadway Line",是,40.730043,-73.8616485,
+New York-US,"Woodhaven Blvd (IND Eighth Avenue Line, IND Sixth Avenue Line, BMT Broadway Line)","NYCS-IND Eighth Avenue Line, IND Sixth Avenue Line, BMT Broadway Line",是,40.7332625,-73.8697005,
+New York-US,Grand Av - Newtown,"NYCS-IND Eighth Avenue Line, IND Sixth Avenue Line, BMT Broadway Line",是,40.7372246,-73.8772168,
+New York-US,Elmhurst Av,"NYCS-IND Eighth Avenue Line, IND Sixth Avenue Line, BMT Broadway Line",是,40.7420609,-73.8812565,
+New York-US,Jackson Hts - Roosevelt Av,"NYCS-IND Eighth Avenue Line, IND Sixth Avenue Line, BMT Broadway Line",是,40.746644,-73.891338,
+New York-US,65 St,"NYCS-IND Eighth Avenue Line, IND Sixth Avenue Line, BMT Broadway Line",是,40.7494358,-73.8977926,
+New York-US,Northern Blvd,"NYCS-IND Eighth Avenue Line, IND Sixth Avenue Line, BMT Broadway Line",是,40.7530794,-73.9062074,
+New York-US,46 St,"NYCS-IND Eighth Avenue Line, IND Sixth Avenue Line, BMT Broadway Line",是,40.7566484,-73.9140858,
+New York-US,Steinway St,"NYCS-IND Eighth Avenue Line, IND Sixth Avenue Line, BMT Broadway Line",是,40.7575068,-73.9201758,
+New York-US,"36 St (IND Eighth Avenue Line, IND Sixth Avenue Line, BMT Broadway Line)","NYCS-IND Eighth Avenue Line, IND Sixth Avenue Line, BMT Broadway Line",是,40.655144,-74.003549,
+New York-US,Queens Plaza,"NYCS-IND Eighth Avenue Line, IND Sixth Avenue Line, BMT Broadway Line",是,40.7491009,-73.9372155,
+New York-US,Court Sq - 23 St,"NYCS-IND Eighth Avenue Line, IND Sixth Avenue Line",是,40.7478095,-73.9457377,
+New York-US,Lexington Av/53 St,"NYCS-IND Eighth Avenue Line, IND Sixth Avenue Line",是,40.7582149,-73.9706019,
+New York-US,5 Av/53 St,"NYCS-IND Eighth Avenue Line, IND Sixth Avenue Line",是,40.7605598,-73.9759537,
+New York-US,"7 Av (IND Eighth Avenue Line, IND Sixth Avenue Line)","NYCS-IND Eighth Avenue Line, IND Sixth Avenue Line",是,40.762862,-73.981637,
+New York-US,World Trade Center,NYCS-IND Eighth Avenue Line,否,40.7118877,-74.0124412,
+New York-US,Bedford Park Blvd,NYCS-IND Sixth Avenue Line,否,40.873244,-73.8871379,
+New York-US,Kingsbridge Rd (IND Sixth Avenue Line),NYCS-IND Sixth Avenue Line,否,40.866978,-73.893509,
+New York-US,Fordham Rd (IND Sixth Avenue Line),NYCS-IND Sixth Avenue Line,否,40.861296,-73.897749,
+New York-US,182-183 Sts,NYCS-IND Sixth Avenue Line,否,40.856093,-73.900741,
+New York-US,Tremont Av,NYCS-IND Sixth Avenue Line,否,40.8504099,-73.905227,
+New York-US,174-175 Sts,NYCS-IND Sixth Avenue Line,否,40.8459,-73.910136,
+New York-US,170 St (IND Sixth Avenue Line),NYCS-IND Sixth Avenue Line,否,40.8388411,-73.9136825,
+New York-US,167 St (IND Sixth Avenue Line),NYCS-IND Sixth Avenue Line,否,40.8343819,-73.9178396,
+New York-US,161 St - Yankee Stadium (IND Sixth Avenue Line),NYCS-IND Sixth Avenue Line,否,40.8277271,-73.9256588,
+New York-US,155 St (IND Sixth Avenue Line),NYCS-IND Sixth Avenue Line,否,40.8303452,-73.9367102,
+New York-US,47-50 Sts - Rockefeller Center,NYCS-IND Sixth Avenue Line,否,40.758663,-73.981329,
+New York-US,42 St - Bryant Park,NYCS-IND Sixth Avenue Line,否,40.754222,-73.9845689,
+New York-US,34 St - Herald Sq (IND Sixth Avenue Line),NYCS-IND Sixth Avenue Line,否,40.749719,-73.987823,
+New York-US,Broadway - Lafayette St,NYCS-IND Sixth Avenue Line,否,40.725297,-73.996204,
+New York-US,Grand St (IND Sixth Avenue Line),NYCS-IND Sixth Avenue Line,否,40.7181616,-73.9937839,
+New York-US,"DeKalb Av (IND Sixth Avenue Line, BMT Broadway Line)","NYCS-IND Sixth Avenue Line, BMT Broadway Line",是,40.690635,-73.981824,
+New York-US,"Atlantic Av - Barclays Center (IND Sixth Avenue Line B, BMT Broadway Line Q)","NYCS-IND Sixth Avenue Line, BMT Broadway Line",是,40.68446,-73.97689,
+New York-US,"7 Av (IND Sixth Avenue Line, BMT Broadway Line)","NYCS-IND Sixth Avenue Line, BMT Broadway Line",是,40.67705,-73.972367,
+New York-US,Prospect Park,"NYCS-IND Sixth Avenue Line, BMT Broadway Line, Shuttles",是,40.661614,-73.9622459,
+New York-US,"Church Av (IND Sixth Avenue Line, BMT Broadway Line)","NYCS-IND Sixth Avenue Line, BMT Broadway Line",是,40.6505269,-73.962982,
+New York-US,Newkirk Plaza,"NYCS-IND Sixth Avenue Line, BMT Broadway Line",是,40.635082,-73.962793,
+New York-US,"Kings Hwy (IND Sixth Avenue Line, BMT Broadway Line)","NYCS-IND Sixth Avenue Line, BMT Broadway Line",是,40.6086699,-73.957734,
+New York-US,Sheepshead Bay,"NYCS-IND Sixth Avenue Line, BMT Broadway Line",是,40.586896,-73.954155,
+New York-US,Brighton Beach,"NYCS-IND Sixth Avenue Line, BMT Broadway Line",是,40.577621,-73.961376,
+New York-US,Norwood - 205 St,NYCS-IND Sixth Avenue Line,否,40.874811,-73.878855,
+New York-US,"Atlantic Av - Barclays Center (IND Sixth Avenue Line D, BMT Broadway Line N,R)","NYCS-IND Sixth Avenue Line, BMT Broadway Line",是,40.6838111,-73.9786613,
+New York-US,Union St,"NYCS-IND Sixth Avenue Line, BMT Broadway Line",是,40.677316,-73.98311,
+New York-US,4 Av,"NYCS-IND Sixth Avenue Line, IND Crosstown Line",是,40.670272,-73.989779,
+New York-US,"Prospect Av (IND Sixth Avenue Line, BMT Broadway Line)","NYCS-IND Sixth Avenue Line, BMT Broadway Line",是,40.665414,-73.992872,
+New York-US,25 St,"NYCS-IND Sixth Avenue Line, BMT Broadway Line",是,40.660397,-73.998091,
+New York-US,"36 St (IND Sixth Avenue Line, BMT Broadway Line)","NYCS-IND Sixth Avenue Line, BMT Broadway Line",是,40.7520898,-73.928282,
+New York-US,9 Av,NYCS-IND Sixth Avenue Line,否,40.6463249,-73.9943519,
+New York-US,Fort Hamilton Pkwy (IND Sixth Avenue Line),NYCS-IND Sixth Avenue Line,否,40.640914,-73.994304,
+New York-US,50 St,NYCS-IND Sixth Avenue Line,否,40.6360702,-73.99482,
+New York-US,55 St,NYCS-IND Sixth Avenue Line,否,40.6315301,-73.9954466,
+New York-US,62 St,NYCS-IND Sixth Avenue Line,否,40.626472,-73.996895,
+New York-US,71 St,NYCS-IND Sixth Avenue Line,否,40.6193283,-73.9989445,
+New York-US,79 St (IND Sixth Avenue Line),NYCS-IND Sixth Avenue Line,否,40.6134177,-74.000633,
+New York-US,18 Av (IND Sixth Avenue Line D),NYCS-IND Sixth Avenue Line,否,40.6078547,-74.0017168,
+New York-US,20 Av (IND Sixth Avenue Line),NYCS-IND Sixth Avenue Line,否,40.6045829,-73.9982508,
+New York-US,Bay Pkwy (IND Sixth Avenue Line D),NYCS-IND Sixth Avenue Line,否,40.6019107,-73.993774,
+New York-US,25 Av,NYCS-IND Sixth Avenue Line,否,40.5976945,-73.9867923,
+New York-US,Bay 50 St,NYCS-IND Sixth Avenue Line,否,40.5886755,-73.9837274,
+New York-US,Coney Island - Stillwell Av,"NYCS-IND Sixth Avenue Line, BMT Broadway Line",是,40.577422,-73.981233,
+New York-US,Jamaica - 179 St,NYCS-IND Sixth Avenue Line,否,40.712646,-73.783817,
+New York-US,169 St,NYCS-IND Sixth Avenue Line,否,40.71047,-73.793604,
+New York-US,Parsons Blvd,NYCS-IND Sixth Avenue Line,否,40.707564,-73.803326,
+New York-US,Sutphin Blvd,NYCS-IND Sixth Avenue Line,否,40.70546,-73.810708,
+New York-US,21 St - Queensbridge,NYCS-IND Sixth Avenue Line,否,40.7542029,-73.942836,
+New York-US,Roosevelt Island,NYCS-IND Sixth Avenue Line,否,40.7591449,-73.95326,
+New York-US,Lexington Av/63 St,"NYCS-IND Sixth Avenue Line, BMT Broadway Line",是,40.764629,-73.966113,
+New York-US,57 St,NYCS-IND Sixth Avenue Line,否,40.763972,-73.97745,
+New York-US,23 St (IND Sixth Avenue Line),NYCS-IND Sixth Avenue Line,否,40.742878,-73.992821,
+New York-US,14 St,NYCS-IND Sixth Avenue Line,否,40.7380466,-73.9963408,
+New York-US,2 Av,NYCS-IND Sixth Avenue Line,否,40.723402,-73.989938,
+New York-US,Delancey St,NYCS-IND Sixth Avenue Line,否,40.718428,-73.9881811,
+New York-US,East Broadway,NYCS-IND Sixth Avenue Line,否,40.713715,-73.990173,
+New York-US,York St,NYCS-IND Sixth Avenue Line,否,40.701397,-73.986751,
+New York-US,"Bergen St (IND Sixth Avenue Line, IND Crosstown Line)","NYCS-IND Sixth Avenue Line, IND Crosstown Line",是,40.686145,-73.990862,
+New York-US,Carroll St,"NYCS-IND Sixth Avenue Line, IND Crosstown Line",是,40.680303,-73.995048,
+New York-US,Smith - 9 Sts,"NYCS-IND Sixth Avenue Line, IND Crosstown Line",是,40.67358,-73.995959,
+New York-US,"7 Av (IND Sixth Avenue Line, IND Crosstown Line)","NYCS-IND Sixth Avenue Line, IND Crosstown Line",是,40.666271,-73.980305,
+New York-US,15 St - Prospect Park,"NYCS-IND Sixth Avenue Line, IND Crosstown Line",是,40.660365,-73.979493,
+New York-US,"Fort Hamilton Pkwy (IND Sixth Avenue Line, IND Crosstown Line)","NYCS-IND Sixth Avenue Line, IND Crosstown Line",是,40.650782,-73.975776,
+New York-US,"Church Av (IND Sixth Avenue Line, IND Crosstown Line)","NYCS-IND Sixth Avenue Line, IND Crosstown Line",是,40.644041,-73.979678,
+New York-US,Ditmas Av,NYCS-IND Sixth Avenue Line,否,40.636119,-73.978172,
+New York-US,18 Av (IND Sixth Avenue Line F),NYCS-IND Sixth Avenue Line,否,40.629755,-73.976971,
+New York-US,Avenue I,NYCS-IND Sixth Avenue Line,否,40.625322,-73.976127,
+New York-US,Bay Pkwy (IND Sixth Avenue Line F),NYCS-IND Sixth Avenue Line,否,40.621009,-73.975306,
+New York-US,Avenue N,NYCS-IND Sixth Avenue Line,否,40.6151399,-73.974197,
+New York-US,Avenue P,NYCS-IND Sixth Avenue Line,否,40.608944,-73.973022,
+New York-US,Kings Hwy (IND Sixth Avenue Line),NYCS-IND Sixth Avenue Line,否,40.603217,-73.972361,
+New York-US,Avenue U (IND Sixth Avenue Line),NYCS-IND Sixth Avenue Line,否,40.596063,-73.9733569,
+New York-US,Avenue X,NYCS-IND Sixth Avenue Line,否,40.5896199,-73.97425,
+New York-US,Neptune Av,NYCS-IND Sixth Avenue Line,否,40.5810109,-73.974574,
+New York-US,West 8 St - NY Aquarium,"NYCS-IND Sixth Avenue Line, BMT Broadway Line",是,40.576127,-73.975939,
+New York-US,Essex St,"NYCS-IND Sixth Avenue Line, BMT Nassau Street Line",是,40.7183982,-73.9874236,
+New York-US,Marcy Av,"NYCS-IND Sixth Avenue Line, BMT Nassau Street Line",是,40.7084064,-73.9579142,
+New York-US,Hewes St,"NYCS-IND Sixth Avenue Line, BMT Nassau Street Line",是,40.7068552,-73.9533503,
+New York-US,"Lorimer St (IND Sixth Avenue Line, BMT Nassau Street Line)","NYCS-IND Sixth Avenue Line, BMT Nassau Street Line",是,40.7038293,40.7038293,
+New York-US,"Flushing Av (IND Sixth Avenue Line, BMT Nassau Street Line)","NYCS-IND Sixth Avenue Line, BMT Nassau Street Line",是,40.7002809,-73.9411682,
+New York-US,Myrtle Av,"NYCS-IND Sixth Avenue Line, BMT Nassau Street Line",是,40.6969959,-73.9352775,
+New York-US,Central Av,NYCS-IND Sixth Avenue Line,否,40.6979465,-73.9266436,
+New York-US,Knickerbocker Av,NYCS-IND Sixth Avenue Line,否,40.6987479,-73.9189811,
+New York-US,Myrtle - Wyckoff Avs (IND Sixth Avenue Line),NYCS-IND Sixth Avenue Line,否,40.6994961,-73.9117908,
+New York-US,Seneca Av,NYCS-IND Sixth Avenue Line,否,40.7028171,-73.9076756,
+New York-US,Forest Av,NYCS-IND Sixth Avenue Line,否,40.7043972,-73.903074,
+New York-US,Fresh Pond Rd,NYCS-IND Sixth Avenue Line,否,40.7062234,-73.8959256,
+New York-US,Middle Village - Metropolitan Av,NYCS-IND Sixth Avenue Line,否,40.7115203,-73.8895607,
+New York-US,Court Sq (IND Crosstown Line),NYCS-IND Crosstown Line,否,40.746554,-73.943832,
+New York-US,21 St,NYCS-IND Crosstown Line,否,40.744065,-73.949724,
+New York-US,Greenpoint Av,NYCS-IND Crosstown Line,否,40.731352,-73.954449,
+New York-US,Nassau Av,NYCS-IND Crosstown Line,否,40.724635,-73.951277,
+New York-US,Metropolitan Av,NYCS-IND Crosstown Line,否,40.7130242,-73.9514225,
+New York-US,Broadway (IND Crosstown Line),NYCS-IND Crosstown Line,否,40.706092,-73.950308,
+New York-US,Flushing Av (IND Crosstown Line),NYCS-IND Crosstown Line,否,40.700377,-73.950234,
+New York-US,Myrtle - Willoughby Avs,NYCS-IND Crosstown Line,否,40.6945679,-73.949046,
+New York-US,Bedford - Nostrand Avs,NYCS-IND Crosstown Line,否,40.689627,-73.953522,
+New York-US,Classon Av,NYCS-IND Crosstown Line,否,40.688873,-73.96007,
+New York-US,Clinton - Washington Avs (IND Crosstown Line),NYCS-IND Crosstown Line,否,40.688089,-73.9668389,
+New York-US,Fulton St (IND Crosstown Line),NYCS-IND Crosstown Line,否,40.687119,-73.975375,
+New York-US,121 St,NYCS-BMT Nassau Street Line,否,40.7005266,-73.8283178,
+New York-US,111 St (BMT Nassau Street Line),NYCS-BMT Nassau Street Line,否,40.6974093,-73.836449,
+New York-US,104 St,NYCS-BMT Nassau Street Line,否,40.6951942,-73.8442743,
+New York-US,Woodhaven Blvd (BMT Nassau Street Line),NYCS-BMT Nassau Street Line,否,40.6938911,-73.8516544,
+New York-US,85 St - Forest Pkwy,NYCS-BMT Nassau Street Line,否,40.6924432,-73.8599369,
+New York-US,75 St - Elderts Lane,NYCS-BMT Nassau Street Line,否,40.691321,-73.8672547,
+New York-US,Cypress Hills,NYCS-BMT Nassau Street Line,否,40.6899088,-73.8726597,
+New York-US,Crescent St,NYCS-BMT Nassau Street Line,否,40.6833496,-73.873286,
+New York-US,Norwood Av,NYCS-BMT Nassau Street Line,否,40.6817017,-73.8790759,
+New York-US,Cleveland St,NYCS-BMT Nassau Street Line,否,40.6796142,-73.8857367,
+New York-US,Van Siclen Av (BMT Nassau Street Line),NYCS-BMT Nassau Street Line,否,40.6780372,-73.8916769,
+New York-US,Alabama Av,NYCS-BMT Nassau Street Line,否,40.6768986,-73.8992908,
+New York-US,Broadway Junction (BMT Nassau Street Line),NYCS-BMT Nassau Street Line,否,40.6791416,-73.9038642,
+New York-US,Chauncey St,NYCS-BMT Nassau Street Line,否,40.6829301,-73.9105344,
+New York-US,Halsey St (BMT Nassau Street Line),NYCS-BMT Nassau Street Line,否,40.6863449,-73.9165406,
+New York-US,Gates Av,NYCS-BMT Nassau Street Line,否,40.6895761,-73.9222019,
+New York-US,Kosciuszko St,NYCS-BMT Nassau Street Line,否,40.6934095,-73.9289536,
+New York-US,Bowery,NYCS-BMT Nassau Street Line,否,40.7202174,-73.99372,
+New York-US,Canal St (BMT Nassau Street Line),NYCS-BMT Nassau Street Line,否,40.718092,-73.999892,
+New York-US,Chambers St (BMT Nassau Street Line),NYCS-BMT Nassau Street Line,否,40.7129921,-74.0038204,
+New York-US,Fulton St (BMT Nassau Street Line),NYCS-BMT Nassau Street Line,否,40.7103294,-74.0076322,
+New York-US,Broad St,NYCS-BMT Nassau Street Line,否,40.7064906,-74.0110604,
+New York-US,8 Av (BMT Canarsie Line),NYCS-BMT Canarsie Line,否,40.7398753,-74.0027381,
+New York-US,6 Av,NYCS-BMT Canarsie Line,否,40.7374588,-73.997068,
+New York-US,Union Sq,NYCS-BMT Canarsie Line,否,40.734603,-73.9903599,
+New York-US,3 Av,NYCS-BMT Canarsie Line,否,40.7331529,-73.986821,
+New York-US,1 Av,NYCS-BMT Canarsie Line,否,40.7308653,-73.9814231,
+New York-US,Bedford Av,NYCS-BMT Canarsie Line,否,40.7174046,-73.9570004,
+New York-US,Lorimer St (BMT Canarsie Line),NYCS-BMT Canarsie Line,否,40.7140621,-73.9502126,
+New York-US,Graham Av,NYCS-BMT Canarsie Line,否,40.7145231,-73.9443875,
+New York-US,Grand St (BMT Canarsie Line),NYCS-BMT Canarsie Line,否,40.7119711,-73.9406949,
+New York-US,Montrose Av,NYCS-BMT Canarsie Line,否,40.7076636,-73.9398247,
+New York-US,Morgan Av,NYCS-BMT Canarsie Line,否,40.7062248,-73.9326982,
+New York-US,Jefferson St,NYCS-BMT Canarsie Line,否,40.7066877,-73.9230698,
+New York-US,DeKalb Av (BMT Canarsie Line),NYCS-BMT Canarsie Line,否,40.7038749,-73.9185021,
+New York-US,Myrtle - Wyckoff Avs (BMT Canarsie Line),NYCS-BMT Canarsie Line,否,40.6997803,-73.9115169,
+New York-US,Halsey St (BMT Canarsie Line),NYCS-BMT Canarsie Line,否,40.6955868,-73.9040399,
+New York-US,Wilson Av,NYCS-BMT Canarsie Line,否,40.6885422,-73.9042827,
+New York-US,Bushwick Av - Aberdeen St,NYCS-BMT Canarsie Line,否,40.6827996,-73.9052062,
+New York-US,Broadway Junction (BMT Canarsie Line),NYCS-BMT Canarsie Line,否,40.6791923,-73.9033537,
+New York-US,Atlantic Av,NYCS-BMT Canarsie Line,否,40.6755661,-73.9029897,
+New York-US,Sutter Av,NYCS-BMT Canarsie Line,否,40.6695618,-73.9020236,
+New York-US,Livonia Av,NYCS-BMT Canarsie Line,否,40.6637042,-73.9004923,
+New York-US,New Lots Av (BMT Canarsie Line),NYCS-BMT Canarsie Line,否,40.6589611,-73.8992787,
+New York-US,E 105 St,NYCS-BMT Canarsie Line,否,40.6512183,-73.8990872,
+New York-US,Canarsie - Rockaway Pkwy,NYCS-BMT Canarsie Line,否,40.6464582,-73.9019799,
+New York-US,Astoria - Ditmars Blvd,NYCS-BMT Broadway Line,否,40.7749872,-73.9121176,
+New York-US,Astoria Blvd,NYCS-BMT Broadway Line,否,40.7704417,-73.9176868,
+New York-US,30 Av,NYCS-BMT Broadway Line,否,40.7666967,-73.9215824,
+New York-US,Broadway (BMT Broadway Line),NYCS-BMT Broadway Line,否,40.7617758,-73.9255789,
+New York-US,36 Av,NYCS-BMT Broadway Line,否,40.7565586,-73.9298155,
+New York-US,39 Av,NYCS-BMT Broadway Line,否,40.7526866,-73.9329357,
+New York-US,Lexington Av/59 St,NYCS-BMT Broadway Line,否,40.7627515,-73.9674728,
+New York-US,5 Av/59 St,NYCS-BMT Broadway Line,否,40.7648269,-73.9726747,
+New York-US,57 St - 7 Av,NYCS-BMT Broadway Line,否,40.7646501,-73.9806228,
+New York-US,49 St,NYCS-BMT Broadway Line,否,40.759901,-73.984139,
+New York-US,Times Sq - 42 St (BMT Broadway Line),NYCS-BMT Broadway Line,否,40.7547445,-73.9867299,
+New York-US,34 St - Herald Sq (BMT Broadway Line),NYCS-BMT Broadway Line,否,40.749567,-73.98795,
+New York-US,28 St (BMT Broadway Line),NYCS-BMT Broadway Line,否,40.745494,-73.988691,
+New York-US,23 St (BMT Broadway Line),NYCS-BMT Broadway Line,否,40.741303,-73.989344,
+New York-US,14 St - Union Sq (BMT Broadway Line),NYCS-BMT Broadway Line,否,40.7357611,-73.9906491,
+New York-US,8 St - NYU,NYCS-BMT Broadway Line,否,40.730328,-73.9926289,
+New York-US,Prince St,NYCS-BMT Broadway Line,否,40.724329,-73.997702,
+New York-US,"Canal St (BMT Broadway Line N,Q)",NYCS-BMT Broadway Line,否,40.7186195,-74.0007681,
+New York-US,"Canal St (BMT Broadway Line R,W)",NYCS-BMT Broadway Line,否,40.719527,-74.001775,
+New York-US,City Hall,NYCS-BMT Broadway Line,否,40.713282,-74.006978,
+New York-US,Cortlandt St,NYCS-BMT Broadway Line,否,40.710668,-74.0110289,
+New York-US,Rector St (BMT Broadway Line),NYCS-BMT Broadway Line,否,40.70722,-74.013342,
+New York-US,Whitehall St,NYCS-BMT Broadway Line,否,40.7030869,-74.012994,
+New York-US,Court St,NYCS-BMT Broadway Line,否,40.6941,-73.991777,
+New York-US,Jay St - MetroTech (BMT Broadway Line),NYCS-BMT Broadway Line,否,40.69218,-73.985942,
+New York-US,9 St,NYCS-BMT Broadway Line,否,40.670847,-73.988302,
+New York-US,45 St,NYCS-BMT Broadway Line,否,40.648939,-74.010006,
+New York-US,53 St,NYCS-BMT Broadway Line,否,40.645069,-74.014034,
+New York-US,59 St,NYCS-BMT Broadway Line,否,40.641362,-74.017881,
+New York-US,8 Av (BMT Broadway Line),NYCS-BMT Broadway Line,否,40.635064,-74.011719,
+New York-US,Fort Hamilton Pkwy (BMT Broadway Line),NYCS-BMT Broadway Line,否,40.631386,-74.005351,
+New York-US,New Utrecht Av,NYCS-BMT Broadway Line,否,40.624842,-73.996353,
+New York-US,18 Av (BMT Broadway Line),NYCS-BMT Broadway Line,否,40.620671,-73.990414,
+New York-US,20 Av (BMT Broadway Line),NYCS-BMT Broadway Line,否,40.61741,-73.985026,
+New York-US,Bay Pkwy (BMT Broadway Line),NYCS-BMT Broadway Line,否,40.611815,-73.981848,
+New York-US,Kings Hwy (BMT Broadway Line),NYCS-BMT Broadway Line,否,40.603923,-73.9803529,
+New York-US,Avenue U (BMT Broadway Line N),NYCS-BMT Broadway Line,否,40.597473,-73.979137,
+New York-US,86 St (BMT Broadway Line N),NYCS-BMT Broadway Line,否,40.784318,-73.947152,
+New York-US,96 St (BMT Broadway Line),NYCS-BMT Broadway Line,否,40.7778909,-73.951787,
+New York-US,86 St (BMT Broadway Line),NYCS-BMT Broadway Line,否,40.768799,-73.9584239,
+New York-US,72 St (BMT Broadway Line),NYCS-BMT Broadway Line,否,40.768799,-73.9584239,
+New York-US,Parkside Av,NYCS-BMT Broadway Line,否,40.655292,-73.961495,
+New York-US,Beverley Rd,NYCS-BMT Broadway Line,否,40.644031,-73.964492,
+New York-US,Cortelyou Rd,NYCS-BMT Broadway Line,否,40.640927,-73.963891,
+New York-US,Avenue H,NYCS-BMT Broadway Line,否,40.62927,-73.961639,
+New York-US,Avenue J,NYCS-BMT Broadway Line,否,40.625039,-73.960803,
+New York-US,Avenue M,NYCS-BMT Broadway Line,否,40.6178971,-73.959474,
+New York-US,Avenue U (BMT Broadway Line Q),NYCS-BMT Broadway Line,否,40.5993,-73.955929,
+New York-US,Neck Rd,NYCS-BMT Broadway Line,否,40.595246,-73.955161,
+New York-US,Ocean Pkwy,NYCS-BMT Broadway Line,否,40.576312,-73.968501,
+New York-US,Bay Ridge Av,NYCS-BMT Broadway Line,否,40.6347733,-74.0234269,
+New York-US,77 St (BMT Broadway Line),NYCS-BMT Broadway Line,否,40.6295562,-74.0255506,
+New York-US,86 St (BMT Broadway Line R),NYCS-BMT Broadway Line,否,40.622811,-74.0282979,
+New York-US,Bay Ridge - 95 St,NYCS-BMT Broadway Line,否,40.6161881,-74.0310127,
+New York-US,Franklin Av (Shuttles),NYCS-Shuttles,否,40.6805541,-73.9558057,
+New York-US,Park Place (Shuttles),NYCS-Shuttles,否,40.6748186,-73.9576469,
+New York-US,Botanic Garden,NYCS-Shuttles,否,40.6706475,-73.9591467,
+New York-US,Grand Central,NYCS-Shuttles,否,40.752769,-73.979189,
+New York-US,Times Sq ,NYCS-Shuttles,否,40.7555923,-73.9858388,
+New York-US,Newark Penn Station,Path-NWK-WTC line,否,40.7345985,-74.1639563,
+New York-US,Harrison,Path-NWK-WTC line,否,40.7393434,-74.1556748,
+New York-US,Journal Square,"Path-NWK-WTC line, JSQ-33 line",是,40.7318097,-74.0628655,
+New York-US,Grove Street,"Path-NWK-WTC line, JSQ-33 line",是,40.7192583,-74.0421003,
+New York-US,Exchange Place,"Path-NWK-WTC line, HOB-WTC line",是,40.7167341,-74.0324551,
+New York-US,World Trade Center,"Path-NWK-WTC line, HOB-WTC line",是,40.7118877,-74.0124412,
+New York-US,Hoboken Terminal,"Path-HOB-WTC line, HOB-33 line",是,40.7349447,-74.0273829,
+New York-US,Newport,"Path-HOB-WTC line, JSQ-33 line",是,40.727029,-74.0360637,
+New York-US,Christopher Street,"Path-JSQ-33 line, HOB-33 line",是,40.7329877,-74.0069062,
+New York-US,9th Street,"Path-JSQ-33 line, HOB-33 line",是,40.7340749,-73.9996395,
+New York-US,14th Street,"Path-JSQ-33 line, HOB-33 line",是,40.7370478,-73.9970695,
+New York-US,23rd Street,"Path-JSQ-33 line, HOB-33 line",是,40.742878,-73.992821,
+New York-US,33rd Street,"Path-JSQ-33 line, HOB-33 line",是,40.7485384,-73.9887001,
+New York-US,St. George Terminal,SIR,否,40.6439626,-74.0734416,
+New York-US,Tompkinsville,SIR,否,40.6371655,-74.0748862,
+New York-US,Stapleton,SIR,否,40.6279568,-74.0751652,
+New York-US,Clifton,SIR,否,40.6214971,-74.0714909,
+New York-US,Grasmere,SIR,否,40.6030874,-74.0841861,
+New York-US,Old Town,SIR,否,40.5966257,-74.0872839,
+New York-US,Dongan Hills,SIR,否,40.5887262,-74.0962396,
+New York-US,Jefferson Avenue,SIR,否,40.5835955,-74.1033494,
+New York-US,Grant City,SIR,否,40.5791828,-74.1094223,
+New York-US,New Dorp,SIR,否,40.5736051,-74.1170472,
+New York-US,Oakwood Heights,SIR,否,40.5648458,-74.1266603,
+New York-US,Bay Terrace,SIR,否,40.5564668,-74.136828,
+New York-US,Great Kills,SIR,否,40.5513353,-74.151201,
+New York-US,Eltingville,SIR,否,40.5444455,-74.1649012,
+New York-US,Annadale,SIR,否,40.540534,-74.1779041,
+New York-US,Huguenot,SIR,否,40.5335447,-74.1919401,
+New York-US,Prince's Bay,SIR,否,40.525526,-74.2000583,
+New York-US,Pleasant Plains,SIR,否,40.522491,-74.2175382,
+New York-US,Richmond Valley,SIR,否,40.5196623,-74.2290407,
+New York-US,Arthur Kill,SIR,否,40.5168019,-74.2416146,
+New York-US,Tottenville,SIR,否,40.5127684,-74.2519703,
+Philadelphia-US,15–16th & Locust ,PATCO Speedline-Lindenwold Line,,39.9485309, -75.1670040,yes
+Philadelphia-US,12–13th & Locust,PATCO Speedline-Lindenwold Line,,39.9478496, -75.1615880,yes
+Philadelphia-US,9–10th & Locust ,PATCO Speedline-Lindenwold Line,,39.9472633, -75.1568659,no
+Philadelphia-US,8th & Market ,PATCO Speedline-Lindenwold Line,,39.9509527, -75.1536208,yes
+Philadelphia-US,City Hall,PATCO Speedline-Lindenwold Line,,39.9456122, -75.1211073,no
+Philadelphia-US,Broadway  ,PATCO Speedline-Lindenwold Line,,39.9430252, -75.1196234,no
+Philadelphia-US,Ferry Avenue  ,PATCO Speedline-Lindenwold Line,,39.9228482, -75.0919740,no
+Philadelphia-US,Collingswood  ,PATCO Speedline-Lindenwold Line,,39.913655, -75.0647602,no
+Philadelphia-US,Westmont  ,PATCO Speedline-Lindenwold Line,,39.9072314, -75.0468963,no
+Philadelphia-US,Haddonfield  ,PATCO Speedline-Lindenwold Line,,39.8973845, -75.0368309,no
+Philadelphia-US,Woodcrest  ,PATCO Speedline-Lindenwold Line,,39.8702238, -75.0111924,no
+Philadelphia-US,Ashland  ,PATCO Speedline-Lindenwold Line,,39.8587646, -75.0092080,no
+Philadelphia-US,Lindenwold  ,PATCO Speedline-Lindenwold Line,,39.8338506, -75.0003711,no
+Philadelphia-US,69th Street Transportation Center,SEPTA-Market–Frankford Line,,39.9625339, -75.2591050,yes
+Philadelphia-US,Millbourne,SEPTA-Market–Frankford Line,,39.9643903, -75.2522065,no
+Philadelphia-US,63rd Street,SEPTA-Market–Frankford Line,,39.9627056, -75.2467035,no
+Philadelphia-US,60th Street,SEPTA-Market–Frankford Line,,39.9619732, -75.2408051,no
+Philadelphia-US,56th Street,SEPTA-Market–Frankford Line,,39.9609881, -75.2328616,no
+Philadelphia-US,52nd Street,SEPTA-Market–Frankford Line,,39.9600003, -75.2248623,no
+Philadelphia-US,46th Street,SEPTA-Market–Frankford Line,,39.9586542, -75.2140058,no
+Philadelphia-US,40th Street,SEPTA-Market–Frankford Line,,39.9572587, -75.2018813,no
+Philadelphia-US,34th Street,SEPTA-Market–Frankford Line,,39.9559238, -75.1914953,no
+Philadelphia-US,30th Street,SEPTA-Market–Frankford Line,,39.9550324, -75.1834700,no
+Philadelphia-US,15th Street,SEPTA-Market–Frankford Line,,39.9526346, -75.1651258,yes
+Philadelphia-US,13th Street,SEPTA-Market–Frankford Line,,39.952184, -75.1615338,no
+Philadelphia-US,11th Street,SEPTA-Market–Frankford Line,,39.9517977, -75.1583456,no
+Philadelphia-US,8th Street,SEPTA-Market–Frankford Line,,39.9511591, -75.1537918,yes
+Philadelphia-US,5th Street/Independence Hall,SEPTA-Market–Frankford Line,,39.9505503, -75.1488907,no
+Philadelphia-US,2nd Street,SEPTA-Market–Frankford Line,,39.9499946, -75.1438048,no
+Philadelphia-US,Spring Garden,SEPTA-Market–Frankford Line,,39.9605274, -75.1403778,no
+Philadelphia-US,Girard,SEPTA-Market–Frankford Line,,39.968916, -75.1362338,no
+Philadelphia-US,Berks,SEPTA-Market–Frankford Line,,39.9785347, -75.1335538,no
+Philadelphia-US,York–Dauphin,SEPTA-Market–Frankford Line,,39.9852156, -75.1321258,no
+Philadelphia-US,Huntingdon,SEPTA-Market–Frankford Line,,39.988866, -75.1272829,no
+Philadelphia-US,Somerset,SEPTA-Market–Frankford Line,,39.9915394, -75.1224276,no
+Philadelphia-US,Allegheny,SEPTA-Market–Frankford Line,,39.9964906, -75.1134652,no
+Philadelphia-US,Tioga,SEPTA-Market–Frankford Line,,40.0002153, -75.1066243,no
+Philadelphia-US,Erie–Torresdale,SEPTA-Market–Frankford Line,,40.0059983, -75.0960928,no
+Philadelphia-US,Church,SEPTA-Market–Frankford Line,,40.0105932, -75.0889580,no
+Philadelphia-US,Arrott Transportation Center,SEPTA-Market–Frankford Line,,40.0163655, -75.0840679,no
+Philadelphia-US,Frankford Transportation Center,SEPTA-Market–Frankford Line,,40.0231608, -75.0778115,no
+Philadelphia-US,Fern Rock Transportation Center ,SEPTA-Broad Street Line,,40.0418091, -75.1368239,yes
+Philadelphia-US,Olney Transportation Center ,SEPTA-Broad Street Line,,40.0387963, -75.1447438,no
+Philadelphia-US,Logan,SEPTA-Broad Street Line,,40.0298125, -75.1467057,no
+Philadelphia-US,Wyoming,SEPTA-Broad Street Line,,40.0245715, -75.1478543,no
+Philadelphia-US,Hunting Park,SEPTA-Broad Street Line,,40.0175785, -75.1493881,no
+Philadelphia-US,Erie,SEPTA-Broad Street Line,,40.0092413, -75.1512083,no
+Philadelphia-US,Allegheny ,SEPTA-Broad Street Line,,40.0015922, -75.1528751,no
+Philadelphia-US,North Philadelphia ,SEPTA-Broad Street Line,,39.9946558, -75.1543919,yes
+Philadelphia-US,Susquehanna–Dauphin,SEPTA-Broad Street Line,,39.9870963, -75.1560417,no
+Philadelphia-US,Cecil B. Moore ,SEPTA-Broad Street Line,,39.9785703, -75.1579015,no
+Philadelphia-US,Girard ,SEPTA-Broad Street Line,,39.9714988, -75.1594598,no
+Philadelphia-US,Fairmount,SEPTA-Broad Street Line,,39.9668932, -75.1604429,no
+Philadelphia-US,Spring Garden,SEPTA-Broad Street Line,,39.9624091, -75.1614309,no
+Philadelphia-US,Chinatown,SEPTA-Broad Street Line,,39.9559058, -75.1532615,no
+Philadelphia-US,8th & Market ,SEPTA-Broad Street Line,,39.9509527, -75.1536208,yes
+Philadelphia-US,Spring Garden ,SEPTA-Broad Street Line,,39.9624091, -75.1614309,no
+Philadelphia-US,Race–Vine,SEPTA-Broad Street Line,,39.9568762, -75.1626318,no
+Philadelphia-US,City Hall,SEPTA-Broad Street Line,,39.9531287, -75.1642021,yes
+Philadelphia-US,Walnut–Locust ,SEPTA-Broad Street Line,,39.9488158, -75.1643881,yes
+Philadelphia-US,Lombard–South,SEPTA-Broad Street Line,,39.9441504, -75.1653951,no
+Philadelphia-US,Ellsworth–Federal,SEPTA-Broad Street Line,,39.9362304, -75.1671154,no
+Philadelphia-US,Tasker–Morris,SEPTA-Broad Street Line,,39.9298966, -75.1684917,no
+Philadelphia-US,Snyder,SEPTA-Broad Street Line,,39.9237275, -75.1695817,no
+Philadelphia-US,Oregon ,SEPTA-Broad Street Line,,39.9169429, -75.1710579,no
+Philadelphia-US,NRG ,SEPTA-Broad Street Line,,39.9059917, -75.1731127,no
+Philadelphia-US,Penn Medicine ,SEPTA-Airport Line,,39.9478543, -75.1903505,yes
+Philadelphia-US,Eastwick ,SEPTA-Airport Line,,39.8916933, -75.2449472,no
+Philadelphia-US,Terminal A ,SEPTA-Airport Line,,39.8759814, -75.2464330,no
+Philadelphia-US,Terminal B ,SEPTA-Airport Line,,39.8763364, -75.2446549,no
+Philadelphia-US,Terminals C & D ,SEPTA-Airport Line,,39.8772959, -75.2414885,no
+Philadelphia-US,Terminals E & F ,SEPTA-Airport Line,,39.8790494, -75.2399593,no
+Philadelphia-US,Temple University ,SEPTA-Chestnut Hill East Line,,39.9815838, -75.1495197,yes
+Philadelphia-US,Wayne Junction ,SEPTA-Chestnut Hill East Line,,40.0227281, -75.1598192,yes
+Philadelphia-US,Wister,SEPTA-Chestnut Hill East Line,,40.0362811, -75.1614769,no
+Philadelphia-US,Germantown,SEPTA-Chestnut Hill East Line,,40.0377966, -75.1718910,no
+Philadelphia-US,Washington Lane,SEPTA-Chestnut Hill East Line,,40.0510578, -75.1716415,no
+Philadelphia-US,Stenton,SEPTA-Chestnut Hill East Line,,40.0606027, -75.1789347,no
+Philadelphia-US,Sedgwick,SEPTA-Chestnut Hill East Line,,40.0629183, -75.1853925,no
+Philadelphia-US,Mount Airy,SEPTA-Chestnut Hill East Line,,40.0651969, -75.1912225,no
+Philadelphia-US,Wyndmoor,SEPTA-Chestnut Hill East Line,,40.0733919, -75.1968200,no
+Philadelphia-US,Gravers,SEPTA-Chestnut Hill East Line,,40.0773512, -75.2019399,no
+Philadelphia-US,Chestnut Hill East,SEPTA-Chestnut Hill East Line,,40.0809185, -75.2077675,no
+Philadelphia-US,North Philadelphia,SEPTA-Chestnut Hill West Line,,39.9946558, -75.1543919,yes
+Philadelphia-US,Queen Lane ,SEPTA-Chestnut Hill West Line,,40.0232855, -75.1777824,no
+Philadelphia-US,Chelten Avenue,SEPTA-Chestnut Hill West Line,,40.0298482, -75.1811682,no
+Philadelphia-US,Tulpehocken,SEPTA-Chestnut Hill West Line,,40.035191, -75.1868656,no
+Philadelphia-US,Upsal,SEPTA-Chestnut Hill West Line,,40.0423876, -75.1900600,no
+Philadelphia-US,Carpenter,SEPTA-Chestnut Hill West Line,,40.0509172, -75.1917249,no
+Philadelphia-US,Richard Allen Lane ,SEPTA-Chestnut Hill West Line,,40.0574208, -75.1948812,no
+Philadelphia-US,St. Martins,SEPTA-Chestnut Hill West Line,,40.0657302, -75.2045873,no
+Philadelphia-US,Highland,SEPTA-Chestnut Hill West Line,,40.0702511, -75.2109804,no
+Philadelphia-US,Chestnut Hill West ,SEPTA-Chestnut Hill West Line,,40.0761535, -75.2083308,no
+Philadelphia-US,Wynnefield Avenue,SEPTA-Cynwyd Line,,39.9903627, -75.2257034,no
+Philadelphia-US,Bala,SEPTA-Cynwyd Line,,40.0009974, -75.2278284,no
+Philadelphia-US,Cynwyd,SEPTA-Cynwyd Line,,40.0067183, -75.2320804,no
+Philadelphia-US,Temple University,SEPTA-Fox Chase Line,,39.9815838, -75.1495197,yes
+Philadelphia-US,Wayne Junction,SEPTA-Fox Chase Line,,40.0227281, -75.1598192,yes
+Philadelphia-US,Olney,SEPTA-Fox Chase Line,,40.0334543, -75.1225778,no
+Philadelphia-US,Lawndale,SEPTA-Fox Chase Line,,40.0513079, -75.1032858,no
+Philadelphia-US,Cheltenham,SEPTA-Fox Chase Line,,40.0579085, -75.0929207,no
+Philadelphia-US,Ryers,SEPTA-Fox Chase Line,,40.063581, -75.0869178,no
+Philadelphia-US,Fox Chase,SEPTA-Fox Chase Line,,40.0759538, -75.0835851,no
+Philadelphia-US,Temple University ,SEPTA-Lansdale/Doylestown Line,,39.9815838, -75.1495197,yes
+Philadelphia-US,North Broad ,SEPTA-Lansdale/Doylestown Line,,39.9922152, -75.1539044,yes
+Philadelphia-US,Wayne Junction ,SEPTA-Lansdale/Doylestown Line,,40.0227281, -75.1598192,yes
+Philadelphia-US,Fern Rock Transportation Center ,SEPTA-Lansdale/Doylestown Line,,40.0414027, -75.1347899,yes
+Philadelphia-US,Melrose Park ,SEPTA-Lansdale/Doylestown Line,,40.0594779, -75.1291394,yes
+Philadelphia-US,Elkins Park,SEPTA-Lansdale/Doylestown Line,,40.0712142, -75.1278444,yes
+Philadelphia-US,Jenkintown–Wyncote,SEPTA-Lansdale/Doylestown Line,,40.0931689, -75.1379852,yes
+Philadelphia-US,Glenside,SEPTA-Lansdale/Doylestown Line,,40.1014262, -75.1537213,yes
+Philadelphia-US,North Hills,SEPTA-Lansdale/Doylestown Line,,40.1121101, -75.1698704,no
+Philadelphia-US,Oreland,SEPTA-Lansdale/Doylestown Line,,40.1180717, -75.1839050,no
+Philadelphia-US,Fort Washington ,SEPTA-Lansdale/Doylestown Line,,40.1353891, -75.2118676,no
+Philadelphia-US,Ambler ,SEPTA-Lansdale/Doylestown Line,,40.1528172, -75.2244650,no
+Philadelphia-US,Penllyn,SEPTA-Lansdale/Doylestown Line,,40.1698517, -75.2440725,no
+Philadelphia-US,Gwynedd Valley,SEPTA-Lansdale/Doylestown Line,,40.184815, -75.2569297,no
+Philadelphia-US,North Wales ,SEPTA-Lansdale/Doylestown Line,,40.2143282, -75.2774194,no
+Philadelphia-US,Pennbrook ,SEPTA-Lansdale/Doylestown Line,,40.2302836, -75.2818374,no
+Philadelphia-US,Lansdale ,SEPTA-Lansdale/Doylestown Line,,40.2430731, -75.2851412,no
+Philadelphia-US,9th Street ,SEPTA-Lansdale/Doylestown Line,,40.2503517, -75.2788695,no
+Philadelphia-US,Fortuna ,SEPTA-Lansdale/Doylestown Line,,40.2595203, -75.2661980,no
+Philadelphia-US,Colmar ,SEPTA-Lansdale/Doylestown Line,,40.2685292, -75.2541492,no
+Philadelphia-US,Link Belt ,SEPTA-Lansdale/Doylestown Line,,40.2738956, -75.2468162,no
+Philadelphia-US,Chalfont ,SEPTA-Lansdale/Doylestown Line,,40.2878561, -75.2112009,no
+Philadelphia-US,New Britain ,SEPTA-Lansdale/Doylestown Line,,40.2974577, -75.1796313,no
+Philadelphia-US,Delaware Valley University ,SEPTA-Lansdale/Doylestown Line,,40.297289, -75.1617528,no
+Philadelphia-US,Doylestown ,SEPTA-Lansdale/Doylestown Line,,40.3062661, -75.1308122,no
+Philadelphia-US,Temple University ,SEPTA-Manayunk/Norristown Line,,39.9815838, -75.1495197,yes
+Philadelphia-US,North Broad ,SEPTA-Manayunk/Norristown Line,,39.9922152, -75.1539044,yes
+Philadelphia-US,Allegheny,SEPTA-Manayunk/Norristown Line,,40.0015922, -75.1528751,no
+Philadelphia-US,East Falls,SEPTA-Manayunk/Norristown Line,,40.011478, -75.1920089,no
+Philadelphia-US,Wissahickon,SEPTA-Manayunk/Norristown Line,,40.0166327, -75.2102018,no
+Philadelphia-US,Manayunk,SEPTA-Manayunk/Norristown Line,,40.0270147, -75.2251482,no
+Philadelphia-US,Ivy Ridge,SEPTA-Manayunk/Norristown Line,,40.0341791, -75.2354520,no
+Philadelphia-US,Miquon,SEPTA-Manayunk/Norristown Line,,40.058595, -75.2663067,no
+Philadelphia-US,Spring Mill ,SEPTA-Manayunk/Norristown Line,,40.0741671, -75.2860926,no
+Philadelphia-US,Conshohocken,SEPTA-Manayunk/Norristown Line,,40.0720808, -75.3087811,no
+Philadelphia-US,Norristown Transportation Center,SEPTA-Manayunk/Norristown Line,,40.1132303, -75.3453521,no
+Philadelphia-US,Norristown–Main Street,SEPTA-Manayunk/Norristown Line,,40.1170916, -75.3486934,no
+Philadelphia-US,Norristown–Elm Street ,SEPTA-Manayunk/Norristown Line,,40.1208026, -75.3449840,no
+Philadelphia-US,Penn Medicine ,SEPTA-Media/Wawa Line,,39.9478543, -75.1903505,yes
+Philadelphia-US,49th Street ,SEPTA-Media/Wawa Line,,39.9435993, -75.2166260,no
+Philadelphia-US,Angora,SEPTA-Media/Wawa Line,,39.9449115, -75.2383483,no
+Philadelphia-US,Fernwood–Yeadon,SEPTA-Media/Wawa Line,,39.9396267, -75.2560715,no
+Philadelphia-US,Lansdowne,SEPTA-Media/Wawa Line,,39.9372966, -75.2715394,no
+Philadelphia-US,Gladstone,SEPTA-Media/Wawa Line,,39.9326946, -75.2820740,no
+Philadelphia-US,Clifton–Aldan,SEPTA-Media/Wawa Line,,39.926592, -75.2902258,no
+Philadelphia-US,Primos ,SEPTA-Media/Wawa Line,,39.9216357, -75.2982987,no
+Philadelphia-US,Secane ,SEPTA-Media/Wawa Line,,39.9157428, -75.3098796,no
+Philadelphia-US,Morton ,SEPTA-Media/Wawa Line,,39.9078688, -75.3287038,no
+Philadelphia-US,Swarthmore ,SEPTA-Media/Wawa Line,,39.9023002, -75.3509085,no
+Philadelphia-US,Wallingford,SEPTA-Media/Wawa Line,,39.9036359, -75.3716623,no
+Philadelphia-US,Moylan–Rose Valley,SEPTA-Media/Wawa Line,,39.905677, -75.3879695,no
+Philadelphia-US,Media ,SEPTA-Media/Wawa Line,,39.9141268, -75.3946984,no
+Philadelphia-US,Elwyn ,SEPTA-Media/Wawa Line,,39.907865, -75.4112533,no
+Philadelphia-US,Wawa ,SEPTA-Media/Wawa Line,,39.9010997, -75.4595746,no
+Philadelphia-US,Overbrook ,SEPTA-Paoli/Thorndale Line,,39.9898764, -75.2499989,no
+Philadelphia-US,Merion,SEPTA-Paoli/Thorndale Line,,39.9975379, -75.2516078,no
+Philadelphia-US,Narberth,SEPTA-Paoli/Thorndale Line,,40.0047478, -75.2616109,no
+Philadelphia-US,Wynnewood,SEPTA-Paoli/Thorndale Line,,40.0027198, -75.2731002,no
+Philadelphia-US,Ardmore,SEPTA-Paoli/Thorndale Line,,40.0082891, -75.2902885,no
+Philadelphia-US,Haverford,SEPTA-Paoli/Thorndale Line,,40.0139837, -75.3002556,no
+Philadelphia-US,Bryn Mawr,SEPTA-Paoli/Thorndale Line,,40.0216926, -75.3157570,no
+Philadelphia-US,Rosemont,SEPTA-Paoli/Thorndale Line,,40.028133, -75.3274099,no
+Philadelphia-US,Villanova,SEPTA-Paoli/Thorndale Line,,40.0387278, -75.3422808,no
+Philadelphia-US,Radnor ,SEPTA-Paoli/Thorndale Line,,40.0448619, -75.3594728,no
+Philadelphia-US,St. Davids,SEPTA-Paoli/Thorndale Line,,40.0441884, -75.3734145,no
+Philadelphia-US,Wayne ,SEPTA-Paoli/Thorndale Line,,40.0458376, -75.3871651,no
+Philadelphia-US,Strafford ,SEPTA-Paoli/Thorndale Line,,40.049706, -75.4037569,no
+Philadelphia-US,Devon,SEPTA-Paoli/Thorndale Line,,40.0473603, -75.4229511,no
+Philadelphia-US,Berwyn ,SEPTA-Paoli/Thorndale Line,,40.0480849, -75.4425098,no
+Philadelphia-US,Daylesford,SEPTA-Paoli/Thorndale Line,,40.0428463, -75.4606106,no
+Philadelphia-US,Paoli ,SEPTA-Paoli/Thorndale Line,,40.0429514, -75.4835877,no
+Philadelphia-US,Malvern,SEPTA-Paoli/Thorndale Line,,40.0363469, -75.5155215,no
+Philadelphia-US,Exton ,SEPTA-Paoli/Thorndale Line,,40.0193473, -75.6217159,no
+Philadelphia-US,Whitford,SEPTA-Paoli/Thorndale Line,,40.014675, -75.6387796,no
+Philadelphia-US,Downingtown,SEPTA-Paoli/Thorndale Line,,40.0020755, -75.7105446,no
+Philadelphia-US,Thorndale ,SEPTA-Paoli/Thorndale Line,,39.992598, -75.7626804,no
+Philadelphia-US,Coatesville,SEPTA-Paoli/Thorndale Line,,39.9857545, -75.8209661,no
+Philadelphia-US,Parkesburg,SEPTA-Paoli/Thorndale Line,,39.9591012, -75.9223376,no
+Philadelphia-US,North Philadelphia,SEPTA-Trenton Line,,39.9946558, -75.1543919,yes
+Philadelphia-US,Bridesburg,SEPTA-Trenton Line,,40.0108251, -75.0699462,no
+Philadelphia-US,Tacony,SEPTA-Trenton Line,,40.0232498, -75.0390150,no
+Philadelphia-US,Holmesburg Junction,SEPTA-Trenton Line,,40.0328708, -75.0238363,no
+Philadelphia-US,Torresdale,SEPTA-Trenton Line,,40.0544244, -74.9845185,no
+Philadelphia-US,Cornwells Heights,SEPTA-Trenton Line,,40.0718694, -74.9521030,no
+Philadelphia-US,Eddington,SEPTA-Trenton Line,,40.0829892, -74.9337081,no
+Philadelphia-US,Croydon,SEPTA-Trenton Line,,40.0935334, -74.9068150,no
+Philadelphia-US,Bristol,SEPTA-Trenton Line,,40.1049605, -74.8547898,no
+Philadelphia-US,Levittown,SEPTA-Trenton Line,,40.1402502, -74.8172822,no
+Philadelphia-US,Trenton Transit Center ,SEPTA-Trenton Line,,40.2185331, -74.7539009,no
+Philadelphia-US,Temple University ,SEPTA-Warminster Line,,39.9815838, -75.1495197,yes
+Philadelphia-US,Wayne Junction ,SEPTA-Warminster Line,,40.0227281, -75.1598192,yes
+Philadelphia-US,Fern Rock Transportation Center ,SEPTA-Warminster Line,,40.0414027, -75.1347899,yes
+Philadelphia-US,Melrose Park ,SEPTA-Warminster Line,,40.0594779, -75.1291394,yes
+Philadelphia-US,Elkins Park,SEPTA-Warminster Line,,40.0712142, -75.1278444,yes
+Philadelphia-US,Jenkintown–Wyncote,SEPTA-Warminster Line,,40.0931689, -75.1379852,yes
+Philadelphia-US,Glenside,SEPTA-Warminster Line,,40.1014262, -75.1537213,yes
+Philadelphia-US,Ardsley ,SEPTA-Warminster Line,,40.1141473, -75.1531701,no
+Philadelphia-US,Roslyn ,SEPTA-Warminster Line,,40.1208411, -75.1340993,no
+Philadelphia-US,Crestmont ,SEPTA-Warminster Line,,40.1332528, -75.1185884,no
+Philadelphia-US,Willow Grove,SEPTA-Warminster Line,,40.1436471, -75.1142749,no
+Philadelphia-US,Hatboro,SEPTA-Warminster Line,,40.1756474, -75.1028881,no
+Philadelphia-US,Warminster ,SEPTA-Warminster Line,,40.1950775, -75.0889315,no
+Philadelphia-US,Temple University ,SEPTA-West Trenton Line,,39.9815838, -75.1495197,yes
+Philadelphia-US,Wayne Junction ,SEPTA-West Trenton Line,,40.0227281, -75.1598192,yes
+Philadelphia-US,Fern Rock Transportation Center ,SEPTA-West Trenton Line,,40.0414027, -75.1347899,yes
+Philadelphia-US,Melrose Park ,SEPTA-West Trenton Line,,40.0594779, -75.1291394,yes
+Philadelphia-US,Elkins Park,SEPTA-West Trenton Line,,40.0712142, -75.1278444,yes
+Philadelphia-US,Jenkintown–Wyncote,SEPTA-West Trenton Line,,40.0931689, -75.1379852,yes
+Philadelphia-US,Noble,SEPTA-West Trenton Line,,40.104455, -75.1246602,no
+Philadelphia-US,Rydal,SEPTA-West Trenton Line,,40.107492, -75.1106687,no
+Philadelphia-US,Meadowbrook,SEPTA-West Trenton Line,,40.1113073, -75.0925035,no
+Philadelphia-US,Bethayres ,SEPTA-West Trenton Line,,40.1165679, -75.0687391,no
+Philadelphia-US,Philmont ,SEPTA-West Trenton Line,,40.1219778, -75.0438288,no
+Philadelphia-US,Forest Hills ,SEPTA-West Trenton Line,,40.1278051, -75.0209468,no
+Philadelphia-US,Somerton ,SEPTA-West Trenton Line,,40.1307147, -75.0120980,no
+Philadelphia-US,Trevose ,SEPTA-West Trenton Line,,40.1402074, -74.9828106,no
+Philadelphia-US,Neshaminy Falls ,SEPTA-West Trenton Line,,40.146926, -74.9621990,no
+Philadelphia-US,Langhorne,SEPTA-West Trenton Line,,40.1607725, -74.9131000,no
+Philadelphia-US,Woodbourne,SEPTA-West Trenton Line,,40.1908891, -74.8909853,no
+Philadelphia-US,Yardley,SEPTA-West Trenton Line,,40.2351274, -74.8309913,no
+Philadelphia-US,West Trenton,SEPTA-West Trenton Line,,40.2573097, -74.8152371,no
+Philadelphia-US,Penn Medicine ,SEPTA-Wilmington/Newark Line,,39.9478543, -75.1903505,yes
+Philadelphia-US,Darby,SEPTA-Wilmington/Newark Line,,39.9129268, -75.2546342,no
+Philadelphia-US,Curtis Park,SEPTA-Wilmington/Newark Line,,39.9080039, -75.2650501,no
+Philadelphia-US,Sharon Hill,SEPTA-Wilmington/Newark Line,,39.9045802, -75.2707940,no
+Philadelphia-US,Folcroft,SEPTA-Wilmington/Newark Line,,39.9005526, -75.2797250,no
+Philadelphia-US,Glenolden,SEPTA-Wilmington/Newark Line,,39.8962795, -75.2899943,no
+Philadelphia-US,Norwood,SEPTA-Wilmington/Newark Line,,39.8912129, -75.3021430,no
+Philadelphia-US,Prospect Park,SEPTA-Wilmington/Newark Line,,39.8880087, -75.3093736,no
+Philadelphia-US,Ridley Park,SEPTA-Wilmington/Newark Line,,39.8805248, -75.3221004,no
+Philadelphia-US,Crum Lynne,SEPTA-Wilmington/Newark Line,,39.8717777, -75.3310032,no
+Philadelphia-US,Eddystone,SEPTA-Wilmington/Newark Line,,39.8574365, -75.3416266,no
+Philadelphia-US,Chester Transportation Center ,SEPTA-Wilmington/Newark Line,,39.8494898, -75.3600489,no
+Philadelphia-US,Highland Avenue,SEPTA-Wilmington/Newark Line,,39.8337042, -75.3929946,no
+Philadelphia-US,Marcus Hook,SEPTA-Wilmington/Newark Line,,39.8214874, -75.4196694,no
+Philadelphia-US,Claymont ,SEPTA-Wilmington/Newark Line,,39.7976518, -75.4522222,no
+Philadelphia-US,Wilmington ,SEPTA-Wilmington/Newark Line,,39.7367534, -75.5511036,no
+Philadelphia-US,Churchmans Crossing ,SEPTA-Wilmington/Newark Line,,39.6945405, -75.6728049,no
+Philadelphia-US,Newark ,SEPTA-Wilmington/Newark Line,,39.6701701, -75.7527691,no
+San Francisco-US,12th Street Oakland City Center,Bay Area Rapid Transit,,37.8034958, -122.2716920,yes
+San Francisco-US,16th Street Mission,Bay Area Rapid Transit,,37.7650686, -122.4196780,yes
+San Francisco-US,19th Street Oakland ,Bay Area Rapid Transit,,37.807894, -122.2688878,yes
+San Francisco-US,24th Street Mission,Bay Area Rapid Transit,,37.7522559, -122.4184490,yes
+San Francisco-US,Antioch ,Bay Area Rapid Transit,,37.9957458, -121.7800050,no
+San Francisco-US,Ashby,Bay Area Rapid Transit,,37.8529812, -122.2697110,yes
+San Francisco-US,Balboa Park   ,Bay Area Rapid Transit,,37.7214274, -122.4475473,yes
+San Francisco-US,Bay Fair ,Bay Area Rapid Transit,,37.697049, -122.1264749,yes
+San Francisco-US,Downtown Berkeley,Bay Area Rapid Transit,,37.8701007, -122.2681385,yes
+San Francisco-US,Berryessa/​North San José ,Bay Area Rapid Transit,,37.3684396, -121.8746770,yes
+San Francisco-US,Castro Valley,Bay Area Rapid Transit,,37.691213, -122.0759234,no
+San Francisco-US,Civic Center/​UN Plaza  ,Bay Area Rapid Transit,,37.7793625, -122.4139719,yes
+San Francisco-US,Coliseum   ,Bay Area Rapid Transit,,37.7539702, -122.1972051,yes
+San Francisco-US,Colma,Bay Area Rapid Transit,,37.684628, -122.4662130,yes
+San Francisco-US,Concord,Bay Area Rapid Transit,,37.9737812, -122.0290705,no
+San Francisco-US,Daly City ,Bay Area Rapid Transit,,37.7063084, -122.4688905,yes
+San Francisco-US,Dublin/​Pleasanton ,Bay Area Rapid Transit,,37.7016339, -121.8982990,no
+San Francisco-US,El Cerrito del Norte,Bay Area Rapid Transit,,37.9251823, -122.3169068,yes
+San Francisco-US,El Cerrito Plaza,Bay Area Rapid Transit,,37.9026207, -122.2989397,yes
+San Francisco-US,Embarcadero  ,Bay Area Rapid Transit,,37.792855, -122.3968986,yes
+San Francisco-US,Fremont,Bay Area Rapid Transit,,37.5574802, -121.9766318,yes
+San Francisco-US,Fruitvale,Bay Area Rapid Transit,,37.7748464, -122.2240955,yes
+San Francisco-US,Glen Park  ,Bay Area Rapid Transit,,37.7331037, -122.4338051,yes
+San Francisco-US,Hayward,Bay Area Rapid Transit,,37.6698995, -122.0872611,yes
+San Francisco-US,Lafayette,Bay Area Rapid Transit,,37.8931856, -122.1246366,no
+San Francisco-US,Lake Merritt,Bay Area Rapid Transit,,37.7972157, -122.2650397,yes
+San Francisco-US,MacArthur ,Bay Area Rapid Transit,,37.8288064, -122.2671250,yes
+San Francisco-US,Millbrae   ,Bay Area Rapid Transit,,37.6001143, -122.3870094,yes
+San Francisco-US,Milpitas  ,Bay Area Rapid Transit,,37.4100396, -121.8909720,yes
+San Francisco-US,Montgomery Street  ,Bay Area Rapid Transit,,37.7892257, -122.4014677,yes
+San Francisco-US,North Berkeley,Bay Area Rapid Transit,,37.8739663, -122.2834392,yes
+San Francisco-US,North Concord/​Martinez,Bay Area Rapid Transit,,38.0029897, -122.0243458,no
+San Francisco-US,Oakland International Airport ,Bay Area Rapid Transit,,37.7131093, -122.2123989,no
+San Francisco-US,Orinda,Bay Area Rapid Transit,,37.8784879, -122.1836810,no
+San Francisco-US,Pittsburg/​Bay Point ,Bay Area Rapid Transit,,38.0182952, -121.9451489,no
+San Francisco-US,Pittsburg Center,Bay Area Rapid Transit,,38.0168742, -121.8891598,no
+San Francisco-US,Pleasant Hill/​Contra Costa Centre,Bay Area Rapid Transit,,37.9284398, -122.0559847,no
+San Francisco-US,Powell Street  ,Bay Area Rapid Transit,,37.7847137, -122.4071968,yes
+San Francisco-US,Richmond   ,Bay Area Rapid Transit,,37.9368702, -122.3536041,yes
+San Francisco-US,Rockridge,Bay Area Rapid Transit,,37.8447574, -122.2512573,no
+San Francisco-US,San Bruno,Bay Area Rapid Transit,,37.6377524, -122.4163021,yes
+San Francisco-US,San Francisco International Airport ,Bay Area Rapid Transit,,37.6162238, -122.3915235,yes
+San Francisco-US,San Leandro,Bay Area Rapid Transit,,37.7215601, -122.1605840,yes
+San Francisco-US,South Hayward,Bay Area Rapid Transit,,37.6344666, -122.0569501,yes
+San Francisco-US,South San Francisco,Bay Area Rapid Transit,,37.6642278, -122.4439774,yes
+San Francisco-US,Union City,Bay Area Rapid Transit,,37.5906286, -122.0173972,yes
+San Francisco-US,Walnut Creek,Bay Area Rapid Transit,,37.905796, -122.0673437,no
+San Francisco-US,Warm Springs/​South Fremont,Bay Area Rapid Transit,,37.5019913, -121.9392080,yes
+San Francisco-US,West Dublin/​Pleasanton,Bay Area Rapid Transit,,37.6997514, -121.9281673,no
+San Francisco-US,West Oakland,Bay Area Rapid Transit,,37.8048919, -122.2951752,yes
+San Juan-US,Bayamón,Tren Urbano,,18.4001205,-66.1538246,no
+San Juan-US,Centro Médico,Tren Urbano,,18.3914911,-66.0749682,no
+San Juan-US,Cupey,Tren Urbano,,18.3902388,-66.0635445,no
+San Juan-US,Deportivo,Tren Urbano,,18.3942699,-66.1495982,no
+San Juan-US,Domenech,Tren Urbano,,18.4154496,-66.0563168,no
+San Juan-US,Hato Rey,Tren Urbano,,18.4292235,-66.0601256,no
+San Juan-US,Jardines,Tren Urbano,,18.3940672,-66.1282539,no
+San Juan-US,Las Lomas,Tren Urbano,,18.3907377,-66.0943655,no
+San Juan-US,Martínez Nadal,Tren Urbano,,18.391117,-66.1016683,no
+San Juan-US,Piñero,Tren Urbano,,18.4108173,-66.0554772,no
+San Juan-US,Roosevelt,Tren Urbano,,18.4231094,-66.0589166,no
+San Juan-US,Río Piedras,Tren Urbano,,18.3990969,-66.0523898,no
+San Juan-US,Sagrado Corazón,Tren Urbano,,18.4362102,-66.0603005,no
+San Juan-US,San Francisco,Tren Urbano,,18.3907886,-66.0829265,no
+San Juan-US,Torrimar,Tren Urbano,,18.3918712,-66.1188713,no
+San Juan-US,Universidad,Tren Urbano,,18.4049382,-66.0518342,no
+Washington-US,Addison Road,"Blue, Silver Line",,38.8867225, -76.8944056,yes
+Washington-US,Anacostia,Green Line,,38.8621924, -76.9953319,no
+Washington-US,Archives,"Green, Yellow Line",,38.8936824, -77.0219151,yes
+Washington-US,Arlington Cemetery,Blue Line,,38.8846187, -77.0630855,no
+Washington-US,Ashburn,Silver Line,,39.004970900000004, -77.4911968,no
+Washington-US,Ballston–MU,"Orange, Silver Line",,38.8820057, -77.1115141,yes
+Washington-US,Benning Road,"Blue, Silver Line",,38.8904471, -76.9375326,yes
+Washington-US,Bethesda,Red Line,,38.9843774, -77.0941675,no
+Washington-US,Braddock Road,"Blue, Yellow Line",,38.814146, -77.0536699,yes
+Washington-US,Branch Avenue,Green Line,,38.8268521, -76.9120843,no
+Washington-US,Brookland–CUA,Red Line,,38.933211, -76.9945344,no
+Washington-US,Capitol Heights,"Blue, Silver Line",,38.8892677, -76.9131648,yes
+Washington-US,Capitol South,"Blue, Orange, Silver Line",,38.8851435, -77.0060652,yes
+Washington-US,Cheverly,Orange Line,,38.9166306, -76.9166560,no
+Washington-US,Clarendon,"Orange, Silver Line",,38.887075, -77.0952496,yes
+Washington-US,Cleveland Park,Red Line,,38.9355163, -77.0584432,no
+Washington-US,College Park–University of Maryland,"Green, Yellow Line",,38.9784587, -76.9282678,yes
+Washington-US,Columbia Heights,"Green, Yellow Line",,38.9286849, -77.0328058,yes
+Washington-US,Congress Heights,Green Line,,38.8451339, -76.9880780,no
+Washington-US,Court House,"Orange, Silver Line",,38.8907825, -77.0856426,yes
+Washington-US,Crystal City,"Blue, Yellow Line",,38.8579043, -77.0502898,yes
+Washington-US,Deanwood,Orange Line,,38.9080735, -76.9353421,no
+Washington-US,Downtown Largo,"Blue, Silver Line",,38.9004838, -76.8446482,yes
+Washington-US,Dulles International Airport ,Silver Line,,38.9557882, -77.4483187,no
+Washington-US,Dunn Loring,Orange Line,,38.8833529, -77.2281200,no
+Washington-US,Dupont Circle,Red Line,,38.9097455, -77.0435618,no
+Washington-US,East Falls Church,"Orange, Silver Line",,38.8859763, -77.1568243,yes
+Washington-US,Eastern Market,"Blue, Orange, Silver Line",,38.8842486, -76.9958230,yes
+Washington-US,Eisenhower Avenue,Yellow Line,,38.8003449, -77.0711330,no
+Washington-US,Farragut North,Red Line,,38.9032961, -77.0397342,no
+Washington-US,Farragut West,"Blue, Orange, Silver Line",,38.9013497, -77.0404456,yes
+Washington-US,Federal Center SW,"Blue, Orange, Silver Line",,38.8851184, -77.0150823,yes
+Washington-US,Federal Triangle,"Blue, Orange, Silver Line",,38.8934583, -77.0280297,yes
+Washington-US,Foggy Bottom–GWU,"Blue, Orange, Silver Line",,38.9008731, -77.0503500,yes
+Washington-US,Forest Glen,Red Line,,39.0152846, -77.0431475,no
+Washington-US,Fort Totten (lower level),"Green, Yellow Line",,38.9517337, -77.0026753,yes
+Washington-US,Fort Totten (upper level),Red Line,,38.9518112, -77.0021619,no
+Washington-US,Franconia–Springfield,Blue Line,,38.7659146, -77.1686097,no
+Washington-US,Friendship Heights,Red Line,,38.9594839, -77.0849958,no
+Washington-US,Gallery Place (lower level),"Green, Yellow Line",,38.8987958, -77.0219097,yes
+Washington-US,Gallery Place (upper level),Red Line,,38.8983294, -77.0225784,no
+Washington-US,Georgia Avenue–Petworth,"Green, Yellow Line",,38.9369372, -77.0241656,yes
+Washington-US,Glenmont,Red Line,,39.0617838, -77.0535574,no
+Washington-US,Greensboro,Silver Line,,38.9211119, -77.2340047,no
+Washington-US,Greenbelt,"Green, Yellow Line",,39.0099993, -76.9125366,yes
+Washington-US,Grosvenor–Strathmore,Red Line,,39.0290818, -77.1038103,no
+Washington-US,Herndon,Silver Line,,38.9528369, -77.3852557,no
+Washington-US,Huntington,Yellow Line,,38.7938265, -77.0752900,no
+Washington-US,Hyattsville Crossing,"Green, Yellow Line",,38.9653369, -76.9566821,yes
+Washington-US,Innovation Center,Silver Line,,38.9610241, -77.4160843,no
+Washington-US,Judiciary Square,Red Line,,38.8960859, -77.0166814,no
+Washington-US,King Street–Old Town,"Blue, Yellow Line",,38.8065306, -77.0610459,yes
+Washington-US,L'Enfant Plaza (lower level),"Blue, Orange, Silver Line",,38.8849108, -77.0225831,yes
+Washington-US,L'Enfant Plaza (upper level),"Green, Yellow Line",,38.8853708, -77.0218956,yes
+Washington-US,Landover,Orange Line,,38.9334967, -76.8912621,no
+Washington-US,Loudoun Gateway,Silver Line,,38.9922486, -77.4610028,no
+Washington-US,McLean,Silver Line,,38.9245311, -77.2101036,no
+Washington-US,McPherson Square,"Blue, Orange, Silver Line",,38.9013627, -77.0320064,yes
+Washington-US,Medical Center,Red Line,,38.9988498, -77.0968366,no
+Washington-US,Metro Center (lower level),"Blue, Orange, Silver Line",,38.8977924, -77.0280111,yes
+Washington-US,Metro Center (upper level),Red Line,,38.8983395, -77.0286189,no
+Washington-US,Minnesota Avenue,Orange Line,,38.8991612, -76.9467392,no
+Washington-US,Morgan Boulevard,"Blue, Silver Line",,38.893744, -76.8683427,yes
+Washington-US,Mount Vernon Square,"Green, Yellow Line",,38.9055282, -77.0219332,yes
+Washington-US,Navy Yard–Ballpark,Green Line,,38.8764746, -77.0059207,no
+Washington-US,Naylor Road,Green Line,,38.851128, -76.9566758,no
+Washington-US,New Carrollton,Orange Line,,38.9480097, -76.8718770,no
+Washington-US,NoMa–Gallaudet U,Red Line,,38.9070253, -77.0031528,no
+Washington-US,North Bethesda,Red Line,,39.0481514, -77.1128299,no
+Washington-US,Pentagon,"Blue, Yellow Line",,38.8691306, -77.0540760,yes
+Washington-US,Pentagon City,"Blue, Yellow Line",,38.8630421, -77.0594270,yes
+Washington-US,Potomac Avenue,"Blue, Orange, Silver Line",,38.8812969, -76.9851996,yes
+Washington-US,Reston Town Center,Silver Line,,38.9528226, -77.3606533,no
+Washington-US,Rhode Island Avenue,Red Line,,38.9208202, -76.9959733,no
+Washington-US,Rockville,Red Line,,39.0841518, -77.1460645,no
+Washington-US,Ronald Reagan Washington National Airport ,"Blue, Yellow Line",,38.8534164, -77.0440423,yes
+Washington-US,Rosslyn,"Blue, Orange, Silver Line",,38.8959791, -77.0709087,yes
+Washington-US,Shady Grove,Red Line,,39.1199123, -77.1646588,no
+Washington-US,Shaw–Howard University,"Green, Yellow Line",,38.9134707, -77.0219174,yes
+Washington-US,Silver Spring,Red Line,,38.9927608, -77.0300984,no
+Washington-US,Smithsonian,"Blue, Orange, Silver Line",,38.8885156, -77.0285572,yes
+Washington-US,Southern Avenue,Green Line,,38.8413902, -76.9748750,no
+Washington-US,Spring Hill,Silver Line,,38.9292587, -77.2419329,no
+Washington-US,Stadium–Armory,"Blue, Orange, Silver Line",,38.888334, -76.9770859,yes
+Washington-US,Suitland,Green Line,,38.8444841, -76.9326657,no
+Washington-US,Takoma,Red Line,,38.97563, -77.0178970,no
+Washington-US,Tenleytown–AU,Red Line,,38.9480661, -77.0793047,no
+Washington-US,Twinbrook,Red Line,,39.062682, -77.1212090,no
+Washington-US,Tysons,Silver Line,,38.9206007, -77.2223184,no
+Washington-US,U Street,"Green, Yellow Line",,38.9169902, -77.0260055,yes
+Washington-US,Union Station,Red Line,,38.897766, -77.0074143,no
+Washington-US,Van Dorn Street,Blue Line,,38.7993077, -77.1291115,no
+Washington-US,Van Ness–UDC,Red Line,,38.9441698, -77.0634765,no
+Washington-US,Vienna,Orange Line,,38.8776013, -77.2722884,no
+Washington-US,Virginia Square–GMU,"Orange, Silver Line",,38.8829435, -77.1033092,yes
+Washington-US,Waterfront,Green Line,,38.8764426, -77.0175081,no
+Washington-US,West Falls Church,Orange Line,,38.9007928, -77.1889651,no
+Washington-US,West Hyattsville,"Green, Yellow Line",,38.9552277, -76.9695200,yes
+Washington-US,Wheaton,Red Line,,39.0386859, -77.0507409,no
+Washington-US,Wiehle–Reston East,Silver Line,,38.947749, -77.3400754,no
+Washington-US,Woodley Park,Red Line,,38.9250248, -77.0523627,no
