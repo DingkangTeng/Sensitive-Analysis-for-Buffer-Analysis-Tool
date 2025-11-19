@@ -67,14 +67,14 @@ Typically, the installation should be prompt (around _10-20 min_ from a "_clean_
    > ```
 3. Run
    1. **preprocessing**: run each script in the dir ``./rowDataProcess``
-      > - amapMetro.py: get metro data from Amap Metro Map
-      > - analysis.py: compare data value from different data sources
-      > - oldData.py: merge data from old data sources
-   2. **buffer analysis**: run ``./ParkingAndCharging.pyt`` under ``ArcGIS`` enovironmet, python script in ``./tools`` serve for this tool.
+      > - **amapMetro.py**: get metro data from Amap Metro Map
+      > - **analysis.py**: compare data value from different data sources
+      > - **oldData.py**: merge data from old data sources
+   2. **buffer analysis**: run ``./ParkingAndCharging.pyt`` under ``ArcGIS`` enovironmet, the python script in ``./tools`` serve as the foundation for this tool.
    3. **analysis**: run each script (shown as below) in the dir ``./analysis/``
-      > - sensativeAnalysis.py: creat heat map for buffer-rings
-      > - globalAnalysis.py: generate analysis results
-      > - function.py: basic function serve for other python scripts
+      > - **sensativeAnalysis.py**: creat heat map for buffer-rings
+      > - **globalAnalysis.py**: generate analysis results
+      > - **function.py**: basic function serve for other python scripts
 5. Outputs (including text files and figures) will be stored in the dir ``./__SampleData/Export/``.
 
 # Contact
