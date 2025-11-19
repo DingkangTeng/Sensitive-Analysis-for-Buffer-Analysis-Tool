@@ -53,31 +53,29 @@ Typically, the installation should be prompt (around _10-20 min_ from a "_clean_
      conda install <package_name>=<specific_version>
      ```
 
-<!-- # Usage
+# Usage
 1. Git clone/download the repository to your local disk.
 2. Unzip the full datasets (which can be provided upon request, see [Overview](https://github.com/DingkangTeng/Sensitive-Analysis-for-Buffer-Analysis-Tool?tab=readme-ov-file#overview))
    > The structure of the provided full datasets should look like as below:
    > 
    > ```
-   > - gdp
-   > - evcs.7z
-   > - housing.7z
-   > - poiAndNetwork.7z
-   > - population.7z
+   > - __SampleData
+   > - analysis
+   > - rowDataProcess
+   > - tools
+   > - ParkingAndCharging.pyt
    > ```
-3. Unzip each compressed dataset (``.7z`` file) and drag folders/files into corresponding dir of this repo. 
- For example, extract all files from the ``population.7z`` to the dir ``./data/input/population/``.
-4. Run
-   1. **preprocessing**: run each script in the dir ``./codes/preprocessing``
-   2. **analysis**: run each script (shown as below) in the dir ``./codes/`` and some intermediate data 
-   will be produced (can be found in the dir ``./data/interim/...``) then 
-      > - distribution.py
-      > - housing.py
-      > - poi.py
-      > - pop_coverage.py
-      > - road_network.py
-   3. **plot**: to plot figures as presented in the manuscript, run each script in the dir ``./codes/plots/``
-5. Outputs (including text files and figures) will be stored in the dir ``./data/output/texts/`` and ``./data/output/plots/``, respectively. -->
+3. Run
+   1. **preprocessing**: run each script in the dir ``./rowDataProcess``
+      > - amapMetro.py: get metro data from Amap Metro Map
+      > - analysis.py: compare data value from different data sources
+      > - oldData.py: merge data from old data sources
+   2. **buffer analysis**: run ``./ParkingAndCharging.pyt`` under ``ArcGIS`` enovironmet, python script in ``./tools`` serve for this tool.
+   3. **analysis**: run each script (shown as below) in the dir ``./analysis/``
+      > - sensativeAnalysis.py: creat heat map for buffer-rings
+      > - globalAnalysis.py: generate analysis results
+      > - function.py: basic function serve for other python scripts
+5. Outputs (including text files and figures) will be stored in the dir ``./__SampleData/Export/``.
 
 # Contact
 - Leave questions in [Issues on GitHub](https://github.com/DingkangTeng/Sensitive-Analysis-for-Buffer-Analysis-Tool/issues)
