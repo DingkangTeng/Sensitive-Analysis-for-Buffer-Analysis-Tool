@@ -5,8 +5,8 @@ import arcpy
 class DistrictDivid(object):
     def __init__(self):
         """Define the tool (tool name is the name of the class)."""
-        self.label = "District Divid"
-        self.description = "Add district classification result into the database."
+        self.label = "District Divide"
+        self.description = "This is an auxiliary script that divides POIs by polygon for buffer analysis."
 
     def getParameterInfo(self):
         """Define the tool parameters."""

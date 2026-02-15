@@ -7,19 +7,19 @@ class BufferAnalysisArea(object):
     def __init__(self):
         """Define the tool (tool name is the name of the class)."""
         self.label = "Buffer Analysis(Area)"
-        self.description = "Analysis the the proporation of area of the buffer zone."
+        self.description = "This is a specialized script that performs buffer analysis based solely on the buffer area. It builds multi‑ring buffers around source points and calculates the area of each buffer ring intersecting with the specified district boundaries."
 
     def getParameterInfo(self):
         """Define the tool parameters."""
         metroLayer = arcpy.Parameter(
-            displayName="Metro Layer",
+            displayName="Source POI Layer",
             name="metroLayer",
             datatype="GPFeatureLayer",
             parameterType="Required",
             direction="Input"
         )
         zoneFieldM = arcpy.Parameter(
-            displayName="Select zone name field of metro",
+            displayName="Select zone name field of source POI",
             name="zoneFieldM",
             datatype="Field",
             parameterType="Required",

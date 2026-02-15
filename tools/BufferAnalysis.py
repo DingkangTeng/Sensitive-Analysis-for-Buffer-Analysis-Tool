@@ -7,19 +7,19 @@ class BufferAnalysis(object):
     def __init__(self):
         """Define the tool (tool name is the name of the class)."""
         self.label = "Buffer Analysis"
-        self.description = "Analysis the relationship between Metro station and charging station or parking lots."
+        self.description = "This is the main script for buffer analysis. It builds multi‑ring buffers around source points and counts target features within each buffer ring, specifically designed for sensitive analysis."
 
     def getParameterInfo(self):
         """Define the tool parameters."""
         metroLayer = arcpy.Parameter(
-            displayName="Metro Layer",
+            displayName="Source POI Layer",
             name="metroLayer",
             datatype="GPFeatureLayer",
             parameterType="Required",
             direction="Input"
         )
         zoneFieldM = arcpy.Parameter(
-            displayName="Select zone name field of metro",
+            displayName="Select zone name field of source POI",
             name="zoneFieldM",
             datatype="Field",
             parameterType="Required",
@@ -28,14 +28,14 @@ class BufferAnalysis(object):
         zoneFieldM.parameterDependencies = [metroLayer.name]
         zoneFieldM.filter.list = ["Text"]
         chargingLayer = arcpy.Parameter(
-            displayName="Charging Station Layer",
+            displayName="Target POI Layer",
             name="chargingLayer",
             datatype="GPFeatureLayer",
             parameterType="Required",
             direction="Input"
         )
         zoneFieldC = arcpy.Parameter(
-            displayName="Select zone name field of charging station",
+            displayName="Select zone name field of target POI",
             name="zoneFieldC",
             datatype="Field",
             parameterType="Required",
